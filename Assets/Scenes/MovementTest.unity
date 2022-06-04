@@ -315,6 +315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7188362982576016349, guid: f976bc1e93301514fa7ae30330eeac76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f976bc1e93301514fa7ae30330eeac76, type: 3}
 --- !u!1 &627766535
@@ -642,6 +647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7188362982576016349, guid: f976bc1e93301514fa7ae30330eeac76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f976bc1e93301514fa7ae30330eeac76, type: 3}
 --- !u!1001 &2076380793
@@ -721,6 +731,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7188362982576016349, guid: f976bc1e93301514fa7ae30330eeac76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f976bc1e93301514fa7ae30330eeac76, type: 3}
 --- !u!1001 &1449658430384745590
@@ -735,56 +750,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1145380702}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
-      value: 45cf3bac-13c0-49fb-a2de-eec64f626ec5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
-      value: be3320c3-e93f-490f-843f-538d72fe5ed3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: d0e23d20-9217-412a-8631-8143e7cc8980
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: 43ddffeb-5686-4d9b-8e93-72f8c009a098
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
-      value: Gameplay/Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
-      value: Gameplay/Dash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: Gameplay/Interact
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449658430384745592, guid: f976bc1e93301514fa7ae30330eeac76,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: Menus/New action
-      objectReference: {fileID: 0}
     - target: {fileID: 2434059746085102224, guid: f976bc1e93301514fa7ae30330eeac76,
         type: 3}
       propertyPath: m_RootOrder
