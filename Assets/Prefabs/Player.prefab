@@ -136,8 +136,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6a1409c62e7e79a4380725f5b59bb837, type: 2}
   - {fileID: 2100000, guid: dde7e6fffd59ac74ab282ef08e0067c3, type: 2}
   - {fileID: 2100000, guid: 4f0ea2477e9c13c41b4f83c06dcd8468, type: 2}
-  acceleration: 10
-  maxSpeed: 10
+  maxAccel: 30
+  maxSpeed: 8
 --- !u!136 &3304209607636648804
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -179,23 +179,55 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6459041946926125507}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 45cf3bac-13c0-49fb-a2de-eec64f626ec5
     m_ActionName: Gameplay/Movement
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6459041946926125507}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: be3320c3-e93f-490f-843f-538d72fe5ed3
     m_ActionName: Gameplay/Dash
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6459041946926125507}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d0e23d20-9217-412a-8631-8143e7cc8980
     m_ActionName: Gameplay/Interact
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 43ddffeb-5686-4d9b-8e93-72f8c009a098
-    m_ActionName: Menus/New action
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
