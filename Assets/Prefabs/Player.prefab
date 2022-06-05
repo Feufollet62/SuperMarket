@@ -226,7 +226,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d0e23d20-9217-412a-8631-8143e7cc8980
     m_ActionName: Gameplay/Interact
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
