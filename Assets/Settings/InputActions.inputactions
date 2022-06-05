@@ -40,7 +40,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -62,7 +62,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -73,7 +73,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -84,7 +84,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -95,10 +95,142 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "062befef-7427-4846-a822-132b0a88b0e5",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "e835c0d5-38b6-4569-aff1-5b301fb99bde",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "bcf076ea-db55-46a0-8218-2231227e645d",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "c5eb9484-4c54-4f27-89a4-7d99b3fbcd97",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "858686cc-b745-4db1-87bf-26d4751e3a26",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "ce4bd027-0778-41d8-9502-af53ff053c5b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "4c87e360-d5fd-43ef-b8f3-2da7e410205a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1e56d934-66b8-4e97-89b2-a61f22e3d1d0",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "780fd6c3-7302-4370-9393-e39159d0f092",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "392a0cdd-d1b4-4e33-893f-036607218e2c",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0fdbe8d9-bce4-4adf-bf19-ab40b27d5b14",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfL",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b538130-391c-490b-bbc1-5e4017b66354",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfR",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -106,7 +238,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -117,7 +249,7 @@
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -128,7 +260,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -139,7 +271,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -147,10 +279,10 @@
                 {
                     "name": "",
                     "id": "cec8f779-f675-4a29-9bdd-e9332e51d411",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -158,10 +290,87 @@
                 {
                     "name": "",
                     "id": "b97b79b1-2789-4524-8843-7eb6c966d12f",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ccee9932-2a9b-4228-86ae-0d95455e5ff3",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "663b036c-9c78-4a99-9b3c-73e05519924a",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af9ee3fb-5989-408a-88b7-4bae9bcd2dc7",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55aca9e6-b175-43cf-9081-cf481dc1f595",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "074ff9af-283f-4ba5-9b83-1862732a6136",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47f966fc-207a-4514-8b70-cd4d5303ef8e",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfL",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "996f6f79-0537-44d8-8464-135e7bb3cbb5",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfR",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -172,7 +381,7 @@
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -183,7 +392,7 @@
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -194,7 +403,7 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -205,7 +414,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "ControllerFull",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -216,7 +425,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -227,7 +436,84 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardHalfL",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cf09a50-3600-4a88-8a7f-a4ac05fbaffd",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35f715aa-2367-47e5-81c9-1459137debb6",
+                    "path": "<Keyboard>/numpadPeriod",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardHalfR",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6261b0f1-c3fd-4bd3-908e-c83d4849baf6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df250d5d-5477-404b-adfe-0b987634b968",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "933f16ad-6304-4865-a02c-8aaba2268f50",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardFull",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fb3793a-d5c4-418d-a588-a2dcda5c9f7a",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfL",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8868436f-dfbd-4240-b6ac-f7f2fe2a4b6f",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControllerHalfR",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -237,8 +523,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Controller",
-            "bindingGroup": "Controller",
+            "name": "ControllerFull",
+            "bindingGroup": "ControllerFull",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
@@ -248,11 +534,60 @@
             ]
         },
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "KeyboardHalfL",
+            "bindingGroup": "KeyboardHalfL",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "KeyboardHalfR",
+            "bindingGroup": "KeyboardHalfR",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "KeyboardFull",
+            "bindingGroup": "KeyboardFull",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "ControllerHalfL",
+            "bindingGroup": "ControllerHalfL",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "ControllerHalfR",
+            "bindingGroup": "ControllerHalfR",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

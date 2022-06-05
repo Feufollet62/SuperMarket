@@ -1,18 +1,16 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum PlayerID {Player1, Player2, Player3, Player4}
-
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     // Info joueur
-    public PlayerID id = PlayerID.Player1;
+    public int id;
     [SerializeField] private Material[] playerMats;
     
     // Variables mouvement
-    [SerializeField] private float maxAccel = 10f;
-    [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float maxAccel = 30f;
+    [SerializeField] private float maxSpeed = 8f;
     
     // Private
     Vector3 velocity;
@@ -23,8 +21,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        PlayerManager manager = PlayerManager.Instance;
+        
         // Assigne les bons matériaux aux bons joueurs
-        GetComponentInChildren<MeshRenderer>().material = playerMats[(int)id];
+        GetComponentInChildren<MeshRenderer>().material = playerMats[id];
     }
 
     private void Update()
@@ -39,20 +39,22 @@ public class PlayerController : MonoBehaviour
     }
 
     // https://youtu.be/5tOOstXaIKE
-    public void OnMovement(InputAction.CallbackContext value)
+    public void OnMovement(InputAction.CallbackContext context)
     {
-        Vector2 rawInput = value.ReadValue<Vector2>();
+        Vector2 rawInput = context.ReadValue<Vector2>();
         print(rawInput.ToString("f3"));
         inputMovement = new Vector3(rawInput.x, 0, rawInput.y);
     }
 
-    public void OnDash(InputAction.CallbackContext value)
+    public void OnDash(InputAction.CallbackContext context)
     {
-        inputDash = value.ReadValueAsButton();
+        //inputDash = context.ReadValue<bool>();
+        inputDash = context.action.triggered;
     }
     
-    public void OnInteract(InputAction.CallbackContext value)
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        inputInteract = value.ReadValueAsButton();
+        //inputInteract = context.ReadValue<bool>();
+        inputInteract = context.action.triggered;
     }
 }
