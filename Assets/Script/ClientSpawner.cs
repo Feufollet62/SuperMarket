@@ -58,14 +58,14 @@ namespace _Script{
 			limitSpawn -= Time.deltaTime;
 			if (limitSpawn < 0)
 			{
-				if (FindObjectOfType<GameManager>().ennemyCount <= 15)
+				if (FindObjectOfType<GameManager>().ClientContent <= 15)
 				{
 					GameObject enemyPrefab;
 					enemyPrefab = Client[0];
 					GameObject newEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
 					newEnemy.transform.parent = transform;
 					limitSpawn = cooldownSpawn;
-					FindObjectOfType<GameManager>().ennemyCount++;
+					FindObjectOfType<GameManager>().ClientContent++;
 				}
 			}
 		}
