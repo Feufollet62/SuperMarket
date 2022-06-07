@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,14 +20,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float animMaxAngle = 20f;
     
     // Private
-    Vector3 velocity;
+    private Rigidbody rb;
+    private Vector3 velocity, desiredVelocity;
     
     private Vector3 inputMovement;
-    private bool inputDash;
-    private bool inputInteract;
+    private bool inputDash, inputInteract;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         PlayerManager manager = PlayerManager.Instance;
         
         // Assigne les bons matériaux aux bons joueurs
@@ -35,10 +37,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        GetInput();
         Animate();
     }
-    
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
     // https://youtu.be/5tOOstXaIKE
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -58,17 +65,22 @@ public class PlayerController : MonoBehaviour
         inputInteract = context.action.triggered;
     }
 
+    private void GetInput()
+    {
+        desiredVelocity = inputMovement * maxSpeed;
+    }
+    
     private void Move()
     {
-        // On essaye d'atteindre la desiredVelocity; la vitesse à laquelle on l'atteint dépend de l'accélération.
-        Vector3 desiredVelocity = inputMovement * maxSpeed;
         float maxSpeedChange = maxAccel * Time.deltaTime;
-
-        // Voir la doc de MoveTowards si c'est pas clair
+        
+        velocity = rb.velocity;
+        
         velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
         velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
 
-        transform.position += velocity * Time.deltaTime;
+        //transform.position += velocity * Time.deltaTime;
+        rb.velocity = velocity;
     }
 
     private void Animate()
