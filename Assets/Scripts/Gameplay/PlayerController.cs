@@ -4,13 +4,19 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
-    // Info joueur
+    [Header("Info")]
     public int id;
+    // Remplacer par scriptableojbect maybe ?
     [SerializeField] private Material[] playerMats;
+    [SerializeField] private Transform model;
     
-    // Variables mouvement
+    [Header("Mouvement")]
     [SerializeField] private float maxAccel = 30f;
     [SerializeField] private float maxSpeed = 8f;
+
+    [Header("Animation")]
+    [SerializeField] private float animIntensity = 2f;
+    [SerializeField] private float animMaxAngle = 20f;
     
     // Private
     Vector3 velocity;
@@ -29,20 +35,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 desiredVelocity = inputMovement * maxSpeed;
-        float maxSpeedChange = maxAccel * Time.deltaTime;
-
-        velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
-        velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
-
-        transform.position += velocity * Time.deltaTime;
+        Move();
+        Animate();
     }
-
+    
     // https://youtu.be/5tOOstXaIKE
     public void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 rawInput = context.ReadValue<Vector2>();
-        print(rawInput.ToString("f3"));
         inputMovement = new Vector3(rawInput.x, 0, rawInput.y);
     }
 
@@ -56,5 +56,37 @@ public class PlayerController : MonoBehaviour
     {
         //inputInteract = context.ReadValue<bool>();
         inputInteract = context.action.triggered;
+    }
+
+    private void Move()
+    {
+        // On essaye d'atteindre la desiredVelocity; la vitesse à laquelle on l'atteint dépend de l'accélération.
+        Vector3 desiredVelocity = inputMovement * maxSpeed;
+        float maxSpeedChange = maxAccel * Time.deltaTime;
+
+        // Voir la doc de MoveTowards si c'est pas clair
+        velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
+        velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
+
+        transform.position += velocity * Time.deltaTime;
+    }
+
+    private void Animate()
+    {
+        if(inputMovement == Vector3.zero)
+        {
+            model.Rotate(0,0,0);
+            return;
+        }
+        
+        // On retrouve l'accélération
+        Vector3 accel = inputMovement*maxSpeed - velocity;
+
+        model.forward = accel;
+        float angle = accel.magnitude * animIntensity;
+
+        Mathf.Clamp(0, animMaxAngle, angle);
+        
+        model.Rotate(-angle,0,0);
     }
 }
