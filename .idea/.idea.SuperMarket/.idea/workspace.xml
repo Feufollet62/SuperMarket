@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="46efc5ea-e756-45b2-bfd5-1967e832438c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2A73UNBpgqcF6epi03uunXaObkO" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\feufo\Desktop\Bordel\Unity\SuperMarket -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\feufo\Desktop\Bordel\Unity\SuperMarket" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46efc5ea-e756-45b2-bfd5-1967e832438c" name="Changes" comment="" />
+      <created>1654346813657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654346813657</updated>
+      <workItem from="1654346844792" duration="631000" />
+      <workItem from="1654347682198" duration="2501000" />
+      <workItem from="1654351455496" duration="2775000" />
+      <workItem from="1654425228681" duration="1049000" />
+      <workItem from="1654432599381" duration="987000" />
+      <workItem from="1654440864977" duration="7016000" />
+      <workItem from="1654595629944" duration="608000" />
+      <workItem from="1654620809815" duration="3566000" />
+      <workItem from="1654673926155" duration="255000" />
+      <workItem from="1654674234371" duration="3884000" />
+      <workItem from="1654678770005" duration="4157000" />
+      <workItem from="1654690842148" duration="6053000" />
+      <workItem from="1654702409545" duration="1432000" />
+      <workItem from="1654708081594" duration="93000" />
+      <workItem from="1654708190543" duration="38000" />
+      <workItem from="1654708336330" duration="90000" />
+      <workItem from="1654708568097" duration="59000" />
+      <workItem from="1654708631488" duration="166000" />
+    </task>
+    <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
+      <created>1654347854558</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654347854558</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Setup scene basique + assignation auto matériaux joueurs + input system">
+      <created>1654350348750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654350348750</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Première version bancale sans physique, en solo. Support clavier + manette">
+      <created>1654353185198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654353185198</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout de plein de méthodes d'input, dont clavier et manette partagée entre 2e joueurs&#10;Ajout Logo&#10;Nettoyage Fichiers">
+      <created>1654448315267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654448315267</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout DotWeen + petit feedback de mouvement">
+      <created>1654629412872</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654629412872</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Rigidbodies sur les joueurs">
+      <created>1654630292733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654630292733</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Dash basique sans knockback / stun&#10;Feedback de mouvement avec &quot;animation&quot; du joueur + particules">
+      <created>1654683626435</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654683626435</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout objet throwable&#10;Interaction basique avec le throwable">
+      <created>1654696932548</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654696932548</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Premier import scene Alex + rangement">
+      <created>1654702866607</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654702866607</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Giga rangement de la map d'Alex">
+      <created>1654707714457</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654707714457</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix">
+      <created>1654707740193</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654707740193</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Truc random avant merge">
+      <created>1654708676924</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654708676924</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Setup nouveau PC + merge avec DevCorentin" />
+    <MESSAGE value="Setup scene basique + assignation auto matériaux joueurs + input system" />
+    <MESSAGE value="Première version bancale sans physique, en solo. Support clavier + manette" />
+    <MESSAGE value="Ajout de plein de méthodes d'input, dont clavier et manette partagée entre 2e joueurs&#10;Ajout Logo&#10;Nettoyage Fichiers" />
+    <MESSAGE value="Ajout DotWeen + petit feedback de mouvement" />
+    <MESSAGE value="Rigidbodies sur les joueurs" />
+    <MESSAGE value="Dash basique sans knockback / stun&#10;Feedback de mouvement avec &quot;animation&quot; du joueur + particules" />
+    <MESSAGE value="Ajout objet throwable&#10;Interaction basique avec le throwable" />
+    <MESSAGE value="Premier import scene Alex + rangement" />
+    <MESSAGE value="Giga rangement de la map d'Alex" />
+    <MESSAGE value="Fix" />
+    <MESSAGE value="Truc random avant merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Truc random avant merge" />
+  </component>
+</project>
