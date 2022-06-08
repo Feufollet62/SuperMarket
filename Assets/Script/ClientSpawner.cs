@@ -58,7 +58,7 @@ namespace _Script{
 			limitSpawn -= Time.deltaTime;
 			if (limitSpawn < 0)
 			{
-				if (FindObjectOfType<GameManager>().ClientContent <= 15)
+				if (FindObjectOfType<GameManager>().ClientContent <= 300)
 				{
 					GameObject enemyPrefab;
 					enemyPrefab = Client[0];

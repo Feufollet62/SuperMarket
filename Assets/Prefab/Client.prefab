@@ -128,7 +128,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95114f036845b34aaeaf199c003150e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeService: 10
+  timeService: 30
+  posClientRandom: 0
+  posClient:
+  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 7838044905743572851, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
+  - {fileID: 7838044905743572851, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
+  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  posFinShop: {fileID: 6033230472535909349, guid: 2a1b8b4cd70109246b56729d4e157a33,
+    type: 3}
 --- !u!195 &5002577063355228285
 NavMeshAgent:
   m_ObjectHideFlags: 0
