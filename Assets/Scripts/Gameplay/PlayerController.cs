@@ -1,14 +1,19 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
+
     [Header("Info")]
     public int id;
     // Remplacer par scriptableojbect maybe ?
     [SerializeField] private Material[] playerMats;
     [SerializeField] private Transform model;
+    [SerializeField] private Transform grabPoint;
     
     [Header("Mouvement")]
     [SerializeField] private float maxAccel = 30f;
@@ -23,16 +28,22 @@ public class PlayerController : MonoBehaviour
     // Private
     private Rigidbody _rb;
     private ParticleSystem _particleSystem;
-    
+
+    private List<Interactible> _interactibles = new List<Interactible>();
+    private Interactible _grabbedObject;
+
     private Vector3 _velocity, _desiredVelocity, _inputMovement;
 
+    private bool _inputDash, _inputInteract;
     private bool _dashing;
     private float _dashTimer;
-    
-    private bool _inputDash, _inputInteract;
 
     private float _animTimer;
 
+    #endregion
+
+    #region Built-in Functions
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -46,17 +57,45 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         Animate();
-        print("Dashing: " + _dashing);
-        print("Timer: " + _dashTimer);
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if(!_dashing) Move();
         Dash();
     }
 
-    // https://youtu.be/5tOOstXaIKE
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible"))
+        {
+            Interactible thisInteractible = other.GetComponent<Interactible>();
+            
+            if (!_interactibles.Contains(thisInteractible))
+            {
+                _interactibles.Add(thisInteractible);
+            }
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible"))
+        {
+            Interactible thisInteractible = other.GetComponent<Interactible>();
+            
+            if (_interactibles.Contains(thisInteractible))
+            {
+                _interactibles.Remove(thisInteractible);
+            }
+        }
+    }
+
+    #endregion
+
+    #region Custom Functions
+
+    // Focntionnement input system: https://youtu.be/5tOOstXaIKE
     public void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 rawInput = context.ReadValue<Vector2>();
@@ -70,7 +109,7 @@ public class PlayerController : MonoBehaviour
     
     public void OnInteract(InputAction.CallbackContext context)
     {
-        //inputInteract = context.ReadValue<bool>();
+        GrabNearestThrowable();
         _inputInteract = context.action.triggered;
     }
 
@@ -81,10 +120,6 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
-        if(_dashing) return;
-        
-        print("Moving");
-        
         float maxSpeedChange = maxAccel * Time.deltaTime;
         
         _velocity = _rb.velocity;
@@ -101,7 +136,6 @@ public class PlayerController : MonoBehaviour
         // Already dashing
         if(_dashing)
         {
-            print("Currently dashing " + Time.time);
             _dashTimer += Time.fixedDeltaTime;
             if (_dashTimer >= dashLength)
             {
@@ -118,8 +152,44 @@ public class PlayerController : MonoBehaviour
         _dashing = true;
         _dashTimer = 0f;
         
-        print("Start dash " + Time.time);
         _rb.AddForce(_inputMovement * dashStrength, ForceMode.Impulse);
+    }
+
+    private void GrabNearestThrowable()
+    {
+        // Si rien est à portée ou si on porte déja un truc, rien ne se passe 
+        if(_interactibles.Count == 0 || !(_grabbedObject == null)) return;
+        
+        // Si c'est le seul à portée on cherche pas plus loin
+        if (_interactibles.Count == 1 && _interactibles[0].type == InteractType.Throwable)
+        {
+            _grabbedObject = _interactibles[0];
+            _grabbedObject.Grab(grabPoint);
+            return;
+        }
+
+        // Sinon on vérifie tout le reste
+        // Le premier obj sera forcément plus près que l'infini
+        float closestDistance = Single.PositiveInfinity;
+        
+        // Peu importe ce qu'il y a là dedans car ce sera forcément remplacé
+        Interactible closest = _interactibles[0];
+        
+        for (int i = 0; i < _interactibles.Count; i++)
+        {
+            // Si pas throwable peu importe
+            if (_interactibles[i].type != InteractType.Throwable) continue;
+
+            float distance = Vector3.Distance(transform.position, _interactibles[i].transform.position);
+            
+            if (distance < closestDistance)
+            {
+                closest = _interactibles[i];
+                closestDistance = distance;
+            }
+        }
+        
+        closest.Grab(grabPoint);
     }
 
     private void Animate()
@@ -142,11 +212,13 @@ public class PlayerController : MonoBehaviour
         // On retrouve l'accélération
         Vector3 accel = _inputMovement*maxSpeed - _rb.velocity;
 
-        model.forward = accel;
+        model.forward = _rb.velocity;
         float angle = accel.magnitude * animIntensity;
 
         Mathf.Clamp(0, animMaxAngle, angle);
         
         model.Rotate(-angle,0,0);
     }
+
+    #endregion
 }
