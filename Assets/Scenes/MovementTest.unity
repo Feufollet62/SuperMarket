@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8b97a308da5f94f9e4884110466695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlSchemes: 01000000020000000600000006000000
+  controlSchemes: 04000000050000000600000006000000
   currentPlayers:
   - {fileID: 0}
   - {fileID: 0}
