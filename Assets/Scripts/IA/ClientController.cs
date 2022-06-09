@@ -11,6 +11,7 @@ namespace _Script{
 		[SerializeField] float timeService = 20f;
 		[SerializeField] int posClientRandom;
 		[SerializeField] ClientData clientData;
+		[SerializeField] ClientSpawner clientSpawner;
 		[SerializeField] float timeduClient;
 		[SerializeField] GameManageur gM;
 		[SerializeField] List<Transform> posBaseClient;
@@ -52,6 +53,7 @@ namespace _Script{
 			yield return new WaitForSeconds(1f);
 
 			gM.posClient.Add(posBaseClient[0]);
+			Destroy(clientSpawner.UIcommand);
 
 			StartCoroutine("ExitShop");
 		}
@@ -72,9 +74,9 @@ namespace _Script{
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.CompareTag("FinRun"))
+			if (other.CompareTag("posPourCommande"))
 			{
-				Debug.Log("Je vais partir");
+				clientSpawner.UIcommand.SetActive(true);
 			}
 		}
 		#endregion

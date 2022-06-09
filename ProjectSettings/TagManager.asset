@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Client
   - FinRun
+  - posPourCommande
   layers:
   - Default
   - TransparentFX
