@@ -2,75 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Merge_at_08_06_2022_19_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Merge_at_08_06_2022_19_12__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Client 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Client 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Meuble.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Meuble.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/P1fond.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/P1fond.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/fondMenu.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/fondMenu.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Client.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Client.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Pos4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PosentreFin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PosentreFin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ClientScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ClientScene/NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ClientScene/NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/MenuSelectLvl.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/MenuSelectLvl.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ClientDestroy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ClientDestroy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ClientSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ClientSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/Interactible.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/Interactible.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/PlayerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/PlayerController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/PlayerManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Gameplay/PlayerManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/AcceptPlaying.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/AcceptPlaying.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/SelectMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/SelectMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/TransformBackGround.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/TransformBackGround.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/TurnCharacter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Menu/TurnCharacter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/navscript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/navscript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Menu.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Menu/BackGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Menu/BackGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Menu/BackGround.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Menu/BackGround.shadergraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Logo512.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="DevCorentin" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -139,7 +76,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46efc5ea-e756-45b2-bfd5-1967e832438c" name="Changes" comment="" />
+      <changelist id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="" />
       <created>1654346813657</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -162,6 +99,7 @@
       <workItem from="1654708336330" duration="90000" />
       <workItem from="1654708568097" duration="59000" />
       <workItem from="1654708631488" duration="166000" />
+      <workItem from="1654761107207" duration="6144000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -247,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654708676924</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Nettoyage, ré-intégration plugin substance">
+      <created>1654710511315</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654710511315</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +212,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/DevCorentin" />
                       </list>
                     </value>
                   </entry>
@@ -293,6 +238,7 @@
     <MESSAGE value="Giga rangement de la map d'Alex" />
     <MESSAGE value="Fix" />
     <MESSAGE value="Truc random avant merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Truc random avant merge" />
+    <MESSAGE value="Nettoyage, ré-intégration plugin substance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nettoyage, ré-intégration plugin substance" />
   </component>
 </project>

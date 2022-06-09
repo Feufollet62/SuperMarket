@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,16 +19,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxSpeed = 8f;
     [SerializeField] private float dashStrength = 1f;
     [SerializeField] private float dashLength = .5f;
+    
+    [SerializeField] private float throwStrength = 3f;
 
     [Header("Animation")]
     [SerializeField] private float animIntensity = 2f;
     [SerializeField] private float animMaxAngle = 20f;
     
+    public bool controllable = true;
+
     // Private
     private Rigidbody _rb;
     private ParticleSystem _particleSystem;
 
-    private List<Interactible> _interactibles = new List<Interactible>();
+    public List<Interactible> _interactibles = new List<Interactible>();
     private Interactible _grabbedObject;
 
     private Vector3 _velocity, _desiredVelocity, _inputMovement;
@@ -63,11 +66,12 @@ public class PlayerController : MonoBehaviour
     {
         if(!_dashing) Move();
         Dash();
+        Interact();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible") || other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Interactible thisInteractible = other.GetComponent<Interactible>();
             
@@ -80,7 +84,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactible") || other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Interactible thisInteractible = other.GetComponent<Interactible>();
             
@@ -98,21 +102,41 @@ public class PlayerController : MonoBehaviour
     // Focntionnement input system: https://youtu.be/5tOOstXaIKE
     public void OnMovement(InputAction.CallbackContext context)
     {
-        Vector2 rawInput = context.ReadValue<Vector2>();
-        _inputMovement = new Vector3(rawInput.x, 0, rawInput.y);
+        if (controllable)
+        {
+            Vector2 rawInput = context.ReadValue<Vector2>();
+            _inputMovement = new Vector3(rawInput.x, 0, rawInput.y);
+        }
+        else
+        {
+            _inputMovement = Vector3.zero;
+        }
     }
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        _inputDash = context.action.triggered;
+        // True si controllable = true et context.action.triggered = true
+        _inputDash = controllable && context.action.triggered;
     }
     
     public void OnInteract(InputAction.CallbackContext context)
     {
-        GrabNearestThrowable();
-        _inputInteract = context.action.triggered;
+        _inputInteract = controllable && context.action.triggered;
     }
 
+    public void SetControllable(bool isControllable)
+    {
+        if (isControllable)
+        {
+            controllable = true;
+        }
+        else
+        {
+            controllable = false;
+            _velocity = Vector3.zero;
+        }
+    }
+    
     private void GetInput()
     {
         _desiredVelocity = _inputMovement * maxSpeed;
@@ -155,30 +179,54 @@ public class PlayerController : MonoBehaviour
         _rb.AddForce(_inputMovement * dashStrength, ForceMode.Impulse);
     }
 
-    private void GrabNearestThrowable()
+    private void Interact()
+    {
+        if(!_inputInteract) return;
+        
+        // Pas ouf niveau opti une comparaison avec null
+        if (_inputInteract)
+        {
+            if (_grabbedObject == null)
+            {
+                InteractWithNearest();
+            }
+            else
+            {
+                Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) * throwStrength;
+                throwVector += _velocity;
+                
+                _grabbedObject.Throw(throwVector);
+                _grabbedObject = null;
+            }
+
+            _inputInteract = false; 
+        }
+    }
+
+    private void InteractWithNearest()
     {
         // Si rien est à portée ou si on porte déja un truc, rien ne se passe 
         if(_interactibles.Count == 0 || !(_grabbedObject == null)) return;
         
         // Si c'est le seul à portée on cherche pas plus loin
-        if (_interactibles.Count == 1 && _interactibles[0].type == InteractType.Throwable)
+        if (_interactibles.Count == 1 && _interactibles[0].type != InteractType.Static)
         {
             _grabbedObject = _interactibles[0];
-            _grabbedObject.Grab(grabPoint);
+            _grabbedObject.Interact(grabPoint);
             return;
         }
 
         // Sinon on vérifie tout le reste
         // Le premier obj sera forcément plus près que l'infini
-        float closestDistance = Single.PositiveInfinity;
+        float closestDistance = 99999f;
         
         // Peu importe ce qu'il y a là dedans car ce sera forcément remplacé
         Interactible closest = _interactibles[0];
         
         for (int i = 0; i < _interactibles.Count; i++)
         {
-            // Si pas throwable peu importe
-            if (_interactibles[i].type != InteractType.Throwable) continue;
+            // Si pas throwable on skip
+            if (_interactibles[i].type == InteractType.Static) continue;
 
             float distance = Vector3.Distance(transform.position, _interactibles[i].transform.position);
             
@@ -189,7 +237,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        closest.Grab(grabPoint);
+        closest.Interact(grabPoint);
     }
 
     private void Animate()
