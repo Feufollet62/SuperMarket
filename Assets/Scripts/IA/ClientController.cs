@@ -10,10 +10,11 @@ namespace _Script{
 		#region Variables
 		[SerializeField] float timeService = 20f;
 		[SerializeField] int posClientRandom;
-		//[SerializeField] Transform[] posClient;
 		[SerializeField] ClientData clientData;
 		[SerializeField] float timeduClient;
-		[SerializeField] GameManager gM;
+		[SerializeField] GameManageur gM;
+		[SerializeField] List<Transform> posBaseClient;
+		[SerializeField] int intPosBaseClient;
 		#endregion
 
 		#region Properties
@@ -31,7 +32,8 @@ namespace _Script{
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
 			agent.destination = gM.posClient[posClientRandom].position;
-			//Remove(gM.posClient[posClientRandom]);
+			gM.posClient.Remove(gM.posClient[posClientRandom]);
+			
 			yield return new WaitForSeconds(timeService);
 			StartCoroutine("InExitQueue");
 		}
@@ -48,6 +50,8 @@ namespace _Script{
 			}
 
 			yield return new WaitForSeconds(1f);
+
+			gM.posClient.Add(posBaseClient[0]);
 
 			StartCoroutine("ExitShop");
 		}
@@ -78,7 +82,9 @@ namespace _Script{
 		#region Builtin Methods 
 		void Start()
 		{
-			posClientRandom = Random.Range(0, gM.posClient.Length);
+			gM = FindObjectOfType<GameManageur>();
+			posClientRandom = Random.Range(0, gM.posClient.Count);
+			posBaseClient[0] = gM.posClient[posClientRandom];
 			timeduClient = clientData.Time;
 			StartCoroutine("EnterShop");
 		}

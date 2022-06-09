@@ -27,7 +27,7 @@ namespace _Script{
 			limitSpawn -= Time.deltaTime;
 			if (limitSpawn < 0)
 			{
-				if (FindObjectOfType<GameManager>().ClientContent <= 6)
+				if (FindObjectOfType<GameManageur>().ClientContent <= 6)
 				{
 					GameObject clientPrefab;
 					clientPrefab = Client[0];
@@ -37,7 +37,7 @@ namespace _Script{
 					newClientUI.transform.parent = UIemplacement.transform;
 					newClientUI.transform.position = BaseCommande.position;
 					limitSpawn = cooldownSpawn;
-					FindObjectOfType<GameManager>().ClientContent++;
+					FindObjectOfType<GameManageur>().ClientContent++;
 					BaseCommande.transform.position = new Vector3(BaseCommande.position.x + 130, BaseCommande.position.y, BaseCommande.position.z);
 				}
 			}

@@ -195,15 +195,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeService: 20
   posClientRandom: 0
-  posClient:
-  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 7580337836270400385, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
-  - {fileID: 2791846981973220034, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
-  - {fileID: 2791846981973220034, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
   timeduClient: 0
+  gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
+  posBaseClient:
+  - {fileID: 0}
+  intPosBaseClient: 0
 --- !u!195 &-3699083752858148782
 NavMeshAgent:
   m_ObjectHideFlags: 0
