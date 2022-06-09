@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2576432712426584052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8174626708222624171}
+  - component: {fileID: 6689949860591524472}
+  - component: {fileID: 109846665955247678}
+  m_Layer: 10
+  m_Name: ClientColider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8174626708222624171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576432712426584052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5916702124311115899}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &6689949860591524472
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576432712426584052}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &109846665955247678
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576432712426584052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5916702124311115889
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,11 +74,12 @@ GameObject:
   - component: {fileID: 5916702124311115899}
   - component: {fileID: 5916702124311115892}
   - component: {fileID: 5916702124311115893}
-  - component: {fileID: 5916702124311115894}
   - component: {fileID: 5916702124311115895}
+  - component: {fileID: 3708879513041690723}
   - component: {fileID: 5916702124311115888}
   - component: {fileID: 5002577063355228285}
-  m_Layer: 0
+  - component: {fileID: 6211768763015077085}
+  m_Layer: 9
   m_Name: Client
   m_TagString: Client
   m_Icon: {fileID: 0}
@@ -33,7 +97,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8174626708222624171}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,19 +152,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5916702124311115894
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5916702124311115889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5916702124311115895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,6 +168,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &3708879513041690723
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916702124311115889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5916702124311115888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,15 +197,14 @@ MonoBehaviour:
   timeService: 30
   posClientRandom: 0
   posClient:
-  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 7838044905743572851, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
-  - {fileID: 7838044905743572851, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
-  - {fileID: 2083608006496178037, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
-  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
-  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
-  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
-  - {fileID: 7018030106116657111, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 5492039663282088474, guid: d43210db21539e445a7c2db469f52bd6, type: 3}
+  - {fileID: 7580337836270400385, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
+  - {fileID: 7580337836270400385, guid: 854a2d96cb27bce42b9d59e35bfc0807, type: 3}
+  - {fileID: 2791846981973220034, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 2791846981973220034, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
+  - {fileID: 2791846981973220034, guid: 2d31ee49cac587f44b5a1398ebee0cbd, type: 3}
   posFinShop: {fileID: 6033230472535909349, guid: 2a1b8b4cd70109246b56729d4e157a33,
     type: 3}
 --- !u!195 &5002577063355228285
@@ -152,7 +217,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -164,3 +229,17 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6211768763015077085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916702124311115889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18160f7ab4f9c64419c154f21725528f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClientCollider: {fileID: 3708879513041690723}
+  ClientBlockCollider: {fileID: 109846665955247678}

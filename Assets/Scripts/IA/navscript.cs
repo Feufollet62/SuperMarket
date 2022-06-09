@@ -12,69 +12,77 @@ namespace _Script{
 		[SerializeField] int posClientRandom;
 		[SerializeField] Transform[] posClient;
 		[SerializeField] Transform posFinShop;
+		[SerializeField] 
+		private LayerMask layertest;
 		#endregion
 
 		#region Properties
-
-		#endregion
-
-		#region Builtin Methods 
-		void Start()
-		{
-			posClientRandom = Random.Range(0, posClient.Length);
-			//NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			//agent.destination = GameObject.Find("Posentree").transform.position;
-			//agent.destination = GameObject.Find("Pos2").transform.position;
-			//agent.destination = posClient[posClientRandom].position;
-			StartCoroutine("EnterShop");
-		}
 
 		IEnumerator EnterShop()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
 			agent.destination = GameObject.Find("Posentre").transform.position;
 			yield return new WaitForSeconds(1f);
-			
-			StartCoroutine("InShop");
-		}
-		IEnumerator InShop()
-		{
-			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = posFinShop.position;
-			yield return new WaitForSeconds(0.4f);
 
 			StartCoroutine("TimeService");
 		}
-
+		
 		IEnumerator TimeService()
-        {
+		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
 			agent.destination = posClient[posClientRandom].position;
 			yield return new WaitForSeconds(timeService);
-			StartCoroutine("InShopExit");
+			StartCoroutine("InExitQueue");
 		}
-
-		IEnumerator InShopExit()
+		IEnumerator InExitQueue()
 		{
+			int numberforlayer = 10;
+			layertest = LayerMask.NameToLayer("ClientEndCommand");
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = posFinShop.position;
-			yield return new WaitForSeconds(4f);
+			if (posClientRandom < 3)
+			{
+				agent.destination = GameObject.Find("Posexitqueue2").transform.position;
+			}
+			else
+			{
+				agent.destination = GameObject.Find("Posexitqueue").transform.position;
+			}
+
+			yield return new WaitForSeconds(1f);
 
 			StartCoroutine("ExitShop");
 		}
+
 		IEnumerator ExitShop()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = GameObject.Find("Posentre").transform.position;
+			agent.destination = GameObject.Find("Pos5").transform.position;
 			yield return new WaitForSeconds(1f);
 			exitShop();
 		}
 
 		void exitShop()
-        {
+		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
 			agent.destination = GameObject.Find("Pos5").transform.position;
 		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			if (other.CompareTag("FinRun"))
+			{
+				Debug.Log("Je vais partir");
+			}
+		}
 		#endregion
-	}
+
+		#region Builtin Methods 
+		void Start()
+		{
+			posClientRandom = Random.Range(0, posClient.Length);
+			StartCoroutine("EnterShop");
+		}
+
+        #endregion
+    }
 }
