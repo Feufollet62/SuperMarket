@@ -5074,7 +5074,8 @@ MonoBehaviour:
   maxSpeed: 8
   dashStrength: 10
   dashLength: 0.3
-  throwStrength: 10
+  throwStrengthItem: 3
+  throwStrengthPlayer: 3
   animIntensity: 5
   animMaxAngle: 20
   controllable: 1

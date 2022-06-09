@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashStrength = 1f;
     [SerializeField] private float dashLength = .5f;
     
-    [SerializeField] private float throwStrength = 3f;
+    [SerializeField] private float throwStrengthItem = 3f;
+    [SerializeField] private float throwStrengthPlayer = 5f;
 
     [Header("Animation")]
     [SerializeField] private float animIntensity = 2f;
@@ -192,9 +193,18 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) * throwStrength;
-                throwVector += _velocity;
+                Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) + _velocity;
                 
+                if (_grabbedObject.type == InteractType.Player)
+                {
+                    throwVector *= throwStrengthPlayer;
+                }
+                else
+                {
+                    throwVector *= throwStrengthItem;
+                }
+
+
                 _grabbedObject.Throw(throwVector);
                 _grabbedObject = null;
             }
