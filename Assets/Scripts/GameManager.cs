@@ -11,6 +11,7 @@ namespace _Script{
 		[SerializeField] public bool activation = false;
 		[SerializeField] public int ClientContent;
 		public List<GameObject> positionUsed;
+		[SerializeField]public  Transform[] posClient;
 		#endregion
 
 		#region Builtin Methods

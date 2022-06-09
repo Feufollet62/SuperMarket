@@ -9,6 +9,9 @@ namespace _Script{
 		public GameObject[] Client;
 		[SerializeField] private float limitSpawn;
 		[SerializeField] private float cooldownSpawn = 4f;
+		public GameObject UIcommand;
+		public GameObject UIemplacement;
+		public Transform BaseCommande;
 		//[SerializeField] private int canSpawn;
 		#endregion
 
@@ -16,56 +19,26 @@ namespace _Script{
 		void Start()
         {
 			limitSpawn = cooldownSpawn;
-			//canSpawn = 1;
 		}
 
 		void Update()
 		{
 
-			/*limitSpawn -= Time.deltaTime;
-			if (limitSpawn < 0 && canSpawn <= 2)
-			{
-                for (int i = 0; i < slime.Length; i++)
-                {
-					GameObject enemy = Instantiate(slime[i], transform.position, transform.rotation);
-					enemy.transform.parent = transform;
-					limitSpawn = cooldownSpawn;
-					canSpawn++;
-				}
-			}*/
-
-			/*****************************************************/
-
-			/*limitSpawn -= Time.deltaTime;
-			if (limitSpawn < 0)
-			{
-				if (FindObjectOfType<PlayerManager>().score != 5)
-                {
-					GameObject enemySimple = Instantiate(slime[0], transform.position, transform.rotation);
-					enemySimple.transform.parent = transform;
-					limitSpawn = cooldownSpawn;
-                }
-                else
-                {
-					GameObject enemyBoss = Instantiate(slime[1], transform.position, transform.rotation);
-					enemyBoss.transform.parent = transform;
-					limitSpawn = cooldownSpawn;
-				}
-			}*/
-
-			/*****************************************************/
-
 			limitSpawn -= Time.deltaTime;
 			if (limitSpawn < 0)
 			{
-				if (FindObjectOfType<GameManager>().ClientContent <= 300)
+				if (FindObjectOfType<GameManager>().ClientContent <= 6)
 				{
-					GameObject enemyPrefab;
-					enemyPrefab = Client[0];
-					GameObject newEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-					newEnemy.transform.parent = transform;
+					GameObject clientPrefab;
+					clientPrefab = Client[0];
+					GameObject newClient = Instantiate(clientPrefab, transform.position, transform.rotation);
+					newClient.transform.parent = transform;
+					GameObject newClientUI = Instantiate(UIcommand, UIemplacement.transform.position, UIemplacement.transform.rotation);
+					newClientUI.transform.parent = UIemplacement.transform;
+					newClientUI.transform.position = BaseCommande.position;
 					limitSpawn = cooldownSpawn;
 					FindObjectOfType<GameManager>().ClientContent++;
+					BaseCommande.transform.position = new Vector3(BaseCommande.position.x + 130, BaseCommande.position.y, BaseCommande.position.z);
 				}
 			}
 		}

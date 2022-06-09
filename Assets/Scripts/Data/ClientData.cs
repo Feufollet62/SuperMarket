@@ -6,10 +6,14 @@ using UnityEngine;
 public class ClientData : ScriptableObject
 {
     public GameObject modelClient;
-    public int Name;
+    public string Name;
     public string Description;
     public float Time;
     public int IdObject;
+    public Sprite imageObjet;
 
-
+    public void Awake()
+    {
+        Time = Random.Range(0, 10);
+    }
 }

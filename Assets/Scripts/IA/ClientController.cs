@@ -5,15 +5,15 @@ using UnityEngine.AI;
 
 
 namespace _Script{
-	public class navscript : MonoBehaviour
+	public class ClientController : MonoBehaviour
 	{
 		#region Variables
 		[SerializeField] float timeService = 20f;
 		[SerializeField] int posClientRandom;
-		[SerializeField] Transform[] posClient;
-		[SerializeField] Transform posFinShop;
-		[SerializeField] 
-		private LayerMask layertest;
+		//[SerializeField] Transform[] posClient;
+		[SerializeField] ClientData clientData;
+		[SerializeField] float timeduClient;
+		[SerializeField] GameManager gM;
 		#endregion
 
 		#region Properties
@@ -30,14 +30,13 @@ namespace _Script{
 		IEnumerator TimeService()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = posClient[posClientRandom].position;
+			agent.destination = gM.posClient[posClientRandom].position;
+			//Remove(gM.posClient[posClientRandom]);
 			yield return new WaitForSeconds(timeService);
 			StartCoroutine("InExitQueue");
 		}
 		IEnumerator InExitQueue()
 		{
-			int numberforlayer = 10;
-			layertest = LayerMask.NameToLayer("ClientEndCommand");
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
 			if (posClientRandom < 3)
 			{
@@ -79,7 +78,8 @@ namespace _Script{
 		#region Builtin Methods 
 		void Start()
 		{
-			posClientRandom = Random.Range(0, posClient.Length);
+			posClientRandom = Random.Range(0, gM.posClient.Length);
+			timeduClient = clientData.Time;
 			StartCoroutine("EnterShop");
 		}
 
