@@ -32,8 +32,8 @@ namespace _Script{
 		IEnumerator TimeService()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = gM.posClient[posClientRandom].position;
-			gM.posClient.Remove(gM.posClient[posClientRandom]);
+			agent.destination = gM.posClient[0].position;
+			gM.posClient.Remove(gM.posClient[0]);
 			
 			yield return new WaitForSeconds(timeService);
 			StartCoroutine("InExitQueue");
@@ -50,7 +50,7 @@ namespace _Script{
 				agent.destination = GameObject.Find("Posexitqueue").transform.position;
 			}
 
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(1.2f);
 
 			gM.posClient.Add(posBaseClient[0]);
 			Destroy(clientSpawner.UIcommand);
@@ -85,8 +85,7 @@ namespace _Script{
 		void Start()
 		{
 			gM = FindObjectOfType<GameManageur>();
-			posClientRandom = Random.Range(0, gM.posClient.Count);
-			posBaseClient[0] = gM.posClient[posClientRandom];
+			posBaseClient[0] = gM.posClient[0];
 			timeduClient = clientData.Time;
 			StartCoroutine("EnterShop");
 		}

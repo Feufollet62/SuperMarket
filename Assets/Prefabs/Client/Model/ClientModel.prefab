@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 1796242846011025046}
   - component: {fileID: 6565731353273951826}
   - component: {fileID: -3699083752858148782}
+  - component: {fileID: -8118756297932717977}
   m_Layer: 9
   m_Name: ClientModel
   m_TagString: Client
@@ -193,9 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95114f036845b34aaeaf199c003150e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeService: 20
+  timeService: 10
   posClientRandom: 0
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
+  clientSpawner: {fileID: 2131033989733263640, guid: 5477839e0663de046989ac7e9a3838b6,
+    type: 3}
   timeduClient: 0
   gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
   posBaseClient:
@@ -223,3 +226,16 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &-8118756297932717977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757608080866082436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
