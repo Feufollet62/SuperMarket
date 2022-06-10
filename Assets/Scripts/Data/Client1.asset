@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd81e9b9b46d034f8017b2f29b05249, type: 3}
   m_Name: Client1
   m_EditorClassIdentifier: 
-  modelClient: {fileID: 8188617999109681648, guid: d984d88061ac6ef45bba6f5e893ec399,
-    type: 3}
-  Name: Lambdas
-  Description: "Je ne suis pas press\xE9 et je ne demande qu'un seul objet"
-  Time: 30
-  IdObject: 0
-  imageObjet: {fileID: 0}
+  clientInfos:
+  - type: 0
+    model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
+    sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    name: Xavier
+    description: Il est content
+    time: 0
+  - type: 1
+    model: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
+    sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    name: David
+    description: Il est presser
+    time: 15

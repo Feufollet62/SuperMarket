@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ClientData", menuName = "Data/Client Data")]
 public class ClientData : ScriptableObject
 {
-    public GameObject modelClient;
-    public string Name;
-    public string Description;
-    public float Time;
-    public int IdObject;
-    public Sprite imageObjet;
+    public ClientInfo[] clientInfos;
+}
 
-    public void Awake()
-    {
-        Time = Random.Range(0, 10);
-    }
+[System.Serializable]
+public class ClientInfo
+{
+    public ClientType type = ClientType.Normal;
+
+    public Mesh model;
+    public Material material;
+
+    public Sprite sprite;
+
+    public string name;
+    public string description;
+    public float time;
 }

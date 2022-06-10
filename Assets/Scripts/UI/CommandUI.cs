@@ -11,7 +11,7 @@ public class CommandUI : MonoBehaviour
 
     private void Start()
     {
-        textNameClient.text = clientData.Name;
-        timeClient.text = clientData.Time.ToString();
+        //textNameClient.text = clientData.Name;
+        //timeClient.text = clientData.Time.ToString();
     }
 }
