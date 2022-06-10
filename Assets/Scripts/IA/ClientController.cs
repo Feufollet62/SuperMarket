@@ -26,21 +26,51 @@ namespace _Script{
 			agent.destination = GameObject.Find("Posentre").transform.position;
 			yield return new WaitForSeconds(1f);
 
-			StartCoroutine("TimeService");
+			StartCoroutine("TimeTravel");
 		}
 		
-		IEnumerator TimeService()
+		IEnumerator TimeTravel()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
-			agent.destination = gM.posClient[0].position;
-			gM.posClient.Remove(gM.posClient[0]);
 			
+			
+			if (clientSpawner.aleaspawn == 1)
+			{
+				agent.destination = gM.fileClient1[0].position;
+				gM.fileClient1.Remove(gM.fileClient1[0]);
+			}
+			else if (clientSpawner.aleaspawn == 2)
+			{
+				agent.destination = gM.fileClient2[0].position;
+				gM.fileClient2.Remove(gM.fileClient2[0]);
+			}
+			else if (clientSpawner.aleaspawn == 3)
+			{
+				agent.destination = gM.fileClient3[0].position;
+				gM.fileClient3.Remove(gM.fileClient3[0]);
+			}
+
 			yield return new WaitForSeconds(timeService);
-			StartCoroutine("InExitQueue");
+			//je vais attendre qu'une nouvelle queue se place
+			//StartCoroutine("InExitQueue");
 		}
 		IEnumerator InExitQueue()
 		{
 			NavMeshAgent agent = GetComponent<NavMeshAgent>();
+			if (clientSpawner.aleaspawn == 1)
+			{
+				gM.fileClient1.Add(posBaseClient[0]);
+			}
+			else if (clientSpawner.aleaspawn == 2)
+			{
+				gM.fileClient2.Add(posBaseClient[0]);
+			}
+			else if (clientSpawner.aleaspawn == 3)
+			{
+				gM.fileClient3.Add(posBaseClient[0]);
+			}
+			
+			Destroy(clientSpawner.UIcommand);
 			if (posClientRandom < 3)
 			{
 				agent.destination = GameObject.Find("Posexitqueue2").transform.position;
@@ -52,8 +82,7 @@ namespace _Script{
 
 			yield return new WaitForSeconds(1.2f);
 
-			gM.posClient.Add(posBaseClient[0]);
-			Destroy(clientSpawner.UIcommand);
+			
 
 			StartCoroutine("ExitShop");
 		}
@@ -85,7 +114,19 @@ namespace _Script{
 		void Start()
 		{
 			gM = FindObjectOfType<GameManageur>();
-			posBaseClient[0] = gM.posClient[0];
+            if (clientSpawner.aleaspawn == 1)
+            {
+				posBaseClient[0] = gM.fileClient1[0];
+			}
+			else if (clientSpawner.aleaspawn == 2)
+			{
+				posBaseClient[0] = gM.fileClient2[0];
+			}
+			else if(clientSpawner.aleaspawn == 3)
+			{
+				posBaseClient[0] = gM.fileClient3[0];
+			}
+
 			timeduClient = clientData.Time;
 			StartCoroutine("EnterShop");
 		}

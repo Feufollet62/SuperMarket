@@ -12,7 +12,7 @@ namespace _Script{
 		public GameObject UIcommand;
 		public GameObject UIemplacement;
 		public Transform BaseCommande;
-		//[SerializeField] private int canSpawn;
+		public int aleaspawn;
 		#endregion
 
 		#region Builtin Methods
@@ -27,17 +27,16 @@ namespace _Script{
 			limitSpawn -= Time.deltaTime;
 			if (limitSpawn < 0)
 			{
-				if (FindObjectOfType<GameManageur>().ClientContent <= 6)
+				if (FindObjectOfType<GameManageur>().nbClientAct <= 6)
 				{
-					GameObject clientPrefab;
-					clientPrefab = Client[0];
-					GameObject newClient = Instantiate(clientPrefab, transform.position, transform.rotation);
+					GameObject newClient = Instantiate(Client[0], transform.position, transform.rotation);
 					newClient.transform.parent = transform;
 					GameObject newClientUI = Instantiate(UIcommand, UIemplacement.transform.position, UIemplacement.transform.rotation);
 					newClientUI.transform.parent = UIemplacement.transform;
 					newClientUI.transform.position = BaseCommande.position;
 					limitSpawn = cooldownSpawn;
-					FindObjectOfType<GameManageur>().ClientContent++;
+					FindObjectOfType<GameManageur>().nbClientAct++;
+					aleaspawn = Random.Range(1, 3);
 					BaseCommande.transform.position = new Vector3(BaseCommande.position.x + 130, BaseCommande.position.y, BaseCommande.position.z);
 				}
 			}

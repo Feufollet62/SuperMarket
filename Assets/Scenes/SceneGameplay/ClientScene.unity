@@ -3088,6 +3088,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
+      propertyPath: fileClient1.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient2.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient3.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
       propertyPath: posClient.Array.data[0]
       value: 
       objectReference: {fileID: 1056602924}
@@ -3114,6 +3129,36 @@ PrefabInstance:
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
       propertyPath: posClient.Array.data[5]
+      value: 
+      objectReference: {fileID: 1293455014}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient1.Array.data[0]
+      value: 
+      objectReference: {fileID: 1056602924}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1191577259}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient2.Array.data[0]
+      value: 
+      objectReference: {fileID: 7524263685965353187}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient2.Array.data[1]
+      value: 
+      objectReference: {fileID: 1010366414}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient3.Array.data[0]
+      value: 
+      objectReference: {fileID: 972744352274453239}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
+      propertyPath: fileClient3.Array.data[1]
       value: 
       objectReference: {fileID: 1293455014}
     - target: {fileID: 694172216762316521, guid: b3f06c54c69cdbf408a8deec6b7c422d,
