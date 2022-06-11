@@ -37,7 +37,7 @@ public class Interactible : MonoBehaviour
         
         transform.parent = grabPoint;
         transform.localPosition = Vector3.zero;
-        transform.Rotate(Vector3.zero);
+        transform.localRotation = Quaternion.Euler(0,0,0);
     }
 
     public void Throw(Vector3 force)
