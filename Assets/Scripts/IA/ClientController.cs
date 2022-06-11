@@ -25,6 +25,9 @@ namespace _Script{
 
 		public NavMeshAgent agent;
 
+		private bool premiereVerif = false;
+		private bool FirstPlace = false;
+		private bool SecondPlace = false;
 		#endregion
 
 		#region Builtin Methods 
@@ -33,31 +36,25 @@ namespace _Script{
 			agent = GetComponent<NavMeshAgent>();
 			gM = FindObjectOfType<GameManager>();
 
-			//gM.files[fileTarget]
-
-			/*
-			if (fileTarget == 0)
-            {
-				posBaseClient[0] = gM.fileClient1[0];
-			}
-			else if (fileTarget == 1)
-			{
-				posBaseClient[0] = gM.fileClient2[0];
-			}
-			else if (fileTarget == 2)
-			{
-				posBaseClient[0] = gM.fileClient3[0];
-			}*/
-
-			//timeduClient = clientData.Time;
+			fileTarget = gM.targetClient;
+			
 			StartCoroutine("EnterShop");
 		}
 
-		#endregion
+        private void Update()
+        {
+            if (!gM.files[fileTarget].positions[0].prise && !FirstPlace)
+            {
+				SecondPlace = false;
+				StartCoroutine(InQueue());
+			}
+		}
 
-		#region CustomFunction
+        #endregion
 
-		IEnumerator EnterShop()
+        #region CustomFunction
+
+        IEnumerator EnterShop()
 		{
 			agent.destination = GameObject.Find("EntreeExt").transform.position;
 			yield return new WaitForSeconds(1f);
@@ -67,44 +64,48 @@ namespace _Script{
 		}
 
 		IEnumerator TimeTravel()
-		{
-			/*
-			if (gM.targetClient == 0)
+		{	
+			if (!gM.files[fileTarget].positions[0].prise && !premiereVerif)
 			{
-				agent.destination = gM.fileClient1[0].position;
-				gM.fileClient1.Remove(gM.fileClient1[0]);
+				agent.destination = gM.files[fileTarget].positions[0].pos.position;
+				gM.files[fileTarget].positions[0].prise = true;
+				FirstPlace = true;
 			}
-			else if (gM.targetClient == 1)
+			else if (gM.files[fileTarget].positions[0].prise && !gM.files[fileTarget].positions[1].prise && !premiereVerif)
 			{
-				agent.destination = gM.fileClient2[0].position;
-				gM.fileClient2.Remove(gM.fileClient2[0]);
+				agent.destination = gM.files[fileTarget].positions[1].pos.position;
+				gM.files[fileTarget].positions[1].prise = true;
+				SecondPlace = true;
 			}
-			else if (gM.targetClient == 2)
-			{
-				agent.destination = gM.fileClient3[0].position;
-				gM.fileClient3.Remove(gM.fileClient3[0]);
+            if (false)
+            {
+				premiereVerif = true;
 			}
-			*/
+			
+
+
 			yield return new WaitForSeconds(timeService);
-			//je vais attendre qu'une nouvelle queue se place
-			StartCoroutine("InExitQueue");
+			
+            //je vais attendre qu'une nouvelle queue se place
+            if (FirstPlace)
+            {
+				StartCoroutine("InExitQueue");
+            }
+			
+		}
+		IEnumerator InQueue()
+        {
+			yield return new WaitForSeconds(1f);
+
+			agent.destination = gM.files[fileTarget].positions[0].pos.position;
+			gM.files[fileTarget].positions[1].prise = false;
+
+			StartCoroutine(TimeTravel());
 		}
 		IEnumerator InExitQueue()
 		{
-			/*
-			if (gM.targetClient == 0)
-			{
-				gM.fileClient1.Add(posBaseClient[0]);
-			}
-			else if (gM.targetClient == 1)
-			{
-				gM.fileClient2.Add(posBaseClient[0]);
-			}
-			else if (gM.targetClient == 2)
-			{
-				gM.fileClient3.Add(posBaseClient[0]);
-			}*/
-
+			gM.files[fileTarget].positions[0].prise = false;
+			gM.nbClientAct--; //<-- marche seulement si tout est bon 
 			Destroy(gM.prefabUICommande);
 			if (posClientRandom < 3)
 			{
@@ -124,7 +125,7 @@ namespace _Script{
 
 		IEnumerator ExitShop()
 		{
-			agent.destination = GameObject.Find("Pos5").transform.position;
+			agent.destination = GameObject.Find("Sortie").transform.position;
 			yield return new WaitForSeconds(1f);
 		}
 

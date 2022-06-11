@@ -194,16 +194,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95114f036845b34aaeaf199c003150e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeService: 10
+  type: 0
+  timeService: 30
   posClientRandom: 0
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
-  clientSpawner: {fileID: 2131033989733263640, guid: 5477839e0663de046989ac7e9a3838b6,
-    type: 3}
   timeduClient: 0
   gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
   posBaseClient:
   - {fileID: 0}
   intPosBaseClient: 0
+  agent: {fileID: 0}
 --- !u!195 &-3699083752858148782
 NavMeshAgent:
   m_ObjectHideFlags: 0

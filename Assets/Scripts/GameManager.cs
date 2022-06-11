@@ -30,7 +30,7 @@ namespace _Script{
 		[SerializeField] private float limitSpawn;
 		[SerializeField] private float cooldownSpawn = 4f;
 		
-		private int nbClientAct; // <-- à remplacer par la taille de currentClients
+		public int nbClientAct; // <-- à remplacer par la taille de currentClients
 
 		[Header("UI")]
 		[SerializeField] private GameObject prefabScreenWin;
@@ -86,6 +86,10 @@ namespace _Script{
 
 					int typeClient = Random.Range(0, clientDataSO.clientInfos.Length);
 					targetClient = Random.Range(0, files.Length);
+                    while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
+                    {
+						targetClient = Random.Range(0, files.Length);
+					}
 
 					newClient.SetupClient(clientDataSO.clientInfos[typeClient], targetClient);
 
