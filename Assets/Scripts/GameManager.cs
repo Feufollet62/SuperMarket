@@ -86,6 +86,7 @@ namespace _Script{
 
 					int typeClient = Random.Range(0, clientDataSO.clientInfos.Length);
 					targetClient = Random.Range(0, files.Length);
+
                     while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
                     {
 						targetClient = Random.Range(0, files.Length);

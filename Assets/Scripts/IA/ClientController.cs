@@ -77,21 +77,13 @@ namespace _Script{
 				gM.files[fileTarget].positions[1].prise = true;
 				SecondPlace = true;
 			}
-            if (false)
-            {
-				premiereVerif = true;
-			}
-			
+			premiereVerif = true;
 
 
 			yield return new WaitForSeconds(timeService);
 			
             //je vais attendre qu'une nouvelle queue se place
-            if (FirstPlace)
-            {
-				StartCoroutine("InExitQueue");
-            }
-			
+			StartCoroutine("InExitQueue");
 		}
 		IEnumerator InQueue()
         {
@@ -99,13 +91,12 @@ namespace _Script{
 
 			agent.destination = gM.files[fileTarget].positions[0].pos.position;
 			gM.files[fileTarget].positions[1].prise = false;
-
 			StartCoroutine(TimeTravel());
 		}
 		IEnumerator InExitQueue()
 		{
 			gM.files[fileTarget].positions[0].prise = false;
-			gM.nbClientAct--; //<-- marche seulement si tout est bon 
+			//gM.nbClientAct--; //<-- marche seulement si tout est bon 
 			Destroy(gM.prefabUICommande);
 			if (posClientRandom < 3)
 			{
