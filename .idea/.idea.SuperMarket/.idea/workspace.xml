@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,9 @@
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/Interactible.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
