@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: -3699083752858148782}
   - component: {fileID: -8118756297932717977}
   m_Layer: 9
-  m_Name: ClientModel
+  m_Name: ClientPrefab
   m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

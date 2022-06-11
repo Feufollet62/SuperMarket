@@ -11,7 +11,7 @@ namespace _Script{
 		#region Variables
 
 		public ClientType type = ClientType.Normal;
-		// SO avec tous les modèles de joueur
+		// SO avec tous les modÃ¨les de joueur
 
 		private int fileTarget;
 
@@ -19,7 +19,7 @@ namespace _Script{
 		[SerializeField] int posClientRandom;
 		[SerializeField] ClientData clientData;
 		[SerializeField] float timeduClient;
-		[SerializeField] GameManageur gM;
+		[SerializeField] GameManager gM;
 		[SerializeField] List<Transform> posBaseClient;
 		[SerializeField] int intPosBaseClient;
 
@@ -77,7 +77,7 @@ namespace _Script{
 				gM.fileClient3.Add(posBaseClient[0]);
 			}*/
 			
-			Destroy(gM.UIcommand);
+			Destroy(gM.prefabUICommande);
 			if (posClientRandom < 3)
 			{
 				agent.destination = GameObject.Find("Posexitqueue2").transform.position;
@@ -104,7 +104,7 @@ namespace _Script{
 		{
 			if (other.CompareTag("posPourCommande"))
 			{
-				gM.UIcommand.SetActive(true);
+				gM.prefabUICommande.SetActive(true);
 			}
 		}
 
@@ -139,7 +139,7 @@ namespace _Script{
 		void Start()
 		{
 			agent = GetComponent<NavMeshAgent>();
-			gM = FindObjectOfType<GameManageur>();
+			gM = FindObjectOfType<GameManager>();
 
 			//gM.files[fileTarget]
 

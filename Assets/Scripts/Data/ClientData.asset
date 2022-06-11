@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bd81e9b9b46d034f8017b2f29b05249, type: 3}
-  m_Name: Client1
+  m_Name: ClientData
   m_EditorClassIdentifier: 
   clientInfos:
   - type: 0

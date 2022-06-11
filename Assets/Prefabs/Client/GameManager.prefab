@@ -44,9 +44,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169591db38074184481d7d0a6fb159c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenWin: {fileID: 0}
+  clientPrefab: {fileID: 8757608080866082436, guid: 5fd72a3d5ad58984ab6d1e9d5d740b4b,
+    type: 3}
+  clientDataSO: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
+  currentClients: []
+  clientSpawnPos: {fileID: 0}
+  files:
+  - positions:
+    - pos: {fileID: 0}
+      prise: 0
+    - pos: {fileID: 0}
+      prise: 0
+  - positions:
+    - pos: {fileID: 0}
+      prise: 0
+    - pos: {fileID: 0}
+      prise: 0
+  - positions:
+    - pos: {fileID: 0}
+      prise: 0
+    - pos: {fileID: 0}
+      prise: 0
+  limitSpawn: 0
+  cooldownSpawn: 4
+  prefabScreenWin: {fileID: 0}
   score: 0
-  activation: 0
-  ClientContent: 0
-  posClient:
-  - {fileID: 0}
+  prefabUICommande: {fileID: 0}
+  prefabUIEmplacement: {fileID: 0}
+  baseCommande: {fileID: 0}
+  targetClient: 0
