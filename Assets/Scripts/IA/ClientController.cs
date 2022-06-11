@@ -27,31 +27,59 @@ namespace _Script{
 
 		#endregion
 
-		#region Properties
+		#region Builtin Methods 
+		void Start()
+		{
+			agent = GetComponent<NavMeshAgent>();
+			gM = FindObjectOfType<GameManager>();
+
+			//gM.files[fileTarget]
+
+			/*
+			if (fileTarget == 0)
+            {
+				posBaseClient[0] = gM.fileClient1[0];
+			}
+			else if (fileTarget == 1)
+			{
+				posBaseClient[0] = gM.fileClient2[0];
+			}
+			else if (fileTarget == 2)
+			{
+				posBaseClient[0] = gM.fileClient3[0];
+			}*/
+
+			//timeduClient = clientData.Time;
+			StartCoroutine("EnterShop");
+		}
+
+		#endregion
+
+		#region CustomFunction
 
 		IEnumerator EnterShop()
 		{
-			agent.destination = GameObject.Find("Posentre").transform.position;
+			agent.destination = GameObject.Find("EntreeExt").transform.position;
 			yield return new WaitForSeconds(1f);
 
 
 			StartCoroutine("TimeTravel");
 		}
-		
+
 		IEnumerator TimeTravel()
 		{
 			/*
-			if (gM.targetClient == 1)
+			if (gM.targetClient == 0)
 			{
 				agent.destination = gM.fileClient1[0].position;
 				gM.fileClient1.Remove(gM.fileClient1[0]);
 			}
-			else if (gM.targetClient == 2)
+			else if (gM.targetClient == 1)
 			{
 				agent.destination = gM.fileClient2[0].position;
 				gM.fileClient2.Remove(gM.fileClient2[0]);
 			}
-			else if (gM.targetClient == 3)
+			else if (gM.targetClient == 2)
 			{
 				agent.destination = gM.fileClient3[0].position;
 				gM.fileClient3.Remove(gM.fileClient3[0]);
@@ -64,19 +92,19 @@ namespace _Script{
 		IEnumerator InExitQueue()
 		{
 			/*
-			if (gM.targetClient == 1)
+			if (gM.targetClient == 0)
 			{
 				gM.fileClient1.Add(posBaseClient[0]);
 			}
-			else if (gM.targetClient == 2)
+			else if (gM.targetClient == 1)
 			{
 				gM.fileClient2.Add(posBaseClient[0]);
 			}
-			else if (gM.targetClient == 3)
+			else if (gM.targetClient == 2)
 			{
 				gM.fileClient3.Add(posBaseClient[0]);
 			}*/
-			
+
 			Destroy(gM.prefabUICommande);
 			if (posClientRandom < 3)
 			{
@@ -89,7 +117,7 @@ namespace _Script{
 
 			yield return new WaitForSeconds(1.2f);
 
-			
+
 
 			StartCoroutine("ExitShop");
 		}
@@ -109,7 +137,7 @@ namespace _Script{
 		}
 
 		public void SetupClient(ClientInfo infos, int target)
-        {
+		{
 			/*
 			public ClientType type = ClientType.Normal;
 
@@ -134,33 +162,5 @@ namespace _Script{
 			gameObject.name = infos.name;
 		}
 		#endregion
-
-		#region Builtin Methods 
-		void Start()
-		{
-			agent = GetComponent<NavMeshAgent>();
-			gM = FindObjectOfType<GameManager>();
-
-			//gM.files[fileTarget]
-
-			/*
-			if (fileTarget == 1)
-            {
-				posBaseClient[0] = gM.fileClient1[0];
-			}
-			else if (fileTarget == 2)
-			{
-				posBaseClient[0] = gM.fileClient2[0];
-			}
-			else if (fileTarget == 3)
-			{
-				posBaseClient[0] = gM.fileClient3[0];
-			}*/
-
-			//timeduClient = clientData.Time;
-			StartCoroutine("EnterShop");
-		}
-
-        #endregion
-    }
+	}
 }

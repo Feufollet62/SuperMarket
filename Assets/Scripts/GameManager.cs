@@ -85,7 +85,7 @@ namespace _Script{
 					newClient.transform.parent = transform;
 
 					int typeClient = Random.Range(0, clientDataSO.clientInfos.Length);
-					targetClient = Random.Range(1, 4);
+					targetClient = Random.Range(0, files.Length);
 
 					newClient.SetupClient(clientDataSO.clientInfos[typeClient], targetClient);
 
