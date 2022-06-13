@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class File
@@ -38,7 +39,10 @@ namespace _Script{
 		private bool activation = false; // <<- Potentiellement remplaçable par screenWinPrefab.activeSelf
 
 		public GameObject prefabUICommande;
-		
+		/*public Text namePrefabUICommande;
+		public Sprite spritePrefabUICommande;
+		public Text timePrefabUICommande;*/
+
 		// Différence entre ces deux là ?
 		public GameObject prefabUIEmplacement;
 		public Transform baseCommande;
@@ -94,16 +98,14 @@ namespace _Script{
 
 					newClient.SetupClient(clientDataSO.clientInfos[typeClient], targetClient);
 
+					/*
 					GameObject newClientUI = Instantiate(prefabUICommande, prefabUIEmplacement.transform.position, prefabUIEmplacement.transform.rotation);
 					newClientUI.transform.parent = prefabUIEmplacement.transform;
 					newClientUI.transform.position = baseCommande.position;
-					
+					baseCommande.transform.position = new Vector3(baseCommande.position.x + 130, baseCommande.position.y, baseCommande.position.z);
+					*/
 					limitSpawn = cooldownSpawn;
 					nbClientAct++;
-
-					
-
-					baseCommande.transform.position = new Vector3(baseCommande.position.x + 130, baseCommande.position.y, baseCommande.position.z);
 				}
 			}
 		}

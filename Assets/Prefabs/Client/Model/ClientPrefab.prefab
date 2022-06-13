@@ -195,15 +195,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  ActPos: 0
   timeService: 30
   posClientRandom: 0
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
-  timeduClient: 0
   gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
   posBaseClient:
   - {fileID: 0}
   intPosBaseClient: 0
-  agent: {fileID: 0}
+  agent: {fileID: -3699083752858148782}
+  prefabUICommande: {fileID: 3945187260307515550, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
+    type: 3}
+  prefabUIEmplacement: {fileID: 7231960651243887471, guid: ad23779d07e32da42bfdb25e7e185ad5,
+    type: 3}
+  baseCommande: {fileID: 2795994132098098510, guid: da824e87edcf8604e881ef5b9f421d7e,
+    type: 3}
 --- !u!195 &-3699083752858148782
 NavMeshAgent:
   m_ObjectHideFlags: 0

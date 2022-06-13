@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ClientData
   m_EditorClassIdentifier: 
   clientInfos:
-  - type: 0
-    model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-    material: {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
-    sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    name: Xavier
-    description: Il est content
-    time: 0
   - type: 1
     model: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     material: {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
-    sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    sprite: {fileID: 21300000, guid: 76a42ebeeb1415f40a5d0f797103e5a8, type: 3}
     name: David
     description: Il est presser
     time: 15
+  - type: 0
+    model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 03dfabb01654d27458827a9618868799, type: 2}
+    sprite: {fileID: 21300000, guid: 82ffd816b6585ba459fa453d7ac0224b, type: 3}
+    name: Xavier
+    description: Il est Content
+    time: 30
