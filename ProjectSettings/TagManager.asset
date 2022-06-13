@@ -7,6 +7,7 @@ TagManager:
   - Client
   - FinRun
   - posPourCommande
+  - Object
   layers:
   - Default
   - TransparentFX

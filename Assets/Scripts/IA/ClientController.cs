@@ -22,7 +22,6 @@ namespace _Script{
 		[SerializeField] float timeService = 20f;
 		[SerializeField] int posClientRandom;
 		[SerializeField] ClientData clientData;
-		//[SerializeField] float timeduClient;
 		[SerializeField] GameManager gM;
 		[SerializeField] int intPosBaseClient;
 
@@ -35,20 +34,25 @@ namespace _Script{
 		public GameObject prefabUICommande;
 		public GameObject prefabUIEmplacement;
 		public Transform baseCommande;
+		
+		public float iDaleatoire;
+		public GameObject[] listeObject;
+		public bool iDEgal;
 		#endregion
 
 		#region Builtin Methods 
 		void Start()
 		{
-			//prefabUICommande.SetActive(false);
+			/*
 			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
 			newClientUI.transform.parent = GameObject.Find("Content").transform;
 			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
+			*/
 
 			agent = GetComponent<NavMeshAgent>();
 			gM = FindObjectOfType<GameManager>();
 
-			
+			iDaleatoire = Random.Range(0, listeObject.Length);
 
 			fileTarget = gM.targetClient;
 			
@@ -113,13 +117,25 @@ namespace _Script{
 
 			StartCoroutine(EnCommande());
 		}
+		
 		IEnumerator EnCommande()
         {
-			prefabUICommande.SetActive(true);
+            /*
+			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
+			newClientUI.transform.parent = GameObject.Find("Content").transform;
+			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
+			*/
+
+			if (iDEgal)
+			{
+				StartCoroutine(InExitQueue());
+			}
+
 			yield return new WaitForSeconds(timeService);
 
 			StartCoroutine(InExitQueue());
 		}
+
 		IEnumerator InExitQueue()
 		{
 			ActPos = ActPos.apartir;

@@ -200,8 +200,6 @@ MonoBehaviour:
   posClientRandom: 0
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
   gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
-  posBaseClient:
-  - {fileID: 0}
   intPosBaseClient: 0
   agent: {fileID: -3699083752858148782}
   prefabUICommande: {fileID: 3945187260307515550, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
@@ -210,6 +208,11 @@ MonoBehaviour:
     type: 3}
   baseCommande: {fileID: 2795994132098098510, guid: da824e87edcf8604e881ef5b9f421d7e,
     type: 3}
+  iDaleatoire: 0
+  listeObject:
+  - {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0, type: 3}
+  - {fileID: 8751332412729959243, guid: c3f6772fa7c10cd4885e98c919ca3d51, type: 3}
+  iDEgal: 0
 --- !u!195 &-3699083752858148782
 NavMeshAgent:
   m_ObjectHideFlags: 0
