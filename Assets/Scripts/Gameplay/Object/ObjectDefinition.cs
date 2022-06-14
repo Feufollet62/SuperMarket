@@ -6,6 +6,7 @@ public class ObjectDefinition : MonoBehaviour
 {
     public ObjectData dataObject;
     public float iD;
+    public Sprite imageObjet;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class ObjectDefinition : MonoBehaviour
         mRender.sharedMaterial = dataObject.material;
 
         gameObject.name = dataObject.name;
+        imageObjet = dataObject.image;
 
         iD = dataObject.iD;
     }

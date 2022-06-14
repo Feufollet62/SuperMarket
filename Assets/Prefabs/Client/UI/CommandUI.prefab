@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b33c1ed6c2968e419bba9c1794742a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
   textNameClient: {fileID: 2343503349430678193}
   timeClient: {fileID: 3616296470993444424}
+  imageObjet: {fileID: 0}
 --- !u!1001 &3966549486437549074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,10 +344,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5243530604279084478, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5531874758622531550, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
         type: 3}
       propertyPath: m_Name
       value: ImageObjet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531874758622531550, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8620fd5c839475f47ba0bb4067ab1f1a, type: 3}

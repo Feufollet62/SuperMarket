@@ -33,7 +33,7 @@ namespace _Script{
 		private bool SecondPlace = false;
 
 		public GameObject prefabUICommande;
-		public GameObject prefabUIEmplacement;
+		//public GameObject prefabUIEmplacement;
 		public Transform baseCommande;
 		
 		public float iDaleatoire;
@@ -117,11 +117,15 @@ namespace _Script{
 		
 		IEnumerator EnCommande()
         {
-			/*
+			prefabUICommande.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
+			prefabUICommande.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
+			Sprite sprite = prefabUICommande.GetComponent<CommandUI>().imageObjet;
+			sprite = listeObject[(int)iDaleatoire].GetComponent<ObjectDefinition>().imageObjet;
+
 			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
 			newClientUI.transform.parent = GameObject.Find("Content").transform;
 			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
-			*/
+			
 			verifID.clientsWait.Add(gameObject.GetComponent<ClientController>());
 			if (iDEgal)
 			{
