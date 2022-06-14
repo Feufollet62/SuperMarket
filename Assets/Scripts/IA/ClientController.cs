@@ -125,16 +125,18 @@ namespace _Script{
 			verifID.clientsWait.Add(gameObject.GetComponent<ClientController>());
 			if (iDEgal)
 			{
-				StartCoroutine(InExitQueue());
+				//StartCoroutine(InExitQueue());
 			}
 
 			yield return new WaitForSeconds(timeService);
 
-			StartCoroutine(InExitQueue());
+			//StartCoroutine(InExitQueue());
+			InExitQueue();
 		}
 
-		IEnumerator InExitQueue()
+		public void InExitQueue()
 		{
+			verifID.clientsWait.Remove(gameObject.GetComponent<ClientController>());
 			ActPos = ActPos.apartir;
 			gM.files[fileTarget].positions[0].prise = false;
 			
@@ -148,7 +150,7 @@ namespace _Script{
 				agent.destination = GameObject.Find("Posexitqueue").transform.position;
 			}
 
-			yield return new WaitForSeconds(1.2f);
+			//yield return new WaitForSeconds(1.2f);
 
 			StartCoroutine("ExitShop");
 		}

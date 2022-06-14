@@ -8,32 +8,37 @@ namespace _Script
     {
         [SerializeField] public List<ClientController> clientsWait;
 
-        void VerificationID(ObjectDefinition ObjectComptoire)
+        private void OnTriggerEnter(Collider other)
         {
-            if (clientsWait[0].iDaleatoire == ObjectComptoire.iD)
+            Debug.Log("Ya un truc ?");
+            if (other.gameObject.CompareTag("Object"))
             {
-                Debug.Log("tabon");
-                clientsWait[0].iDEgal = true;
-            }
-            if (clientsWait[1].iDaleatoire == ObjectComptoire.iD)
-            {
-                Debug.Log("tabon");
-                clientsWait[1].iDEgal = true;
-            }
-            if (clientsWait[2].iDaleatoire == ObjectComptoire.iD)
-            {
-                Debug.Log("tabon");
-                clientsWait[2].iDEgal = true;
-            }
-        }
-        void OnTriggerEnter(Collider other)
-        {
-            if(other.tag == "Object")
-            {
-                Destroy(other.gameObject);
                 Debug.Log("Verification en Cours");
                 VerificationID(other.gameObject.GetComponent<ObjectDefinition>());
             }
         }
+        void VerificationID(ObjectDefinition ObjectComptoire)
+        {
+            Debug.Log("L'ID de mon Objet = " + ObjectComptoire.iD);
+            Debug.Log("L'ID du Clients 1 = " + clientsWait[0].iDaleatoire);
+            Debug.Log("L'ID du Clients 2 = " + clientsWait[1].iDaleatoire);
+            Debug.Log("L'ID du Clients 3 = " + clientsWait[2].iDaleatoire);
+
+            for (int i = 0; i < clientsWait.Count; i++)
+            {
+                if (clientsWait[i].iDaleatoire == ObjectComptoire.iD)
+                {
+                    Debug.Log("tabon pour le " + i);
+                    //clientsWait[i].iDEgal = true;
+                    //Debug.Log("etat du client " + clientsWait[i].iDEgal);
+                    clientsWait[i].InExitQueue();
+                }
+                else
+                {
+                    Debug.Log("ya pas en file");
+                }
+            }
+        }
+        
     }
 }
