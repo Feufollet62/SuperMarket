@@ -200,6 +200,7 @@ MonoBehaviour:
   posClientRandom: 0
   clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
   gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
+  verifID: {fileID: 2177623884564316787, guid: 9ad07d2339acbaa43aa417db1161bead, type: 3}
   intPosBaseClient: 0
   agent: {fileID: -3699083752858148782}
   prefabUICommande: {fileID: 3945187260307515550, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,

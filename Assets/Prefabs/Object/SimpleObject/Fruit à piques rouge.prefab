@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 8751332412729959233}
   m_Layer: 0
   m_Name: "Fruit \xE0 piques rouge"
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataObject: {fileID: 11400000, guid: d1590e00bfb60ef448f2cde2d629a60a, type: 2}
+  iD: 0
 --- !u!135 &8751332412729959235
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -317,7 +318,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0.09, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &8751332412729959232
 MeshFilter:
   m_ObjectHideFlags: 0

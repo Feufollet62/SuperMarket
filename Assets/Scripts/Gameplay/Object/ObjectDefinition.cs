@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectDefinition : MonoBehaviour
 {
     public ObjectData dataObject;
+    public float iD;
 
     private void Start()
     {
@@ -15,6 +16,8 @@ public class ObjectDefinition : MonoBehaviour
         mRender.sharedMaterial = dataObject.material;
 
         gameObject.name = dataObject.name;
+
+        iD = dataObject.iD;
     }
     
 

@@ -23,6 +23,7 @@ namespace _Script{
 		[SerializeField] int posClientRandom;
 		[SerializeField] ClientData clientData;
 		[SerializeField] GameManager gM;
+		[SerializeField] IdVerif verifID;
 		[SerializeField] int intPosBaseClient;
 
 		public NavMeshAgent agent;
@@ -43,14 +44,9 @@ namespace _Script{
 		#region Builtin Methods 
 		void Start()
 		{
-			/*
-			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
-			newClientUI.transform.parent = GameObject.Find("Content").transform;
-			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
-			*/
-
 			agent = GetComponent<NavMeshAgent>();
 			gM = FindObjectOfType<GameManager>();
+			verifID = FindObjectOfType<IdVerif>();
 
 			iDaleatoire = Random.Range(0, listeObject.Length);
 
@@ -98,9 +94,10 @@ namespace _Script{
 			premiereVerif = true;
 
 
-			yield return new WaitForSeconds(10f);
+			
             if (FirstPlace)
             {
+				yield return new WaitForSeconds(5f);
 				StartCoroutine(EnCommande());
 			}
 			
@@ -120,12 +117,12 @@ namespace _Script{
 		
 		IEnumerator EnCommande()
         {
-            /*
+			/*
 			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
 			newClientUI.transform.parent = GameObject.Find("Content").transform;
 			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
 			*/
-
+			verifID.clientsWait.Add(gameObject.GetComponent<ClientController>());
 			if (iDEgal)
 			{
 				StartCoroutine(InExitQueue());
