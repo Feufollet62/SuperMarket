@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Merge_at_08_06_2022_19_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Merge_at_08_06_2022_19_12__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +18,8 @@
         <entry key="$PROJECT_DIR$" value="DevCorentin" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/Interactible.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,6 +101,7 @@
       <workItem from="1654761107207" duration="6721000" />
       <workItem from="1654769184516" duration="321000" />
       <workItem from="1654937141684" duration="340000" />
+      <workItem from="1655206463252" duration="5981000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -226,7 +228,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/DevCorentin" />
+                        <option value="DevEliot" />
                       </list>
                     </value>
                   </entry>
