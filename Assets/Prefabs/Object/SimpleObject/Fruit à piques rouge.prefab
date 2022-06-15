@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataObject: {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
   iD: 0
+  imageObjet: {fileID: 21300000, guid: a57d88f676df6b74093f3e5b4867b97c, type: 3}
 --- !u!135 &8751332412729959236
 SphereCollider:
   m_ObjectHideFlags: 0

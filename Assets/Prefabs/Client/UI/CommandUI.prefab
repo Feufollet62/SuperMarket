@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textNameClient: {fileID: 2343503349430678193}
   timeClient: {fileID: 3616296470993444424}
-  imageObjet: {fileID: 0}
+  afficheObjet: {fileID: 5761761551503447330}
 --- !u!1001 &3966549486437549074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696107046167819939, guid: 3b84c6a366e76c441a79040e57bef8f9,
+        type: 3}
+      propertyPath: m_Text
+      value: Xavier
       objectReference: {fileID: 0}
     - target: {fileID: 8376393407838787008, guid: 3b84c6a366e76c441a79040e57bef8f9,
         type: 3}
@@ -344,11 +349,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5243530604279084478, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5531874758622531550, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
         type: 3}
       propertyPath: m_Name
@@ -361,6 +361,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8620fd5c839475f47ba0bb4067ab1f1a, type: 3}
+--- !u!114 &5761761551503447330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1795335564626025817, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6277933997896304763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6047359422644740575 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 356693594942007716, guid: 8620fd5c839475f47ba0bb4067ab1f1a,
@@ -483,6 +495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094747927146884420, guid: 6891b6fc92d09f54f8ff86880a321318,
+        type: 3}
+      propertyPath: m_Text
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6891b6fc92d09f54f8ff86880a321318, type: 3}

@@ -41,6 +41,7 @@ namespace _Script{
 		private bool activation = false; // <<- Potentiellement remplaçable par screenWinPrefab.activeSelf
 
 		public GameObject prefabUICommande;
+		public List<GameObject> listeUI;
 		/*public Text namePrefabUICommande;
 		public Sprite spritePrefabUICommande;
 		public Text timePrefabUICommande;*/

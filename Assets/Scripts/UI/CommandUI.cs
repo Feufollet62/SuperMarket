@@ -7,5 +7,6 @@ public class CommandUI : MonoBehaviour
 {
     [SerializeField] public Text textNameClient;
     [SerializeField] public Text timeClient;
-    [SerializeField] public Sprite imageObjet;
+    [SerializeField] public Image afficheObjet;
+
 }

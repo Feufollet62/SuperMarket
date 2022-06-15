@@ -30,13 +30,13 @@ namespace _Script{
 
 		private bool premiereVerif = false;
 		private bool FirstPlace = false;
-		private bool SecondPlace = false;
 
 		public GameObject prefabUICommande;
 		//public GameObject prefabUIEmplacement;
 		public Transform baseCommande;
-		
-		public float iDaleatoire;
+		GameObject newClientUI;
+
+		public int iDaleatoire;
 		public GameObject[] listeObject;
 		public bool iDEgal;
 		#endregion
@@ -89,7 +89,6 @@ namespace _Script{
 				agent.destination = gM.files[fileTarget].positions[1].pos.position;
 				gM.files[fileTarget].positions[1].prise = true;
 				ActPos = ActPos.pos2;
-				SecondPlace = true;
 			}
 			premiereVerif = true;
 
@@ -117,15 +116,27 @@ namespace _Script{
 		
 		IEnumerator EnCommande()
         {
+			/*
 			prefabUICommande.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
 			prefabUICommande.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
-			Sprite sprite = prefabUICommande.GetComponent<CommandUI>().imageObjet;
-			sprite = listeObject[(int)iDaleatoire].GetComponent<ObjectDefinition>().imageObjet;
-
-			GameObject newClientUI = Instantiate(prefabUICommande, baseCommande.transform.position, baseCommande.transform.rotation);
-			newClientUI.transform.parent = GameObject.Find("Content").transform;
-			newClientUI.transform.position = GameObject.Find("BaseDeCommande").transform.position;
+			Sprite sprite = prefabUICommande.GetComponent<CommandUI>().afficheObjet;
+			sprite = listeObject[(int)iDaleatoire].GetComponent<ObjectDefinition>().afficheObjet;*/
 			
+			
+			newClientUI = Instantiate(prefabUICommande, gM.baseCommande.transform.position , gM.baseCommande.transform.rotation);
+
+			newClientUI.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
+			newClientUI.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
+			Debug.Log("Je veux une image");
+			newClientUI.GetComponent<CommandUI>().afficheObjet.sprite = listeObject[iDaleatoire].GetComponent<ObjectDefinition>().imageObjet;
+			Debug.Log("Je lui ai mis");
+			
+			newClientUI.SetActive(true);
+			newClientUI.transform.parent = gM.prefabUIEmplacement.transform;
+			newClientUI.transform.position = gM.baseCommande.position;
+			gM.baseCommande.transform.position = new Vector3(gM.baseCommande.position.x + 130, gM.baseCommande.position.y, gM.baseCommande.position.z);
+			gM.listeUI.Add(newClientUI);
+
 			verifID.clientsWait.Add(gameObject.GetComponent<ClientController>());
 			if (iDEgal)
 			{
@@ -134,6 +145,7 @@ namespace _Script{
 
 			yield return new WaitForSeconds(timeService);
 
+			
 			//StartCoroutine(InExitQueue());
 			InExitQueue();
 		}
@@ -144,7 +156,15 @@ namespace _Script{
 			ActPos = ActPos.apartir;
 			gM.files[fileTarget].positions[0].prise = false;
 			
-			//Destroy(gM.prefabUICommande);
+            for (int i = 1; i < gM.listeUI.Count; i++)
+            {
+				//Debug.Log("On bouge UI");
+				gM.listeUI[i].transform.position = new Vector3(gM.listeUI[i].transform.position.x - 130, gM.listeUI[i].transform.position.y, gM.listeUI[i].transform.position.z);
+			}
+			gM.listeUI.Remove(newClientUI);
+			gM.baseCommande.transform.position = new Vector3(gM.baseCommande.position.x - 130, gM.baseCommande.position.y, gM.baseCommande.position.z);
+			newClientUI.SetActive(false);
+
 			if (posClientRandom < 3)
 			{
 				agent.destination = GameObject.Find("Posexitqueue2").transform.position;
