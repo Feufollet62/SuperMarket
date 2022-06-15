@@ -88,8 +88,12 @@ namespace _Script{
         }
 		public void ButtonRestartGame()
         {
-			SceneManager.LoadScene("ClientScene");
+			SceneManager.LoadScene("Niveau_1");
         }
+		public void ButtonBackMenu()
+		{
+			SceneManager.LoadScene("MenuSelectLvl");
+		}
 
 		void ClientSpawner()
         {

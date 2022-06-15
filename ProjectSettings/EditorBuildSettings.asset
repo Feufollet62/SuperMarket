@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneGameplay/MenuSelectLvl.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/SceneGameplay/ClientScene.unity
-    guid: c0691cfb57ba4574c9b6d513842acdef
+    path: Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity
+    guid: bdc8cdb46ab37b64db501f87f5e9528f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c6ebd6a447990fe4382800564ec6f0c9,
       type: 2}
