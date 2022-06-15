@@ -116,21 +116,12 @@ namespace _Script{
 		
 		IEnumerator EnCommande()
         {
-			/*
-			prefabUICommande.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
-			prefabUICommande.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
-			Sprite sprite = prefabUICommande.GetComponent<CommandUI>().afficheObjet;
-			sprite = listeObject[(int)iDaleatoire].GetComponent<ObjectDefinition>().afficheObjet;*/
-			
-			
 			newClientUI = Instantiate(prefabUICommande, gM.baseCommande.transform.position , gM.baseCommande.transform.rotation);
 
 			newClientUI.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
 			newClientUI.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
-			Debug.Log("Je veux une image");
 			newClientUI.GetComponent<CommandUI>().afficheObjet.sprite = listeObject[iDaleatoire].GetComponent<ObjectDefinition>().imageObjet;
-			Debug.Log("Je lui ai mis");
-			
+
 			newClientUI.SetActive(true);
 			newClientUI.transform.parent = gM.prefabUIEmplacement.transform;
 			newClientUI.transform.position = gM.baseCommande.position;

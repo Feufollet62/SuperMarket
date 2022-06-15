@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class File
@@ -24,8 +25,6 @@ namespace _Script{
 		public GameObject clientPrefab;
 		public ClientData clientDataSO;
 		public List<ClientController> currentClients;
-		//public List<GameObject> listeClient;
-		//public int prioriterClient;
 
 		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;
@@ -36,15 +35,18 @@ namespace _Script{
 		public int nbClientAct; // <-- à remplacer par la taille de currentClients
 
 		[Header("UI")]
+		//Score
 		[SerializeField] private GameObject prefabScreenWin;
+		[SerializeField] private GameObject prefabScreenInGame;
 		public int score;
 		private bool activation = false; // <<- Potentiellement remplaçable par screenWinPrefab.activeSelf
+		private float time;
+		public float timeGame;
+		public Text textScore;
+
 
 		public GameObject prefabUICommande;
 		public List<GameObject> listeUI;
-		/*public Text namePrefabUICommande;
-		public Sprite spritePrefabUICommande;
-		public Text timePrefabUICommande;*/
 
 		// Différence entre ces deux là ?
 		public GameObject prefabUIEmplacement;
@@ -58,11 +60,13 @@ namespace _Script{
 		void Start()
 		{
 			nbClientAct = 1;
+			time = timeGame;
 		}
 
 
 		void Update()
 		{
+			time -= Time.deltaTime;
 			if (activation == false)
 			{
 				WinLevel();
@@ -74,11 +78,17 @@ namespace _Script{
 		#region Properties
 		void WinLevel()
         {
-			if (score == 20)
+			if (time <= 0)
 			{
+				textScore.text = score.ToString();
+				prefabScreenInGame.SetActive(false);
 				prefabScreenWin.SetActive(true);
 				activation = true;
 			}
+        }
+		public void ButtonRestartGame()
+        {
+			SceneManager.LoadScene("ClientScene");
         }
 
 		void ClientSpawner()

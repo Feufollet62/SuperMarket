@@ -7,6 +7,7 @@ namespace _Script
     public class IdVerif : MonoBehaviour
     {
         [SerializeField] public List<ClientController> clientsWait;
+        [SerializeField] public GameManager gM;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -22,6 +23,7 @@ namespace _Script
             {
                 if (clientsWait[i].iDaleatoire == ObjectComptoire.iD)
                 {
+                    gM.score++;
                     clientsWait[i].InExitQueue();
                 }
             }
