@@ -7,14 +7,18 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance; // Singleton
     
-    [SerializeField] private ControlScheme[] controlSchemes = new ControlScheme[4]; // Remplir ce truc dans les menus avant de lancer la scene
+    [SerializeField] private ControlScheme[] controlSchemes /*= new ControlScheme[4]*/; // Remplir ce truc dans les menus avant de lancer la scene
     public PlayerController[] currentPlayers = new PlayerController[4];
     
     public Transform[] spawnPoints;
     [SerializeField] private GameObject playerPrefab;
-    
+    [SerializeField] public AcceptPlaying sM;
+    private int maxPlayer;
+
     private void Start()
     {
+        sM = FindObjectOfType<AcceptPlaying>();
+
         if (Instance == null)
         {
             Instance = this;

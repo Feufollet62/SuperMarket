@@ -5,7 +5,7 @@ using UnityEngine;
 public class AcceptPlaying : MonoBehaviour
 {
     [SerializeField] int _PlayCount = 0;
-    [SerializeField] int _MaxPlayCount = 2;
+    [SerializeField] public int _MaxPlayCount = 2;
     [SerializeField] GameObject cacheplay;
 
     void Update()
