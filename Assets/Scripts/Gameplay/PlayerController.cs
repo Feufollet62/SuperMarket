@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
         }
         
         // Pas d'input
-        if (!_inputDash) return;
+        if (!_inputDash || _inputMovement == Vector3.zero) return;
         
         // 1ere frame de dash
         _inputDash = false;
