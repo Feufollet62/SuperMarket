@@ -79,12 +79,14 @@ public class PlayerController : MonoBehaviour
         {
             if (groundContactCount > 1)
             {
+                // Si jamais on touche plusieurs colliders de sol, on fait la moyenne
                 contactNormal.Normalize();
             }
             Dash();
         }
         else
         {
+            // Pas de contact au sol
             contactNormal = Vector3.up;
         }
         
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Check si c'est un objet ramassable, si oui on l'ajoute à la liste d'objets ramassables 
         if (other.gameObject.layer == LayerMask.NameToLayer("Interactible") || other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Interactible thisInteractible = other.GetComponent<Interactible>();
@@ -180,6 +183,9 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         // Ci dessous code pour prendre les pentes de manière smooth
+        // L'idée est de projeter le vecteur de velocité sur le plan du sol actuel
+        // Comme ça on se déplace le long de la pente
+        
         Vector3 xAxis = ProjectOnContactPlane(Vector3.right).normalized;
         Vector3 zAxis = ProjectOnContactPlane(Vector3.forward).normalized;
 
@@ -194,14 +200,13 @@ public class PlayerController : MonoBehaviour
         
         _velocity = _rb.velocity;
         _velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
-
-        //transform.position += velocity * Time.deltaTime;
+        
         _rb.velocity = _velocity;
     }
 
     private void Dash()
     {
-        // Already dashing
+        // On dash déjà
         if(_dashing)
         {
             _dashTimer += Time.fixedDeltaTime;
@@ -212,32 +217,37 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
-        // No input
+        // Pas d'input
         if (!_inputDash) return;
         
-        // Start dashing
+        // 1ere frame de dash
         _inputDash = false;
         _dashing = true;
         _dashTimer = 0f;
         
-        _rb.AddForce(_inputMovement * dashStrength, ForceMode.Impulse);
+        _rb.AddForce(_velocity.normalized * dashStrength, ForceMode.Impulse);
     }
 
     private void Interact()
     {
+        // Si pas d'input osef
         if(!_inputInteract) return;
         
-        // Pas ouf niveau opti une comparaison avec null
+        
+        // à faire: rajouter une condition pour interagir avec les meubles quand on tient un truc
         if (_inputInteract)
         {
-            if (_grabbedObject == null)
+            if (_grabbedObject == null) // Pas ouf niveau opti une comparaison avec null
             {
+                // Si on a rien entre les mains
                 InteractWithNearest();
             }
             else
             {
+                // Sinon on lance
                 Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) + _velocity;
                 
+                // Force dépend de si joueur ou non
                 if (_grabbedObject.type == InteractType.Player)
                 {
                     throwVector *= throwStrengthPlayer;
@@ -246,8 +256,7 @@ public class PlayerController : MonoBehaviour
                 {
                     throwVector *= throwStrengthItem;
                 }
-
-
+                
                 _grabbedObject.Throw(throwVector);
                 _grabbedObject = null;
             }
@@ -259,6 +268,7 @@ public class PlayerController : MonoBehaviour
     private void InteractWithNearest()
     {
         // Si rien est à portée ou si on porte déja un truc, rien ne se passe 
+        // (Ajouter condition interaction avec les meubles)
         if(interactibles.Count == 0 || !(_grabbedObject == null)) return;
         
         // Si c'est le seul à portée on cherche pas plus loin
@@ -295,6 +305,9 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
+        // Tout cela est temp et va disparaître quand on aura de vraies anims
+        
+        // Pas d'input
         if(_inputMovement == Vector3.zero)
         {
             model.Rotate(0,0,0);
@@ -302,7 +315,8 @@ public class PlayerController : MonoBehaviour
             _animTimer = 0;
             return;
         }
-
+        
+        // Effet de particule sur timer, à remplacer avec event d'animation
         _animTimer += Time.deltaTime;
         if (_animTimer > .5f)
         {
@@ -326,14 +340,18 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < col.contactCount; i++)
         {
             Vector3 normal = col.GetContact(i).normal;
-            if (normal.y >= minGroundDotProduct) {
+            
+            // On check si c'est du sol; si oui, on l'ajoute pour faire la "moyenne" de toutes les collisions
+            if (normal.y >= minGroundDotProduct) 
+            {
                 groundContactCount += 1;
                 contactNormal += normal;
             }
         }
     }
     
-    private void ClearState() {
+    private void ClearState() 
+    {
         groundContactCount = 0;
         contactNormal = Vector3.zero;
     }
@@ -342,12 +360,6 @@ public class PlayerController : MonoBehaviour
     {
         return vector - contactNormal * Vector3.Dot(vector, contactNormal);
     }
-    
-    private void AdjustVelocity() 
-    {
-        Vector3 xAxis = ProjectOnContactPlane(Vector3.right);
-        Vector3 zAxis = ProjectOnContactPlane(Vector3.forward);
-    }
-    
+
     #endregion
 }
