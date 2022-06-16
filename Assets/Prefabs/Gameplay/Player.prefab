@@ -4909,7 +4909,6 @@ GameObject:
   - component: {fileID: 298776323450890120}
   - component: {fileID: 4278245145478271548}
   - component: {fileID: 4752632554658409393}
-  - component: {fileID: 56954435005116822}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -4982,19 +4981,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &56954435005116822
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4307218880894733094}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6015315166791141032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,6 +5022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2434059746085102224}
   - component: {fileID: 6459041946926125507}
+  - component: {fileID: 7912259794157549765}
   - component: {fileID: 4633482986818612710}
   - component: {fileID: 3304209607636648804}
   - component: {fileID: 8079087531465694130}
@@ -5087,8 +5074,25 @@ MonoBehaviour:
   maxSpeed: 8
   dashStrength: 10
   dashLength: 0.3
+  throwStrengthItem: 3
+  throwStrengthPlayer: 3
   animIntensity: 5
   animMaxAngle: 20
+  controllable: 1
+  _interactibles: []
+--- !u!114 &7912259794157549765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188362982576016349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!54 &4633482986818612710
 Rigidbody:
   m_ObjectHideFlags: 0
