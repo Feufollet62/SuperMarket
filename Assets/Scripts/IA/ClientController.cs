@@ -149,7 +149,6 @@ namespace _Script{
 			
             for (int i = 1; i < gM.listeUI.Count; i++)
             {
-				//Debug.Log("On bouge UI");
 				gM.listeUI[i].transform.position = new Vector3(gM.listeUI[i].transform.position.x - 130, gM.listeUI[i].transform.position.y, gM.listeUI[i].transform.position.z);
 			}
 			gM.listeUI.Remove(newClientUI);
