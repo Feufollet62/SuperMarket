@@ -12,6 +12,7 @@ public class Interactible : MonoBehaviour
     private bool isHeld;
 
     private PlayerController _thisPlayer;
+    [SerializeField] public GameObject _objetPrefab;
 
     private void Start()
     {
@@ -30,10 +31,13 @@ public class Interactible : MonoBehaviour
 
     public void Spawner(Transform grabPoint)
     {
+        if (type != InteractType.Spawner) return;
+
+        Interactible newspawnObject = Instantiate(_objetPrefab).GetComponent<Interactible>();
         // obj = Instatiate(...).getComponent<Interactible>
+        newspawnObject.PickUp(grabPoint);
         // obj.pickup(grabPoint)
-        
-        
+
     }
 
     public void PickUp(Transform grabPoint)

@@ -277,10 +277,10 @@ public class PlayerController : MonoBehaviour
         if(interactibles.Count == 0 || !(_grabbedObject == null)) return;
         
         // Si c'est le seul à portée on cherche pas plus loin
-        if (interactibles.Count == 1 && interactibles[0].type != InteractType.Static)
+        if (interactibles.Count == 1 && interactibles[0].type != InteractType.Spawner)
         {
             _grabbedObject = interactibles[0];
-            _grabbedObject.Interact(grabPoint);
+            _grabbedObject.PickUp(grabPoint);
             return;
         }
 
@@ -294,7 +294,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < interactibles.Count; i++)
         {
             // Si pas throwable on skip
-            if (interactibles[i].type == InteractType.Static) continue;
+            if (interactibles[i].type == InteractType.Spawner) continue;
 
             float distance = Vector3.Distance(transform.position, interactibles[i].transform.position);
             
@@ -305,7 +305,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        closest.Interact(grabPoint);
+        closest.PickUp(grabPoint);
     }
 
     private void Animate()
