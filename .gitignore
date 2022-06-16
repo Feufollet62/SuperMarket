@@ -1,3 +1,7 @@
+# Coucou c'est Eliot
+# J'enlève les .xml parce que ça ajoute des trucs random au git pas important
+*.xml/
+
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
