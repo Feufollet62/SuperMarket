@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Client
+  - FinRun
+  - posPourCommande
+  - Object
   layers:
   - Default
   - TransparentFX
@@ -14,9 +18,9 @@ TagManager:
   - Player
   - Environment
   - Interactible
-  - 
-  - 
-  - 
+  - Client
+  - ClientEndCommand
+  - ClientBlock
   - 
   - 
   - 

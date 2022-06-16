@@ -8,6 +8,7 @@ public class ClientDestroy : MonoBehaviour
     {
         if (other.CompareTag("Client"))
         {
+            Debug.Log("Je veux destroy");
             Destroy(other.gameObject);
         }
     }
