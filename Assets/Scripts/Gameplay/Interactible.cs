@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum InteractType {Static, Throwable, Player}
+public enum InteractType {Spawner, Throwable, Player, Comptoir}
 
 public class Interactible : MonoBehaviour
 {
@@ -8,8 +8,10 @@ public class Interactible : MonoBehaviour
 
     private Rigidbody _rb;
     private Collider _collider;
+    
+    private bool isHeld;
 
-    private PlayerController _player;
+    private PlayerController _thisPlayer;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class Interactible : MonoBehaviour
         
         if (type == InteractType.Player)
         {
-            _player = GetComponent<PlayerController>();
+            _thisPlayer = GetComponent<PlayerController>();
             _collider = GetComponent<CapsuleCollider>();
         }
         else
@@ -26,12 +28,21 @@ public class Interactible : MonoBehaviour
         }
     }
 
-    public void Interact(Transform grabPoint)
+    public void Spawner(Transform grabPoint)
     {
-        // ajouter comportement ici
-        if(type == InteractType.Static) return;
-        if(type == InteractType.Player) _player.SetControllable(false);
-                
+        // obj = Instatiate(...).getComponent<Interactible>
+        // obj.pickup(grabPoint)
+        
+        
+    }
+
+    public void PickUp(Transform grabPoint)
+    {
+        if(type == InteractType.Spawner || isHeld) return;
+        if(type == InteractType.Player) _thisPlayer.SetControllable(false);
+
+        isHeld = true;
+        
         _rb.isKinematic = true;
         _collider.enabled = false;
         
@@ -42,13 +53,10 @@ public class Interactible : MonoBehaviour
 
     public void Throw(Vector3 force)
     {
-        if(type == InteractType.Static) return;
-        
-        if(type == InteractType.Player)
-        {
-            _player.SetControllable(true);
-        }
+        if(type == InteractType.Spawner || !isHeld) return;
+        if(type == InteractType.Player) _thisPlayer.SetControllable(true);
 
+        isHeld = false;
         transform.SetParent(null, true);
         
         _rb.isKinematic = false;
