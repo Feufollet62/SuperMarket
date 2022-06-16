@@ -5071,7 +5071,9 @@ MonoBehaviour:
   model: {fileID: 7331436132118923141}
   grabPoint: {fileID: 6876032649036955550}
   maxAccel: 30
+  maxAirAccel: 10
   maxSpeed: 8
+  minGroundDotProduct: 0.75
   dashStrength: 10
   dashLength: 0.3
   throwStrengthItem: 3
@@ -5079,7 +5081,7 @@ MonoBehaviour:
   animIntensity: 5
   animMaxAngle: 20
   controllable: 1
-  _interactibles: []
+  interactibles: []
 --- !u!114 &7912259794157549765
 MonoBehaviour:
   m_ObjectHideFlags: 0

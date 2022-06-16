@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _velocity, _desiredVelocity, _inputMovement;
     private Vector3 contactNormal;
 
-    private int groundContactCount;
+    private int groundContactCount, stepsSinceGrounded;
     private bool Grounded => groundContactCount > 0;
     
     private bool _inputDash, _inputInteract;
@@ -73,10 +73,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!_dashing) Move();
+        stepsSinceGrounded++;
         
-        if (Grounded)
+        // Si on est pas grounded alors on tente SnapToGround()
+        if (Grounded || SnapToGround())
         {
+            stepsSinceGrounded = 0;
             if (groundContactCount > 1)
             {
                 // Si jamais on touche plusieurs colliders de sol, on fait la moyenne
@@ -84,6 +86,8 @@ public class PlayerController : MonoBehaviour
             }
             Dash();
         }
+        
+        if(!_dashing) Move();
         else
         {
             // Pas de contact au sol
@@ -186,6 +190,8 @@ public class PlayerController : MonoBehaviour
         // L'idée est de projeter le vecteur de velocité sur le plan du sol actuel
         // Comme ça on se déplace le long de la pente
         
+        _velocity = _rb.velocity;
+        
         Vector3 xAxis = ProjectOnContactPlane(Vector3.right).normalized;
         Vector3 zAxis = ProjectOnContactPlane(Vector3.forward).normalized;
 
@@ -198,7 +204,6 @@ public class PlayerController : MonoBehaviour
         float newX = Mathf.MoveTowards(currentX, _desiredVelocity.x, maxSpeedChange);
         float newZ = Mathf.MoveTowards(currentZ, _desiredVelocity.z, maxSpeedChange);
         
-        _velocity = _rb.velocity;
         _velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
         
         _rb.velocity = _velocity;
@@ -359,6 +364,45 @@ public class PlayerController : MonoBehaviour
     private Vector3 ProjectOnContactPlane(Vector3 vector) 
     {
         return vector - contactNormal * Vector3.Dot(vector, contactNormal);
+    }
+
+    private bool SnapToGround()
+    {
+        // Return sert à savoir si suite à la focntion on est au sol ou non
+        
+        // On a décollé depuis longtemps ou pas ?
+        if (stepsSinceGrounded > 1)
+        {
+            return false;
+        }
+        
+        // Quelque chose sous les pieds ?
+        if (!Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit)) 
+        {
+            return false;
+        }
+        
+        // Sol ou mur ?
+        if (hit.normal.y < minGroundDotProduct) 
+        {
+            return false;
+        }
+
+        // On ajuste la vélocité pour qu'elle s'aligne avec le sol en dessous
+        
+        groundContactCount = 1;
+        contactNormal = hit.normal;
+        float speed = _velocity.magnitude;
+        float dot = Vector3.Dot(_velocity, hit.normal);
+        
+        if (dot > 0f) // On ajuste la vélocité seulement si on "décolle" (Exemple: on passe le sommet d'une rampe)
+        {
+            _velocity = (_velocity - hit.normal * dot).normalized * speed;
+            _rb.velocity = _velocity;
+            Debug.DrawRay(transform.position, _velocity);
+        }
+        
+        return true;
     }
 
     #endregion
