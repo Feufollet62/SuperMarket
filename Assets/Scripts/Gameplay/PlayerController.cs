@@ -239,22 +239,16 @@ public class PlayerController : MonoBehaviour
         // Si pas d'input osef
         if(!_inputInteract) return;
         
-        print("1");
-        
         _inputInteract = false;
 
         if (InteractWithClosest())
         {
-            print("2");
             return;
         }
-        
-        print("3");
         
         // Rien est interactible, alors on lance
         if(grabbing)
         {
-            print("4");
             Throw();
         }
     }
@@ -273,9 +267,7 @@ public class PlayerController : MonoBehaviour
         {
             if (interactible.Interact(this)) return true;
         }
-        
-        print("retourne false");
-        
+
         return false;
     }
 

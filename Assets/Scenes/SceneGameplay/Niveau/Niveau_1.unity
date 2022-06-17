@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6188146175450579414}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpawnObject, Assembly-CSharp
         m_MethodName: SpawnObjectAction
         m_Mode: 1
@@ -4328,32 +4328,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea953a0b72f375842805daae43547506, type: 3}
---- !u!1 &6188146175450579412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7236457375084039921, guid: ea953a0b72f375842805daae43547506,
-    type: 3}
-  m_PrefabInstance: {fileID: 6188146175450579411}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6188146175450579413 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2330608633324411406, guid: ea953a0b72f375842805daae43547506,
-    type: 3}
-  m_PrefabInstance: {fileID: 6188146175450579411}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6188146175450579414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6188146175450579412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38b566bbf03ca5468df73b7a8f39693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objet: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0, type: 3}
-  spawnerObject: {fileID: 6188146175450579413}
 --- !u!4 &6188146175450579415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5734267978062349698, guid: ea953a0b72f375842805daae43547506,

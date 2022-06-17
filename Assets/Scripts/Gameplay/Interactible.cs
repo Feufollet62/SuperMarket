@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum InteractType {Spawner, Throwable, Player, Comptoir}
+public enum InteractType {Spawner, Throwable, Player, Comptoir, PassePlat}
 
 public class Interactible : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class Interactible : MonoBehaviour
 
     private PlayerController _thisPlayer;
 
-    private void Start()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         
