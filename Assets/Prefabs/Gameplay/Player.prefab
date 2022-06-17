@@ -5081,7 +5081,10 @@ MonoBehaviour:
   animIntensity: 5
   animMaxAngle: 20
   controllable: 1
+  grabbing: 0
   interactibles: []
+  _grabbedObject: {fileID: 0}
+  _dashing: 0
 --- !u!114 &7912259794157549765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,6 +5097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objetPrefab: {fileID: 0}
   type: 2
 --- !u!54 &4633482986818612710
 Rigidbody:

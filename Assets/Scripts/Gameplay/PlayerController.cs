@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour
     private int groundContactCount, stepsSinceGrounded;
     private bool Grounded => groundContactCount > 0;
 
-    public bool _inputDash;
-    private bool _inputInteract;
-    private bool _dashing;
+    //public bool _inputDash;
+    private bool _inputInteract, _inputDash;
+    public bool _dashing;
     private float _dashTimer;
 
     private float _animTimer;

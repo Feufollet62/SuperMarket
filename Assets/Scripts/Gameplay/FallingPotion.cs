@@ -14,20 +14,13 @@ public class FallingPotion : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Player = other.gameObject;
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
             Debug.Log("Je capte mon joueur");
-            if (Player.GetComponent<PlayerController>()._inputDash)
+            if (player._dashing == true)
             {
-                Debug.Log("Je fait ma potion");
+                Debug.Log("Je fait tomber ma potion");
                 Instantiate(potionsFall, posInitial);
             }
-            /*
-            PlayerController player = GetComponent<PlayerController>();
-            if (player._inputDash)
-            {
-                Instantiate(potionsFall, posInitial);
-            }*/
-
-            
         }
     }
 }
