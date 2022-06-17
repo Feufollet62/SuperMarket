@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Client/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Model/ClientModel.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Model/ClientModel.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/ClientScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Client1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Client1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManageur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManageur.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/SpawnObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/SpawnObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +13,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="DevCorentin" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/MovementTest.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/Interactible.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +78,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46efc5ea-e756-45b2-bfd5-1967e832438c" name="Changes" comment="" />
+      <changelist id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="" />
       <created>1654346813657</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -106,6 +101,10 @@
       <workItem from="1654708336330" duration="90000" />
       <workItem from="1654708568097" duration="59000" />
       <workItem from="1654708631488" duration="166000" />
+      <workItem from="1655385013392" duration="4827000" />
+      <workItem from="1655395782905" duration="246000" />
+      <workItem from="1655397301656" duration="4790000" />
+      <workItem from="1655449626951" duration="368000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -191,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654708676924</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update">
+      <created>1655387903783</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655387903783</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements">
+      <created>1655449730858</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655449730858</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +250,8 @@
     <MESSAGE value="Giga rangement de la map d'Alex" />
     <MESSAGE value="Fix" />
     <MESSAGE value="Truc random avant merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Truc random avant merge" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements" />
   </component>
 </project>
