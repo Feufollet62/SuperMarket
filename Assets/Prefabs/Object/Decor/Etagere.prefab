@@ -129,9 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetPrefab: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0,
-    type: 3}
   type: 0
+  throwablePrefab: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0,
+    type: 3}
+  dataObject: {fileID: 0}
+  iD: 0
+  imageObjet: {fileID: 0}
 --- !u!65 &6188146175450579417
 BoxCollider:
   m_ObjectHideFlags: 0

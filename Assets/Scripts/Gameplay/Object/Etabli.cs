@@ -46,6 +46,7 @@ public class Etabli : MonoBehaviour
         // Si mon objet est de type objet 
         // Que la fabrication n'est pas en cours
         // Et si les objet sont craftable
+        
         if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
         {
             //si ma 1ere place n'est pas prise
