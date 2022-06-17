@@ -1,23 +1,34 @@
 using UnityEngine;
 
-public enum InteractType {Spawner, Throwable, Player, Comptoir, PassePlat}
+public enum InteractType {Spawner, Throwable, Player, Comptoir, PassePlat, Etabli}
 
 public class Interactible : MonoBehaviour
 {
-    [SerializeField] public GameObject _objetPrefab;
-    
     public InteractType type;
+    
+    // Bientôt un editor script pour ça
+    // Seulement pour les spawners
+    [SerializeField] public GameObject objetPrefab;
 
+    // Seulement pour les throwables / players
+    public ObjectData dataObject;
+    public float iD;
+    
+    public Sprite imageObjet;
+    
     private Rigidbody _rb;
     private Collider _collider;
     
-    private bool isHeld;
-
+    private bool _isHeld;
+    
+    // Seulement pour les players
     private PlayerController _thisPlayer;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        
+        if(type == InteractType.Throwable) SetupThrowable();
         
         if (type == InteractType.Player)
         {
@@ -70,10 +81,10 @@ public class Interactible : MonoBehaviour
     
     public void Throw(Vector3 force)
     {
-        if(type == InteractType.Spawner || !isHeld) return;
+        if(type == InteractType.Spawner || !_isHeld) return;
         if(type == InteractType.Player) _thisPlayer.SetControllable(true);
 
-        isHeld = false;
+        _isHeld = false;
         transform.SetParent(null, true);
         
         _rb.isKinematic = false;
@@ -82,21 +93,37 @@ public class Interactible : MonoBehaviour
         _rb.AddForce(force,ForceMode.Impulse);
     }
 
+    private void SetupThrowable() // Faire setup global avec switch case plz
+    {
+        if(type != InteractType.Throwable) return;
+        
+        MeshFilter mFilter = GetComponent<MeshFilter>();
+        MeshRenderer mRender = GetComponent<MeshRenderer>();
+
+        mFilter.sharedMesh = dataObject.model;
+        mRender.sharedMaterial = dataObject.material;
+
+        gameObject.name = dataObject.name;
+        imageObjet = dataObject.image;
+
+        iD = dataObject.iD;
+    }
+    
     private void ActivateSpawner(PlayerController player)
     {
         if (type != InteractType.Spawner) return;
 
-        Interactible newObject = Instantiate(_objetPrefab).GetComponent<Interactible>();
+        Interactible newObject = Instantiate(objetPrefab).GetComponent<Interactible>();
         player._grabbedObject = newObject;
         newObject.PickUp(player.grabPoint);
     }
 
     private void PickUp(Transform grabPoint)
     {
-        if(type == InteractType.Spawner || isHeld) return;
+        if(type == InteractType.Spawner || _isHeld) return;
         if(type == InteractType.Player) _thisPlayer.SetControllable(false);
 
-        isHeld = true;
+        _isHeld = true;
         
         _rb.isKinematic = true;
         _collider.enabled = false;

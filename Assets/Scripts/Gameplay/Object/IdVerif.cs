@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,15 +12,15 @@ namespace _Script
         {
             if (other.gameObject.CompareTag("Object"))
             {
-                VerificationID(other.gameObject.GetComponent<ObjectDefinition>());
+                VerificationID(other.gameObject.GetComponent<Interactible>());
             }
         }
-        void VerificationID(ObjectDefinition ObjectComptoire)
+        void VerificationID(Interactible interactible)
         {
 
             for (int i = 0; i < clientsWait.Count; i++)
             {
-                if (clientsWait[i].iDaleatoire == ObjectComptoire.iD)
+                if (clientsWait[i].iDaleatoire == interactible.iD)
                 {
                     gM.score++;
                     clientsWait[i].InExitQueue();

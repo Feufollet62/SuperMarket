@@ -120,7 +120,7 @@ namespace _Script{
 
 			newClientUI.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
 			newClientUI.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
-			newClientUI.GetComponent<CommandUI>().afficheObjet.sprite = listeObject[iDaleatoire].GetComponent<ObjectDefinition>().imageObjet;
+			newClientUI.GetComponent<CommandUI>().afficheObjet.sprite = listeObject[iDaleatoire].GetComponent<Interactible>().imageObjet;
 
 			newClientUI.SetActive(true);
 			newClientUI.transform.parent = gM.prefabUIEmplacement.transform;

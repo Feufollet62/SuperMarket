@@ -2,8 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/SpawnObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/SpawnObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/ChampignonBleu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/ChampignonBleu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/Fleur Jaune.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/Fleur Jaune.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/Fruit à piques rouge.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/Fruit à piques rouge.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/PotionFalling.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object/Objet Simple/PotionFalling.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetFusioner.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetFusioner/Fusion_PosionBleu.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetFusioner/Fusion_PosionBleu.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetFusioner/Fusion_PosionRouge.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetFusioner/Fusion_PosionRouge.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/ChampignonBleu.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/ChampignonBleu.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Fleur Jaune.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Fleur Jaune.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Fruit à piques rouge.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Fruit à piques rouge.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Potion Bleu.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Potion Bleu.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Potion Rouge.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ObjetSimple/Potion Rouge.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Fusionable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Fusionable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/ObjectDefinition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/ObjectDefinition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +51,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/MovementTest.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/Interactible.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -224,7 +253,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="DevCorentin" />
+                        <option value="DevEliot" />
                       </list>
                     </value>
                   </entry>
