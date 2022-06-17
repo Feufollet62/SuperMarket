@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // Remplacer par scriptableojbect maybe ?
     [SerializeField] private Material[] playerMats;
     [SerializeField] private Transform model;
-    [SerializeField] private Transform grabPoint;
+    [SerializeField] public Transform grabPoint;
     
     [Header("Mouvement")]
     [SerializeField] private float maxAccel = 30f;
@@ -32,13 +32,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float animMaxAngle = 20f;
     
     public bool controllable = true;
+    public bool grabbing = false;
 
     // Private
     private Rigidbody _rb;
     private ParticleSystem _particleSystem;
 
     public List<Interactible> interactibles;
-    private Interactible _grabbedObject;
+    public Interactible _grabbedObject;
 
     private Vector3 _velocity, _desiredVelocity, _inputMovement;
     private Vector3 contactNormal;
@@ -238,74 +239,65 @@ public class PlayerController : MonoBehaviour
         // Si pas d'input osef
         if(!_inputInteract) return;
         
+        print("1");
         
-        // à faire: rajouter une condition pour interagir avec les meubles quand on tient un truc
-        if (_inputInteract)
-        {
-            if (_grabbedObject == null) // Pas ouf niveau opti une comparaison avec null
-            {
-                // Si on a rien entre les mains
-                InteractWithNearest();
-            }
-            else
-            {
-                // Sinon on lance
-                Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) + _velocity;
-                
-                // Force dépend de si joueur ou non
-                if (_grabbedObject.type == InteractType.Player)
-                {
-                    throwVector *= throwStrengthPlayer;
-                }
-                else
-                {
-                    throwVector *= throwStrengthItem;
-                }
-                
-                _grabbedObject.Throw(throwVector);
-                _grabbedObject = null;
-            }
+        _inputInteract = false;
 
-            _inputInteract = false; 
+        if (InteractWithClosest())
+        {
+            print("2");
+            return;
+        }
+        
+        print("3");
+        
+        // Rien est interactible, alors on lance
+        if(grabbing)
+        {
+            print("4");
+            Throw();
         }
     }
 
-    private void InteractWithNearest()
+    private bool InteractWithClosest()
     {
-        // Si rien est à portée ou si on porte déja un truc, rien ne se passe 
-        // (Ajouter condition interaction avec les meubles)
-        if(interactibles.Count == 0 || !(_grabbedObject == null)) return;
+        // Si rien est à portée, rien ne se passe 
+        if(interactibles.Count == 0) return false;
         
-        // Si c'est le seul à portée on cherche pas plus loin
-        if (interactibles.Count == 1 && interactibles[0].type != InteractType.Spawner)
+        // On trie la liste du plus proche au plus éloigné
+        interactibles.Sort((a, b) => 
+                  Vector2.Distance(transform.position, a.transform.position).
+        CompareTo(Vector2.Distance(transform.position, b.transform.position)));
+        
+        foreach (Interactible interactible in interactibles)
         {
-            _grabbedObject = interactibles[0];
-            _grabbedObject.PickUp(grabPoint);
-            return;
-        }
-
-        // Sinon on vérifie tout le reste
-        // Le premier obj sera forcément plus près que l'infini
-        float closestDistance = 99999f;
-        
-        // Peu importe ce qu'il y a là dedans car ce sera forcément remplacé
-        Interactible closest = interactibles[0];
-        
-        for (int i = 0; i < interactibles.Count; i++)
-        {
-            // Si pas throwable on skip
-            if (interactibles[i].type == InteractType.Spawner) continue;
-
-            float distance = Vector3.Distance(transform.position, interactibles[i].transform.position);
-            
-            if (distance < closestDistance)
-            {
-                closest = interactibles[i];
-                closestDistance = distance;
-            }
+            if (interactible.Interact(this)) return true;
         }
         
-        closest.PickUp(grabPoint);
+        print("retourne false");
+        
+        return false;
+    }
+
+    private void Throw()
+    {
+        if(!grabbing) return;
+        
+        Vector3 throwVector = new Vector3(model.forward.x, 0, model.forward.z) + _velocity;
+                
+        // Force dépend de si joueur bouge ou non
+        if (_grabbedObject.type == InteractType.Player)
+        {
+            throwVector *= throwStrengthPlayer;
+        }
+        else
+        {
+            throwVector *= throwStrengthItem;
+        }
+                
+        _grabbedObject.Throw(throwVector);
+        _grabbedObject = null;
+        grabbing = false;
     }
 
     private void Animate()
