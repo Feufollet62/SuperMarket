@@ -5,22 +5,16 @@ using UnityEngine;
 public class FallingPotion : MonoBehaviour
 {
     [SerializeField] GameObject potionsFall;
-    [SerializeField] Transform posInitial;
-    private GameObject Player;
+    [SerializeField] PlayerController Player;
+    //private GameObject Player;
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Je capte un truc");
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.CompareTag("armoire") && Player._dashing)
         {
-            Player = other.gameObject;
-            PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            Debug.Log("Je capte mon joueur");
-            if (player._dashing == true)
-            {
-                Debug.Log("Je fait tomber ma potion");
-                Instantiate(potionsFall, posInitial);
-            }
+            Debug.Log("Je fait tomber ma potion");
+            Instantiate(potionsFall, other.gameObject.transform.GetChild(1).position, potionsFall.transform.rotation);
         }
     }
 }
