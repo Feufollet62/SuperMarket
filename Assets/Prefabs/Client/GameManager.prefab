@@ -46,30 +46,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientPrefab: {fileID: 8757608080866082436, guid: 5fd72a3d5ad58984ab6d1e9d5d740b4b,
     type: 3}
-  clientDataSO: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
-  currentClients: []
+  clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
+  clientList: []
   clientSpawnPos: {fileID: 0}
   files:
   - positions:
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 0
+      occupied: 1
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 0
+      occupied: 0
   - positions:
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 1
+      occupied: 0
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 0
+      occupied: 0
   - positions:
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 1
+      occupied: 0
     - pos: {fileID: 0}
-      prise: 0
+      currentClient: {fileID: 0}
+      canOrder: 0
+      occupied: 0
+  sortieQueue1: {fileID: 0}
+  sortieQueue2: {fileID: 0}
+  porteEntree: {fileID: 0}
+  porteSortie: {fileID: 0}
+  despawn: {fileID: 0}
   limitSpawn: 0
   cooldownSpawn: 4
   prefabScreenWin: {fileID: 0}
+  prefabScreenInGame: {fileID: 0}
   score: 0
-  prefabUICommande: {fileID: 0}
+  dureePartie: 0
+  textScore: {fileID: 0}
+  listeUI: []
   prefabUIEmplacement: {fileID: 0}
-  baseCommande: {fileID: 0}
+  uICommande: {fileID: 0}
   targetClient: 0

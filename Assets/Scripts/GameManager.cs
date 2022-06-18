@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Script;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,9 @@ public class File
 public class PositionFile
 {
 	public Transform pos;
-	public bool prise = false;
+	public ClientController currentClient;
+	public bool canOrder = false;
+	public bool occupied = false;
 }
 
 namespace _Script{
@@ -29,6 +32,11 @@ namespace _Script{
 
 		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;
+		public Transform sortieQueue1;
+		public Transform sortieQueue2;
+		public Transform porteEntree;
+		public Transform porteSortie;
+		public Transform despawn;
 
 		[SerializeField] private float limitSpawn;
 		[SerializeField] private float cooldownSpawn = 4f;
@@ -47,19 +55,19 @@ namespace _Script{
 
 		// Différence entre ces deux là ?
 		public GameObject prefabUIEmplacement;
-		public Transform baseCommande;
+		public Transform uICommande;
 		
 		public int targetClient; // à remplacer
 		
 		#endregion
 
 		#region Builtin Methods
-		void Start()
+		private void Start()
 		{
 			time = dureePartie;
 		}
 		
-		void Update()
+		private void Update()
 		{
 			time -= Time.deltaTime;
 			if (activation == false)
@@ -71,7 +79,7 @@ namespace _Script{
 		#endregion
 
 		#region Properties
-		void WinLevel()
+		private void WinLevel()
         {
 			if (time <= 0)
 			{
@@ -90,7 +98,7 @@ namespace _Script{
 			SceneManager.LoadScene("MenuSelectLvl");
 		}
 
-		void ClientSpawner()
+		private void ClientSpawner()
         {
 			limitSpawn -= Time.deltaTime;
 			
@@ -104,7 +112,7 @@ namespace _Script{
 			int typeClient = Random.Range(0, clientData.clientInfos.Length);
 			targetClient = Random.Range(0, files.Length);
 
-			while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
+			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied)
 			{
 				targetClient = Random.Range(0, files.Length);
 			}

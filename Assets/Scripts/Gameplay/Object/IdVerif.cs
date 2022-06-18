@@ -5,7 +5,7 @@ namespace _Script
 {
     public class IdVerif : MonoBehaviour
     {
-        [SerializeField] public List<ClientController> clientsWait;
+        [SerializeField] public List<ClientController> clientsWait; // chez le GM y'a la même
         [SerializeField] public GameManager gM;
 
         private void OnTriggerEnter(Collider other)
@@ -17,13 +17,12 @@ namespace _Script
         }
         void VerificationID(Interactible interactible)
         {
-
             for (int i = 0; i < clientsWait.Count; i++)
             {
                 if (clientsWait[i].iDAleatoire == interactible.iD)
                 {
                     gM.score++;
-                    clientsWait[i].InExitQueue();
+                    clientsWait[i].ExitQueue();
                 }
             }
         }

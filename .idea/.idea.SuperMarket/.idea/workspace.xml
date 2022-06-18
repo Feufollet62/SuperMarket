@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager">
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Client/GameManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +28,13 @@
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Prefabs/Client/PosClient/Pos1.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/UI/CommandUI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -247,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655562015151</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Enleve des prefabs inutiles">
+      <created>1655563194828</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1655563194828</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +314,7 @@
     <MESSAGE value="Début nettoyage" />
     <MESSAGE value="Oups oubli" />
     <MESSAGE value="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager" />
+    <MESSAGE value="Enleve des prefabs inutiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enleve des prefabs inutiles" />
   </component>
 </project>
