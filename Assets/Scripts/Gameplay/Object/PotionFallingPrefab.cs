@@ -16,8 +16,8 @@ public class PotionFallingPrefab : MonoBehaviour
         Debug.Log("Je tombe");
         yield return new WaitForSeconds(timeFall);
 
-
-        flaque.SetActive(true);
+        Vector3 posFlaque = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 0.35f, this.gameObject.transform.position.z);
+        Instantiate(flaque, posFlaque, this.gameObject.transform.rotation);
         Debug.Log("Je casse");
     }
 }
