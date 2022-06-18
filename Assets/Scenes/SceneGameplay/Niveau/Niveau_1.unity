@@ -363,6 +363,12 @@ PrefabInstance:
       objectReference: {fileID: 1139347771}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
+      propertyPath: clientData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5,
+        type: 2}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
       propertyPath: baseCommande
       value: 
       objectReference: {fileID: 1197047435}
