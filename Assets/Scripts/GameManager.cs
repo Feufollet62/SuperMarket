@@ -23,8 +23,9 @@ namespace _Script{
 		
 		[Header("Files d'attente et spawning")]
 		public GameObject clientPrefab;
-		public ClientData clientDataSO;
-		public List<ClientController> currentClients;
+		public ClientData clientData;
+		
+		public List<ClientController> currentClients; // Utiliser ça stp
 
 		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;
@@ -105,7 +106,7 @@ namespace _Script{
 					ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
 					newClient.transform.parent = transform;
 
-					int typeClient = Random.Range(0, clientDataSO.clientInfos.Length);
+					int typeClient = Random.Range(0, clientData.clientInfos.Length);
 					targetClient = Random.Range(0, files.Length);
 
                     while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
@@ -113,7 +114,7 @@ namespace _Script{
 						targetClient = Random.Range(0, files.Length);
 					}
 
-					newClient.SetupClient(clientDataSO.clientInfos[typeClient], targetClient);
+					newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
 
 					/*
 					GameObject newClientUI = Instantiate(prefabUICommande, prefabUIEmplacement.transform.position, prefabUIEmplacement.transform.rotation);

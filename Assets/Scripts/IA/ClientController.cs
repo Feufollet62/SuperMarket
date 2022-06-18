@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections;	
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum ClientType {Normal, Presse,Vieux, Riche}
+public enum ClientType {Normal, Presse, Vieux, Riche}
 
-public enum ActPos {pos1, pos2, apartir}
+public enum ActPos {Pos1, Pos2, APartir}
 
 namespace _Script{
 	public class ClientController : MonoBehaviour
@@ -13,30 +12,27 @@ namespace _Script{
 		#region Variables
 
 		public ClientType type = ClientType.Normal;
-		public ActPos ActPos = ActPos.pos1;
+		public ActPos ActPos = ActPos.Pos1;
 
 		// SO avec tous les modèles de joueur
 
 		private int fileTarget;
 
-		[SerializeField] float timeService = 20f;
-		[SerializeField] int posClientRandom;
-		[SerializeField] ClientData clientData;
-		[SerializeField] GameManager gM;
-		[SerializeField] IdVerif verifID;
-		[SerializeField] int intPosBaseClient;
+		[SerializeField] private float timeService = 20f;
+		[SerializeField] private int posClientRandom;
+		[SerializeField] private ClientData clientData;
+		[SerializeField] private GameManager gM;
+		[SerializeField] private IdVerif verifID;
 
-		public NavMeshAgent agent;
+		private NavMeshAgent agent;
 
-		private bool premiereVerif = false;
-		private bool FirstPlace = false;
+		private bool _premiereVerif = false;
+		private bool _firstPlace = false;
 
 		public GameObject prefabUICommande;
-		//public GameObject prefabUIEmplacement;
-		public Transform baseCommande;
-		GameObject newClientUI;
+		private GameObject newClientUI;
 
-		public int iDaleatoire;
+		public int iDAleatoire;
 		public GameObject[] listeObject;
 		public bool iDEgal;
 		#endregion
@@ -48,7 +44,7 @@ namespace _Script{
 			gM = FindObjectOfType<GameManager>();
 			verifID = FindObjectOfType<IdVerif>();
 
-			iDaleatoire = Random.Range(0, listeObject.Length);
+			iDAleatoire = Random.Range(0, listeObject.Length);
 
 			fileTarget = gM.targetClient;
 			
@@ -57,7 +53,7 @@ namespace _Script{
 
         private void Update()
         {
-            if (!gM.files[fileTarget].positions[0].prise && ActPos == ActPos.pos2)
+            if (!gM.files[fileTarget].positions[0].prise && ActPos == ActPos.Pos2)
             {
 				StartCoroutine(InQueue());
 			}
@@ -69,73 +65,72 @@ namespace _Script{
 
         IEnumerator EnterShop()
 		{
-			agent.destination = GameObject.Find("EntreeExt").transform.position;
+			agent.destination = GameObject.Find("EntreeExt").transform.position; // Aled
 			yield return new WaitForSeconds(3f);
 
-			StartCoroutine("TimeTravel");
+			StartCoroutine(nameof(TimeTravel));
 		}
 
 		IEnumerator TimeTravel()
 		{	
-			if (!gM.files[fileTarget].positions[0].prise && !premiereVerif)
+			if (!gM.files[fileTarget].positions[0].prise && !_premiereVerif)
 			{
 				agent.destination = gM.files[fileTarget].positions[0].pos.position;
 				gM.files[fileTarget].positions[0].prise = true;
-				ActPos = ActPos.pos1;
-				FirstPlace = true;
+				ActPos = ActPos.Pos1;
+				_firstPlace = true;
 			}
-			else if (gM.files[fileTarget].positions[0].prise && !gM.files[fileTarget].positions[1].prise && !premiereVerif)
+			else if (gM.files[fileTarget].positions[0].prise && !gM.files[fileTarget].positions[1].prise && !_premiereVerif)
 			{
 				agent.destination = gM.files[fileTarget].positions[1].pos.position;
 				gM.files[fileTarget].positions[1].prise = true;
-				ActPos = ActPos.pos2;
+				ActPos = ActPos.Pos2;
 			}
-			premiereVerif = true;
-
-
 			
-            if (FirstPlace)
+			_premiereVerif = true;
+			
+            if (_firstPlace)
             {
 				yield return new WaitForSeconds(5f);
-				StartCoroutine(EnCommande());
+				StartCoroutine(PasserCommande());
 			}
-			
 		}
 		IEnumerator InQueue()
         {
 			agent.destination = gM.files[fileTarget].positions[0].pos.position;
 			gM.files[fileTarget].positions[1].prise = false;
 			gM.files[fileTarget].positions[0].prise = true;
-			ActPos = ActPos.pos1;
-			FirstPlace = true;
+			ActPos = ActPos.Pos1;
+			_firstPlace = true;
 
 			yield return new WaitForSeconds(3f);
 
-			StartCoroutine(EnCommande());
+			StartCoroutine(PasserCommande());
 		}
 		
-		IEnumerator EnCommande()
+		IEnumerator PasserCommande()
         {
-			newClientUI = Instantiate(prefabUICommande, gM.baseCommande.transform.position , gM.baseCommande.transform.rotation);
+	        CommandUI ui = Instantiate(prefabUICommande, gM.baseCommande.transform.position , gM.baseCommande.transform.rotation).GetComponent<CommandUI>();
 
-			newClientUI.GetComponent<CommandUI>().textNameClient.text = gameObject.name.ToString();
-			newClientUI.GetComponent<CommandUI>().timeClient.text = timeService.ToString();
-			newClientUI.GetComponent<CommandUI>().afficheObjet.sprite = listeObject[iDaleatoire].GetComponent<Interactible>().imageObjet;
+			ui.textNameClient.text = gameObject.name;
+			ui.timeClient.text = timeService.ToString();
+			ui.afficheObjet.sprite = listeObject[iDAleatoire].GetComponent<Interactible>().imageObjet;
 
-			newClientUI.SetActive(true);
-			newClientUI.transform.parent = gM.prefabUIEmplacement.transform;
-			newClientUI.transform.position = gM.baseCommande.position;
+			ui.gameObject.SetActive(true);
+			ui.transform.parent = gM.prefabUIEmplacement.transform;
+			ui.transform.position = gM.baseCommande.position;
+			
 			gM.baseCommande.transform.position = new Vector3(gM.baseCommande.position.x + 130, gM.baseCommande.position.y, gM.baseCommande.position.z);
 			gM.listeUI.Add(newClientUI);
 
 			verifID.clientsWait.Add(gameObject.GetComponent<ClientController>());
+			
 			if (iDEgal)
 			{
 				//StartCoroutine(InExitQueue());
 			}
 
 			yield return new WaitForSeconds(timeService);
-
 			
 			//StartCoroutine(InExitQueue());
 			InExitQueue();
@@ -144,7 +139,7 @@ namespace _Script{
 		public void InExitQueue()
 		{
 			verifID.clientsWait.Remove(gameObject.GetComponent<ClientController>());
-			ActPos = ActPos.apartir;
+			ActPos = ActPos.APartir;
 			gM.files[fileTarget].positions[0].prise = false;
 			
             for (int i = 1; i < gM.listeUI.Count; i++)
