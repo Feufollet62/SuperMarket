@@ -25,15 +25,13 @@ namespace _Script{
 		public GameObject clientPrefab;
 		public ClientData clientData;
 		
-		public List<ClientController> currentClients; // Utiliser ça stp
+		public List<ClientController> clientList; // Utiliser ça stp
 
 		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;
 
 		[SerializeField] private float limitSpawn;
 		[SerializeField] private float cooldownSpawn = 4f;
-		
-		public int nbClientAct; // <-- à remplacer par la taille de currentClients
 
 		[Header("UI")]
 		//Score
@@ -42,11 +40,9 @@ namespace _Script{
 		public int score;
 		private bool activation = false; // <<- Potentiellement remplaçable par screenWinPrefab.activeSelf
 		private float time;
-		public float timeGame;
+		public float dureePartie;
 		public Text textScore;
-
-
-		public GameObject prefabUICommande;
+		
 		public List<GameObject> listeUI;
 
 		// Différence entre ces deux là ?
@@ -60,11 +56,9 @@ namespace _Script{
 		#region Builtin Methods
 		void Start()
 		{
-			nbClientAct = 1;
-			time = timeGame;
+			time = dureePartie;
 		}
-
-
+		
 		void Update()
 		{
 			time -= Time.deltaTime;
@@ -99,34 +93,26 @@ namespace _Script{
 		void ClientSpawner()
         {
 			limitSpawn -= Time.deltaTime;
-			if (limitSpawn < 0)
+			
+			if (!(limitSpawn < 0) || clientList.Count > 6) return;
+			
+			ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
+			clientList.Add(newClient);
+			
+			newClient.transform.parent = transform;
+
+			int typeClient = Random.Range(0, clientData.clientInfos.Length);
+			targetClient = Random.Range(0, files.Length);
+
+			while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
 			{
-				if (nbClientAct <= 6)
-				{
-					ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
-					newClient.transform.parent = transform;
-
-					int typeClient = Random.Range(0, clientData.clientInfos.Length);
-					targetClient = Random.Range(0, files.Length);
-
-                    while (files[targetClient].positions[0].prise && files[targetClient].positions[1].prise)
-                    {
-						targetClient = Random.Range(0, files.Length);
-					}
-
-					newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
-
-					/*
-					GameObject newClientUI = Instantiate(prefabUICommande, prefabUIEmplacement.transform.position, prefabUIEmplacement.transform.rotation);
-					newClientUI.transform.parent = prefabUIEmplacement.transform;
-					newClientUI.transform.position = baseCommande.position;
-					baseCommande.transform.position = new Vector3(baseCommande.position.x + 130, baseCommande.position.y, baseCommande.position.z);
-					*/
-					limitSpawn = cooldownSpawn;
-					nbClientAct++;
-				}
+				targetClient = Random.Range(0, files.Length);
 			}
-		}
+
+			newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
+					
+			limitSpawn = cooldownSpawn;
+        }
 		#endregion
 	}
 }

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Début nettoyage">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" afterDir="false" />
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Oups oubli">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Client1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Client1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CommandUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CommandUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Prefabs/Client/PosClient/Pos1.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -225,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655474462599</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Début nettoyage">
+      <created>1655560893755</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655560893755</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Oups oubli">
+      <created>1655560921693</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655560921693</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +290,7 @@
     <MESSAGE value="Début grand rangement:&#10;- ObjectDefinition combiné avec Interactible&#10;- Prefabs différents d'objets combinés en un seul Throwable" />
     <MESSAGE value="Refonte objets et spawner" />
     <MESSAGE value="Début nettoyage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début nettoyage" />
+    <MESSAGE value="Oups oubli" />
+    <option name="LAST_COMMIT_MESSAGE" value="Oups oubli" />
   </component>
 </project>

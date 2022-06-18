@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8188617999109681651}
   - component: {fileID: 1968597720518144731}
   m_Layer: 0
-  m_Name: Client1
+  m_Name: Client
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,18 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95114f036845b34aaeaf199c003150e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  ActPos: 0
   timeService: 20
   posClientRandom: 0
-  posClient:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
+  gM: {fileID: 0}
+  verifID: {fileID: 0}
+  prefabUICommande: {fileID: 0}
+  iDAleatoire: 0
+  listeObject:
+  - {fileID: 11400000, guid: 85b5c8ecb45e5b14485a3933a7cc2554, type: 2}
+  - {fileID: 11400000, guid: 1f66566f1f672534bb87d9e850718f6e, type: 2}
+  iDEgal: 0
 --- !u!195 &8188617999109681651
 NavMeshAgent:
   m_ObjectHideFlags: 0

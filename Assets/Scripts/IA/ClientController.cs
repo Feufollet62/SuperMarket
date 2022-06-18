@@ -20,7 +20,6 @@ namespace _Script{
 
 		[SerializeField] private float timeService = 20f;
 		[SerializeField] private int posClientRandom;
-		[SerializeField] private ClientData clientData;
 		[SerializeField] private GameManager gM;
 		[SerializeField] private IdVerif verifID;
 
@@ -33,8 +32,9 @@ namespace _Script{
 		private GameObject newClientUI;
 
 		public int iDAleatoire;
-		public GameObject[] listeObject;
+		public ObjectData[] listeObject; // Part dans game manager
 		public bool iDEgal;
+		
 		#endregion
 
 		#region Builtin Methods 
@@ -114,7 +114,7 @@ namespace _Script{
 
 			ui.textNameClient.text = gameObject.name;
 			ui.timeClient.text = timeService.ToString();
-			ui.afficheObjet.sprite = listeObject[iDAleatoire].GetComponent<Interactible>().imageObjet;
+			ui.afficheObjet.sprite = listeObject[iDAleatoire].image;
 
 			ui.gameObject.SetActive(true);
 			ui.transform.parent = gM.prefabUIEmplacement.transform;
@@ -173,49 +173,26 @@ namespace _Script{
 		IEnumerator DestroyClient()
         {
 			agent.destination = GameObject.Find("Sortie").transform.position;
-			gM.nbClientAct--; //<-- marche seulement si tout est bon 
+			gM.clientList.Remove(this);
 
 			yield return new WaitForSeconds(4f);
 
 			Destroy(gameObject);
 		}
-		/*
-		private void OnTriggerEnter(Collider other)
+
+		public void SetupClient(ClientInfo info, int target)
 		{
-			if (other.CompareTag("posPourCommande"))
-			{
-				gM.prefabUICommande.SetActive(true);
-			}
-		}*/
-
-		public void SetupClient(ClientInfo infos, int target)
-		{
-			/*
-			public ClientType type = ClientType.Normal;
-
-			public Mesh model;
-			public Material material;
-
-			public Sprite sprite;
-
-			public string name;
-			public string description;
-			public float time;*/
-
-			type = infos.type;
+			type = info.type;
 			fileTarget = target;
 
 			MeshFilter mFilter = GetComponent<MeshFilter>();
 			MeshRenderer mRender = GetComponent<MeshRenderer>();
 
-			mFilter.sharedMesh = infos.model;
-			mRender.sharedMaterial = infos.material;
+			mFilter.sharedMesh = info.model;
+			mRender.sharedMaterial = info.material;
 
-			gameObject.name = infos.name;
-			//gM.namePrefabUICommande.text = infos.name.ToString();
-			timeService = infos.time;
-			//gM.timePrefabUICommande.text = infos.time.ToString();
-			//gM.spritePrefabUICommande = infos.sprite;
+			gameObject.name = info.name;
+			timeService = info.time;
 		}
 		#endregion
 	}
