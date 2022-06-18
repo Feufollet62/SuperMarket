@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Oups oubli">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Client1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Client/Client1.prefab.meta" beforeDir="false" />
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,7 @@
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Prefabs/Client/PosClient/Pos1.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/feufo/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -239,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655560921693</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager">
+      <created>1655562015151</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1655562015151</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +299,7 @@
     <MESSAGE value="Refonte objets et spawner" />
     <MESSAGE value="Début nettoyage" />
     <MESSAGE value="Oups oubli" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oups oubli" />
+    <MESSAGE value="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager" />
   </component>
 </project>
