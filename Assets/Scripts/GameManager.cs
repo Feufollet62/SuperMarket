@@ -104,15 +104,17 @@ namespace _Script{
 			
 			if (!(limitSpawn < 0) || clientList.Count > 6) return;
 			
-			ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
-			clientList.Add(newClient);
+			int typeClient = Random.Range(0, clientData.clientInfos.Length);
+			targetClient   = Random.Range(0, files.Length);
 			
+			ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
+			
+			clientList.Add(newClient);
 			newClient.transform.parent = transform;
 
-			int typeClient = Random.Range(0, clientData.clientInfos.Length);
-			targetClient = Random.Range(0, files.Length);
+			
 
-			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied)
+			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
 			{
 				targetClient = Random.Range(0, files.Length);
 			}

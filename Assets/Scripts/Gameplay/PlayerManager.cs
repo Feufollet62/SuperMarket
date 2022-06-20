@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     
     public Transform[] spawnPoints;
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] public AcceptPlaying sM;
+    private AcceptPlaying sM;
     private int maxPlayer;
 
     private void Start()

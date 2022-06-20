@@ -48,7 +48,7 @@ namespace _Script{
 
 			fileTarget = manager.targetClient;
 			
-			StartCoroutine("EnterShop");
+			StartCoroutine(nameof(EnterShop));
 		}
 
         private void Update()
@@ -124,15 +124,9 @@ namespace _Script{
 			manager.listeUI.Add(newClientUI);
 
 			verifID.clientsWait.Add(this);
-			
-			if (iDEgal)
-			{
-				//StartCoroutine(InExitQueue());
-			}
 
 			yield return new WaitForSeconds(timeService);
 			
-			//StartCoroutine(InExitQueue());
 			ExitQueue();
 		}
 
@@ -159,9 +153,7 @@ namespace _Script{
 			{
 				agent.destination = manager.sortieQueue1.position;
 			}
-
-			//yield return new WaitForSeconds(1.2f);
-
+			
 			StartCoroutine("ExitShop");
 		}
 

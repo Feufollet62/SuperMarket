@@ -277,6 +277,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
+      propertyPath: dureePartie
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
+        type: 3}
       propertyPath: porteEntree
       value: 
       objectReference: {fileID: 2037786999}
@@ -1827,12 +1832,12 @@ PrefabInstance:
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}
       propertyPath: controlSchemes.Array.data[0]
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}
       propertyPath: controlSchemes.Array.data[1]
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}
