@@ -123,6 +123,12 @@ public class Interactible : MonoBehaviour
         player._grabbedObject = newObject;
         newObject.PickUp(player.grabPoint);
     }
+    private void Etabli(PlayerController player)
+    {
+        if (type != InteractType.Etabli) return;
+
+        _isHeld = false;
+    }
 
     private void PickUp(Transform grabPoint)
     {

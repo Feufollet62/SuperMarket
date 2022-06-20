@@ -13,4 +13,5 @@ public class ObjectData : ScriptableObject
     public Sprite image;
     public string name;
     public bool craftable;
+    public bool weapon;
 }

@@ -54,7 +54,7 @@ namespace _Script{
 		public List<GameObject> listeUI;
 
 		// Différence entre ces deux là ?
-		public GameObject prefabUIEmplacement;
+		public GameObject prefabUIEmplacementContent;
 		public Transform uICommande;
 		
 		public int targetClient; // à remplacer

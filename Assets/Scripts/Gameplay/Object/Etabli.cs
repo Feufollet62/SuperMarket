@@ -6,9 +6,12 @@ public class Etabli : MonoBehaviour
 {
     #region Variables
 
+    int[,] dataarrey = new int[,] {  { 17,14 }, { 19, 16}, { 18, 15} };
+
     // Recettes possibles sur cet etabli
     [SerializeField] private FusionData[] fusions;
-    
+    [SerializeField] private Interactible interactible;
+
     // Positions de placement des objets
     [SerializeField] private Transform posObjet1;
     [SerializeField] private Transform posObjet2;
@@ -39,6 +42,9 @@ public class Etabli : MonoBehaviour
 
     #endregion
 
+    #region Build-in Function
+    #endregion
+
     #region Custom Function
 
     private void OnTriggerEnter(Collider other)
@@ -46,14 +52,18 @@ public class Etabli : MonoBehaviour
         // Si mon objet est de type objet 
         // Que la fabrication n'est pas en cours
         // Et si les objet sont craftable
-        
-        if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
+        /*
+        if (other.gameObject.CompareTag("Object") && !currentlyCrafting /*&& other.gameObject.GetComponent<Interactible>().dataObject.craftable/)
         {
             //si ma 1ere place n'est pas prise
             if (!pos1)
             {
                 //ma place une est prise
                 pos1 = true;
+                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+
+                
+
                 //j'ajoute un objet dans ma liste
                 objetsSurEtabli.Add(other.gameObject);
                 //destruction de ma liste
@@ -63,6 +73,36 @@ public class Etabli : MonoBehaviour
             }
             if (pos1)
             {
+                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                //j'ajoute un objet dans ma liste
+                objetsSurEtabli.Add(other.gameObject);
+                //destruction de ma liste
+                Destroy(other.gameObject);
+                //creation d'un objet pour animé 
+                Item2 = Instantiate(objetsSurEtabli[1], posObjet2.position, posObjet2.rotation);
+                //on se met en fabrication
+                currentlyCrafting = true;
+                //lancement de la fabrique
+                StartCoroutine(FusionObjet());
+            }
+        }*/
+        if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
+        {
+            if (!pos1 && other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            {
+                //ma place une est prise
+                pos1 = true;
+                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                //j'ajoute un objet dans ma liste
+                objetsSurEtabli.Add(other.gameObject);
+                //destruction de ma liste
+                Destroy(other.gameObject);
+                //creation d'un objet pour animé 
+                Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+            }
+            if (pos1 && !other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            {
+                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
                 //j'ajoute un objet dans ma liste
                 objetsSurEtabli.Add(other.gameObject);
                 //destruction de ma liste
@@ -84,12 +124,23 @@ public class Etabli : MonoBehaviour
 
         if (currentlyCrafting)
         {
-            for (int i = 0; i < fusions.Length; i++)
+            Debug.Log(Item1.GetComponent<Interactible>().dataObject.iD);
+            Debug.Log(Item2.GetComponent<Interactible>().dataObject.iD);
+            Debug.Log(dataarrey[Item1.GetComponent<Interactible>().dataObject.iD, Item2.GetComponent<Interactible>().dataObject.iD]);
+            /*for (int i = 0; i < fusions.Length; i++)
             {
                 //connaitre mon premier objet que je met
                 if (Item1.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion1.iD ||
                     Item1.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion2.iD)
                 {
+                    switch (dataarrey)
+                    {
+                        //case Item1.GetComponent<Interactible>().dataObject.iD = 4:
+                            
+                        default:
+                            break;
+                    }
+                    ;
                     //mon item est bon
                     item1Verif = true;
                 }
@@ -108,8 +159,8 @@ public class Etabli : MonoBehaviour
                 {
                     //crée l'objet
                     newItem = Instantiate(fusions[i].objetResult, posRejet.position, posRejet.rotation);
-                }*/
-            }
+                }/
+            }*/
             //elever tout ce qui as sur mon atelier
             Destroy(Item1);
             Destroy(Item2);
