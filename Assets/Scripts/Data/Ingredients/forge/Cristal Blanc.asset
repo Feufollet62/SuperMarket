@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cristal Blanc
   m_EditorClassIdentifier: 
   model: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 6a1409c62e7e79a4380725f5b59bb837, type: 2}
+  material: {fileID: 2100000, guid: cbeef589492b85d4182e84d2251a5858, type: 2}
   iD: 4
   image: {fileID: 0}
   name: Crystal Blanc

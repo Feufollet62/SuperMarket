@@ -27,7 +27,8 @@ public class Etabli : MonoBehaviour
     
     // Savoir si la première place est prise
     private bool pos1 = false;
-    
+    private bool pos2 = false;
+
     // Si l'objet est en cours de construction
     private bool currentlyCrafting = false;
     
@@ -88,45 +89,86 @@ public class Etabli : MonoBehaviour
         }*/
         if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
         {
-            if (!pos1 && other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            if (other.gameObject.GetComponent<Interactible>().dataObject.weapon)
             {
+                //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                //j'ajoute un objet dans ma liste
+                objetsSurEtabli.Add(other.gameObject);
+                //destruction de ma liste
+                //Destroy(other.gameObject);
+                //creation d'un objet pour animé 
+                if (!pos1)
+                {
+                    objetsSurEtabli[0].GetComponent<SphereCollider>().enabled = false;
+                    objetsSurEtabli[0].transform.position = posObjet1.position;
+                    //Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+                    objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
+                    objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                    //Destroy(other.gameObject);
+                    pos1 = true;
+                }/*
+                else
+                {
+                    objetsSurEtabli[1].GetComponent<SphereCollider>().enabled = false;
+                    objetsSurEtabli[1].transform.position = posObjet1.position;
+                    //Item1 = Instantiate(objetsSurEtabli[1], posObjet1.position, posObjet1.rotation);
+                    objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
+                    objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
+                    //Destroy(other.gameObject);
+                }*/
                 //ma place une est prise
-                pos1 = true;
-                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
-                //j'ajoute un objet dans ma liste
-                objetsSurEtabli.Add(other.gameObject);
-                //destruction de ma liste
-                Destroy(other.gameObject);
-                //creation d'un objet pour animé 
-                Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+                
             }
-            if (pos1 && !other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            if (!other.gameObject.GetComponent<Interactible>().dataObject.weapon)
             {
-                other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
                 //j'ajoute un objet dans ma liste
                 objetsSurEtabli.Add(other.gameObject);
                 //destruction de ma liste
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
                 //creation d'un objet pour animé 
-                Item2 = Instantiate(objetsSurEtabli[1], posObjet2.position, posObjet2.rotation);
+                if (!pos2)
+                {
+                    objetsSurEtabli[0].GetComponent<SphereCollider>().enabled = false;
+                    objetsSurEtabli[0].transform.position = posObjet2.position;
+                    //Item2 = Instantiate(objetsSurEtabli[0], posObjet2.position, posObjet2.rotation);
+                    objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
+                    objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                    //Destroy(other.gameObject);
+                    pos2 = true;
+                }/*
+                else
+                {
+                    objetsSurEtabli[1].GetComponent<SphereCollider>().enabled = false;
+                    objetsSurEtabli[1].transform.position = posObjet2.position;
+                    //Item2 = Instantiate(objetsSurEtabli[1], posObjet2.position, posObjet2.rotation);
+                    objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
+                    objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
+                    //Destroy(other.gameObject);
+                }*/
                 //on se met en fabrication
                 currentlyCrafting = true;
                 //lancement de la fabrique
-                StartCoroutine(FusionObjet());
+                if (pos1 && pos2)
+                {
+                    StartCoroutine(FusionObjet());
+                }
+                
             }
         }
     }
 
     IEnumerator FusionObjet()
     {
+        Debug.Log("Je demarre ma production");
         //temps de fabrique
         yield return new WaitForSeconds(timeToCraft);
 
         if (currentlyCrafting)
         {
-            Debug.Log(Item1.GetComponent<Interactible>().dataObject.iD);
-            Debug.Log(Item2.GetComponent<Interactible>().dataObject.iD);
-            Debug.Log(dataarrey[Item1.GetComponent<Interactible>().dataObject.iD, Item2.GetComponent<Interactible>().dataObject.iD]);
+            Debug.Log(objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD);
+            Debug.Log(objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD);
+            Debug.Log(dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD]);
             /*for (int i = 0; i < fusions.Length; i++)
             {
                 //connaitre mon premier objet que je met
@@ -168,6 +210,7 @@ public class Etabli : MonoBehaviour
         }
         //dire que c'est vide
         pos1 = false;
+        pos2 = false;
         currentlyCrafting = false;
     }
     #endregion

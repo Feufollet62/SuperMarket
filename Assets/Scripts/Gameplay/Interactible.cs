@@ -112,7 +112,18 @@ public class Interactible : MonoBehaviour
 
         iD = dataObject.iD;
     }
-    
+    void Drop()
+    {
+        if (type == InteractType.Spawner || !_isHeld) return;
+        if (type == InteractType.Player) _thisPlayer.SetControllable(true);
+
+        _isHeld = false;
+        transform.SetParent(null, true);
+
+        _rb.isKinematic = true;
+        _collider.enabled = true;
+    }
+
     private void ActivateSpawner(PlayerController player)
     {
         if (type != InteractType.Spawner) return;

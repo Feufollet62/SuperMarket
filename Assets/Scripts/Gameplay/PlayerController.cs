@@ -271,6 +271,13 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
+    void DropItem()
+    {
+        if (!grabbing) return;
+        _grabbedObject = null;
+        grabbing = false;
+        
+    }
 
     private void Throw()
     {
