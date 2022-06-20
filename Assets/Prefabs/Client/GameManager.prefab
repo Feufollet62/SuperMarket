@@ -51,29 +51,29 @@ MonoBehaviour:
   clientSpawnPos: {fileID: 0}
   files:
   - positions:
-    - pos: {fileID: 0}
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
-      canOrder: 0
-      occupied: 1
-    - pos: {fileID: 0}
+      canOrder: 1
+      occupied: 0
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
       canOrder: 0
       occupied: 0
   - positions:
-    - pos: {fileID: 0}
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
       canOrder: 1
       occupied: 0
-    - pos: {fileID: 0}
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
       canOrder: 0
       occupied: 0
   - positions:
-    - pos: {fileID: 0}
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
       canOrder: 1
       occupied: 0
-    - pos: {fileID: 0}
+    - transform: {fileID: 0}
       currentClient: {fileID: 0}
       canOrder: 0
       occupied: 0
@@ -87,9 +87,10 @@ MonoBehaviour:
   prefabScreenWin: {fileID: 0}
   prefabScreenInGame: {fileID: 0}
   score: 0
-  dureePartie: 0
+  dureePartie: 300
   textScore: {fileID: 0}
   listeUI: []
   prefabUIEmplacement: {fileID: 0}
-  uICommande: {fileID: 0}
+  uICommande: {fileID: 3945187260307515549, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
+    type: 3}
   targetClient: 0

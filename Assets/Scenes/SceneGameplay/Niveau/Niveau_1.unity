@@ -271,17 +271,6 @@ PrefabInstance:
       objectReference: {fileID: 1139347771}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: uICommande
-      value: 
-      objectReference: {fileID: 3945187260307515549, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
-        type: 3}
-    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
-        type: 3}
-      propertyPath: dureePartie
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
-        type: 3}
       propertyPath: porteEntree
       value: 
       objectReference: {fileID: 2037786999}
@@ -322,32 +311,32 @@ PrefabInstance:
       objectReference: {fileID: 1471648977}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[0].positions.Array.data[0].pos
+      propertyPath: files.Array.data[0].positions.Array.data[0].transform
       value: 
       objectReference: {fileID: 2791846982700896108}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[0].positions.Array.data[1].pos
+      propertyPath: files.Array.data[0].positions.Array.data[1].transform
       value: 
       objectReference: {fileID: 2791846980899563304}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[1].positions.Array.data[0].pos
+      propertyPath: files.Array.data[1].positions.Array.data[0].transform
       value: 
       objectReference: {fileID: 7580337837217724999}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[1].positions.Array.data[1].pos
+      propertyPath: files.Array.data[1].positions.Array.data[1].transform
       value: 
       objectReference: {fileID: 7580337838151975756}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[2].positions.Array.data[0].pos
+      propertyPath: files.Array.data[2].positions.Array.data[0].transform
       value: 
       objectReference: {fileID: 5492039663109070755}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
-      propertyPath: files.Array.data[2].positions.Array.data[1].pos
+      propertyPath: files.Array.data[2].positions.Array.data[1].transform
       value: 
       objectReference: {fileID: 5492039663061702618}
     - target: {fileID: 694172216762316521, guid: b3f06c54c69cdbf408a8deec6b7c422d,
@@ -1832,12 +1821,12 @@ PrefabInstance:
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}
       propertyPath: controlSchemes.Array.data[0]
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}
       propertyPath: controlSchemes.Array.data[1]
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 326894495481292715, guid: d6b5777ebf0a6c24d8b9fe49695ccc36,
         type: 3}

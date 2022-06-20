@@ -4,18 +4,11 @@ using UnityEngine.AI;
 
 public enum ClientType {Normal, Presse, Vieux, Riche}
 
-public enum Position {Pos1, Pos2, APartir}
-
 namespace _Script{
 	public class ClientController : MonoBehaviour
 	{
 		#region Variables
-
-		public ClientType type = ClientType.Normal;
-		public Position PosActuelle = Position.Pos1;
-
-		// SO avec tous les modèles de joueur
-
+		
 		private int fileTarget;
 
 		[SerializeField] private float timeService = 20f;
@@ -31,9 +24,10 @@ namespace _Script{
 		public GameObject prefabUICommande;
 		private GameObject newClientUI;
 
-		public int iDAleatoire;
+		public int idCommande;
 		public ObjectData[] listeObject; // Part dans game manager
-		public bool iDEgal;
+
+		private PositionFile posActuelle;
 		
 		#endregion
 
@@ -44,7 +38,7 @@ namespace _Script{
 			manager = FindObjectOfType<GameManager>();
 			verifID = FindObjectOfType<IdVerif>();
 
-			iDAleatoire = Random.Range(0, listeObject.Length);
+			idCommande = Random.Range(0, listeObject.Length);
 
 			fileTarget = manager.targetClient;
 			
@@ -53,12 +47,12 @@ namespace _Script{
 
         private void Update()
         {
-            if (!manager.files[fileTarget].positions[0].occupied && PosActuelle == Position.Pos2)
+            if (!manager.files[fileTarget].positions[0].occupied && !posActuelle.canOrder) // Normalement on peut tej ça si le mnager nous assigne
             {
 				StartCoroutine(InQueue());
 			}
 		}
-
+        
         #endregion
 
         #region CustomFunction
@@ -72,19 +66,18 @@ namespace _Script{
 		}
 
 		IEnumerator TimeTravel()
-		{	
-			if (!manager.files[fileTarget].positions[0].occupied && !_premiereVerif)
+		{
+			PositionFile pos0 = manager.files[fileTarget].positions[0];
+			PositionFile pos1 = manager.files[fileTarget].positions[1];
+			
+			if (!pos0.occupied && !_premiereVerif)
 			{
-				agent.destination = manager.files[fileTarget].positions[0].pos.position;
-				manager.files[fileTarget].positions[0].occupied = true;
-				PosActuelle = Position.Pos1;
+				GoToPosition(pos0);
 				_firstPlace = true;
 			}
-			else if (manager.files[fileTarget].positions[0].occupied && !manager.files[fileTarget].positions[1].occupied && !_premiereVerif)
+			else if (pos0.occupied && !pos1.occupied && !_premiereVerif)
 			{
-				agent.destination = manager.files[fileTarget].positions[1].pos.position;
-				manager.files[fileTarget].positions[1].occupied = true;
-				PosActuelle = Position.Pos2;
+				GoToPosition(pos1);
 			}
 			
 			_premiereVerif = true;
@@ -97,10 +90,9 @@ namespace _Script{
 		}
 		IEnumerator InQueue()
         {
-			agent.destination = manager.files[fileTarget].positions[0].pos.position;
+			agent.destination = manager.files[fileTarget].positions[0].transform.position;
 			manager.files[fileTarget].positions[1].occupied = false;
 			manager.files[fileTarget].positions[0].occupied = true;
-			PosActuelle = Position.Pos1;
 			_firstPlace = true;
 
 			yield return new WaitForSeconds(3f);
@@ -114,7 +106,7 @@ namespace _Script{
 
 			ui.textNameClient.text = gameObject.name;
 			ui.timeClient.text = timeService.ToString();
-			ui.afficheObjet.sprite = listeObject[iDAleatoire].image;
+			ui.afficheObjet.sprite = listeObject[idCommande].image;
 
 			ui.gameObject.SetActive(true);
 			ui.transform.parent = manager.prefabUIEmplacement.transform;
@@ -133,7 +125,6 @@ namespace _Script{
 		public void ExitQueue()
 		{
 			verifID.clientsWait.Remove(this);
-			PosActuelle = Position.APartir;
 			manager.files[fileTarget].positions[0].occupied = false;
 			
             for (int i = 1; i < manager.listeUI.Count; i++)
@@ -175,7 +166,6 @@ namespace _Script{
 
 		public void SetupClient(ClientInfo info, int target)
 		{
-			type = info.type;
 			fileTarget = target;
 
 			MeshFilter mFilter = GetComponent<MeshFilter>();
@@ -187,6 +177,22 @@ namespace _Script{
 			gameObject.name = info.name;
 			timeService = info.time;
 		}
+
+		public void GoToPosition(PositionFile pos)
+		{
+			if(pos.occupied) return;
+
+			// On part de notre place actuelle et on la marque comme vide
+			posActuelle.occupied = false;
+
+			// On recup la nouvelle position
+			posActuelle = pos;
+			pos.currentClient = this;
+			pos.occupied = true;
+			
+			agent.destination = pos.transform.position;
+		}
+		
 		#endregion
 	}
 }

@@ -19,7 +19,7 @@ namespace _Script
         {
             for (int i = 0; i < clientsWait.Count; i++)
             {
-                if (clientsWait[i].iDAleatoire == interactible.iD)
+                if (clientsWait[i].idCommande == interactible.iD)
                 {
                     gM.score++;
                     clientsWait[i].ExitQueue();
