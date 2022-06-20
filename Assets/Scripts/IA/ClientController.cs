@@ -9,8 +9,6 @@ namespace _Script{
 	{
 		#region Variables
 		
-		private int fileTarget;
-
 		[SerializeField] private float timeService = 20f;
 		[SerializeField] private int posClientRandom;
 		private GameManager manager;
@@ -28,26 +26,27 @@ namespace _Script{
 		public ObjectData[] listeObject; // Part dans game manager
 
 		private PositionFile posActuelle;
+
+		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		private int fileTarget = 0;
 		
 		#endregion
 
 		#region Builtin Methods 
-		void Start()
+		private void Awake()
 		{
 			agent = GetComponent<NavMeshAgent>();
 			manager = FindObjectOfType<GameManager>();
 			verifID = FindObjectOfType<IdVerif>();
 
 			idCommande = Random.Range(0, listeObject.Length);
-
-			fileTarget = manager.targetClient;
 			
 			StartCoroutine(nameof(EnterShop));
 		}
 
         private void Update()
         {
-            if (!manager.files[fileTarget].positions[0].occupied && !posActuelle.canOrder) // Normalement on peut tej ça si le mnager nous assigne
+            if (!posActuelle.occupied && !posActuelle.canOrder) // Normalement on peut tej ça si le manager nous assigne
             {
 				StartCoroutine(InQueue());
 			}
@@ -164,9 +163,9 @@ namespace _Script{
 			Destroy(gameObject);
 		}
 
-		public void SetupClient(ClientInfo info, int target)
+		public void SetupClient(ClientInfo info, PositionFile target)
 		{
-			fileTarget = target;
+			GoToPosition(target);
 
 			MeshFilter mFilter = GetComponent<MeshFilter>();
 			MeshRenderer mRender = GetComponent<MeshRenderer>();

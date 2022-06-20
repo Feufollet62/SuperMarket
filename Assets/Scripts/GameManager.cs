@@ -70,8 +70,6 @@ namespace _Script{
 		public GameObject prefabUIEmplacement;
 		public Transform uICommande;
 		
-		public int targetClient; // à remplacer
-		
 		#endregion
 
 		#region Builtin Methods
@@ -114,23 +112,17 @@ namespace _Script{
 			if (!(limitSpawn < 0) || clientList.Count > 6) return;
 			
 			int typeClient = Random.Range(0, clientData.clientInfos.Length);
-			targetClient   = Random.Range(0, files.Length);
-			
-			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
-			{
-				targetClient = Random.Range(0, files.Length);
-			}
 			
 			ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
 			clientList.Add(newClient);
 			
 			newClient.transform.parent = transform;
-			newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
+			newClient.SetupClient(clientData.clientInfos[typeClient], GetBestPos());
 					
 			limitSpawn = cooldownSpawn;
         }
 		
-		// C'est de la merde la comp avec Null
+		// C'est pas opti la comp avec Null
 		private PositionFile GetBestPos()
 		{
 			PositionFile bestPos = null;
