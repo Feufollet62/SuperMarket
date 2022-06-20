@@ -10,7 +10,7 @@ public class Etabli : MonoBehaviour
 
     // Recettes possibles sur cet etabli
     [SerializeField] private FusionData[] fusions;
-    [SerializeField] private Interactible interactible;
+   
 
     // Positions de placement des objets
     [SerializeField] private Transform posObjet1;
