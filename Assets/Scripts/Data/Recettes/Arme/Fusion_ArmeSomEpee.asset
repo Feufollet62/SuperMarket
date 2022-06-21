@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f796988a2a5c740bd4e5e5c5bfbf8f, type: 3}
-  m_Name: Fusion_PotionRouge
+  m_Name: Fusion_ArmeSomEpee
   m_EditorClassIdentifier: 
-  objetFusion1: {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
-  objetFusion2: {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
-  objetResult: {fileID: 8751332412729959243, guid: 6567a8551927b094bae6eb88e83f6047,
-    type: 3}
+  objetFusion1: {fileID: 11400000, guid: 7533d95d24400a14a910d15d3538858f, type: 2}
+  objetFusion2: {fileID: 11400000, guid: cf04cd8b87b213b488bffe63bc28bcec, type: 2}
+  objetResult: {fileID: 11400000, guid: 422b288af635988469a0f06b0c238fd2, type: 2}

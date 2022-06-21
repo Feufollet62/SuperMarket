@@ -2029,6 +2029,22 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 0}
+  fusions:
+  - {fileID: 11400000, guid: 756a97f48ee344a41a3574d8b9bd2ae4, type: 2}
+  - {fileID: 11400000, guid: b0839a11f744bf7488a866f1aa1435e1, type: 2}
+  - {fileID: 11400000, guid: 5e18f5e182ffb934eb4b5148edf0be72, type: 2}
+  - {fileID: 11400000, guid: 4ec1ae6c7276b6f4ca859fc8b1d36f74, type: 2}
+  - {fileID: 11400000, guid: 0b6710d92d5e6d847870979b93e36236, type: 2}
+  - {fileID: 11400000, guid: cde16174f5a4c1c4eab8c3765270fc4f, type: 2}
+  - {fileID: 11400000, guid: 7282147462ce1774bb1cbd05f8bd8fb3, type: 2}
+  - {fileID: 11400000, guid: 929ed4d1afe54174ea453e76761b4927, type: 2}
+  - {fileID: 11400000, guid: 232e609ddf0280946bcf8695eea19360, type: 2}
+  - {fileID: 11400000, guid: 04ab33f34758e1748a5fe1e61e3e3338, type: 2}
+  - {fileID: 11400000, guid: 9a076e10c549e304abee85333f51ddb0, type: 2}
+  - {fileID: 11400000, guid: 791b5f870b052db4894f84a5b09f75d3, type: 2}
   ObjectsFusionable:
   - {fileID: 11400000, guid: 6f1d8b10fbe09054f8aad116055630fa, type: 2}
   - {fileID: 11400000, guid: 28d729a720421f041911debe01882a22, type: 2}
@@ -2047,6 +2063,7 @@ MonoBehaviour:
   posObjet2: {fileID: 1185167141}
   posRejet: {fileID: 1293670159}
   timeToCraft: 2
+  objetsSurEtabli: []
 --- !u!1 &1096699559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,12 +2798,17 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 0}
+  fusions: []
   ObjectsFusionable: []
   isAlchimisteTable: 0
   posObjet1: {fileID: 0}
   posObjet2: {fileID: 0}
   posRejet: {fileID: 0}
   timeToCraft: 0
+  objetsSurEtabli: []
 --- !u!1001 &1410358884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2889,6 +2911,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1410358884}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1421608319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421608320}
+  - component: {fileID: 1421608324}
+  - component: {fileID: 1421608323}
+  - component: {fileID: 1421608322}
+  - component: {fileID: 1421608321}
+  m_Layer: 0
+  m_Name: PassePlat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1421608320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421608319}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 16.2, y: 0.43, z: 4.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2094601854}
+  m_Father: {fileID: 1897727957}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1421608321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421608319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  throwablePrefab: {fileID: 0}
+  dataObject: {fileID: 0}
+  iD: 0
+  imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 63421433}
+  posPassePlat: {fileID: 2094601854}
+  fusions: []
+  ObjectsFusionable: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
+  objetsSurEtabli: []
+--- !u!65 &1421608322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421608319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1421608323
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421608319}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1421608324
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421608319}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1466394254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +4008,7 @@ Transform:
   - {fileID: 1096699560}
   - {fileID: 1002487736}
   - {fileID: 1939070851}
+  - {fileID: 1421608320}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4180,6 +4330,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044716478}
   m_CullTransparentMesh: 1
+--- !u!1 &2094601853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094601854}
+  m_Layer: 0
+  m_Name: posPausePlat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094601854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094601853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.075, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1421608320}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265635208489818478
 GameObject:
   m_ObjectHideFlags: 0

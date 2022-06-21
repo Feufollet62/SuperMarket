@@ -3,66 +3,71 @@ using UnityEngine.InputSystem;
 
 public enum ControlScheme {ControllerFull, ControllerHalfL, ControllerHalfR, KeyboardFull, KeyboardHalfL, KeyboardHalfR, None}
 
-public class PlayerManager : MonoBehaviour
+namespace _Script
 {
-    public static PlayerManager Instance; // Singleton
-    
-    [SerializeField] private ControlScheme[] controlSchemes /*= new ControlScheme[4]*/; // Remplir ce truc dans les menus avant de lancer la scene
-    public PlayerController[] currentPlayers = new PlayerController[4];
-    
-    public Transform[] spawnPoints;
-    [SerializeField] private GameObject playerPrefab;
-    private AcceptPlaying sM;
-    private int maxPlayer;
-
-    private void Start()
+    public class PlayerManager : MonoBehaviour
     {
-        sM = FindObjectOfType<AcceptPlaying>();
+        public static PlayerManager Instance; // Singleton
 
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-        SpawnPlayers();
-    }
+        [SerializeField] private ControlScheme[] controlSchemes /*= new ControlScheme[4]*/; // Remplir ce truc dans les menus avant de lancer la scene
+        public PlayerController[] currentPlayers = new PlayerController[4];
 
-    private void SpawnPlayers()
-    {
-        for (int i = 0; i < controlSchemes.Length; i++)
-        {
-            ControlScheme scheme = controlSchemes[i];
+        public Transform[] spawnPoints;
+        [SerializeField] private GameObject playerPrefab;
+        private AcceptPlaying sM;
+        private int maxPlayer;
 
-            // Which pad is solo and which isn't ?
-            switch (scheme)
+        private void Start()
+        {
+            sM = FindObjectOfType<AcceptPlaying>();
+
+            if (Instance == null)
             {
-                case ControlScheme.ControllerFull:
-                    CreateNewPlayer(Gamepad.all[0]);
-                    break;
-                case ControlScheme.ControllerHalfL: case ControlScheme.ControllerHalfR:
-                    CreateNewPlayer(Gamepad.all[0]);
-                    break;
-                case ControlScheme.KeyboardFull:
-                    CreateNewPlayer(Keyboard.current);
-                    break;
-                case ControlScheme.KeyboardHalfL: case ControlScheme.KeyboardHalfR:
-                    CreateNewPlayer(Keyboard.current);
-                    break;
-                case ControlScheme.None:
-                    break;
+                Instance = this;
             }
-            
-            void CreateNewPlayer(InputDevice device)
+            else
             {
-                PlayerController newPlayer = PlayerInput.Instantiate(playerPrefab, controlScheme: scheme.ToString(), pairWithDevice: device).GetComponent<PlayerController>();
-                newPlayer.id = i;
-                newPlayer.transform.position = spawnPoints[i].position;
+                Destroy(gameObject);
+            }
 
-                currentPlayers[i] = newPlayer;
+            SpawnPlayers();
+        }
+
+        private void SpawnPlayers()
+        {
+            for (int i = 0; i < controlSchemes.Length; i++)
+            {
+                ControlScheme scheme = controlSchemes[i];
+
+                // Which pad is solo and which isn't ?
+                switch (scheme)
+                {
+                    case ControlScheme.ControllerFull:
+                        CreateNewPlayer(Gamepad.all[0]);
+                        break;
+                    case ControlScheme.ControllerHalfL:
+                    case ControlScheme.ControllerHalfR:
+                        CreateNewPlayer(Gamepad.all[0]);
+                        break;
+                    case ControlScheme.KeyboardFull:
+                        CreateNewPlayer(Keyboard.current);
+                        break;
+                    case ControlScheme.KeyboardHalfL:
+                    case ControlScheme.KeyboardHalfR:
+                        CreateNewPlayer(Keyboard.current);
+                        break;
+                    case ControlScheme.None:
+                        break;
+                }
+
+                void CreateNewPlayer(InputDevice device)
+                {
+                    PlayerController newPlayer = PlayerInput.Instantiate(playerPrefab, controlScheme: scheme.ToString(), pairWithDevice: device).GetComponent<PlayerController>();
+                    newPlayer.id = i;
+                    newPlayer.transform.position = spawnPoints[i].position;
+
+                    currentPlayers[i] = newPlayer;
+                }
             }
         }
     }

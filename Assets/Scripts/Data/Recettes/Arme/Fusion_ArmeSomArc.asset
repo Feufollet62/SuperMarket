@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f796988a2a5c740bd4e5e5c5bfbf8f, type: 3}
+  m_Name: Fusion_ArmeSomArc
+  m_EditorClassIdentifier: 
+  objetFusion1: {fileID: 11400000, guid: e1bb58ab6901ff149b3ac2bd828d0e61, type: 2}
+  objetFusion2: {fileID: 11400000, guid: cf04cd8b87b213b488bffe63bc28bcec, type: 2}
+  objetResult: {fileID: 11400000, guid: 3fa4a9a394a352245ab70bdb17a238d6, type: 2}

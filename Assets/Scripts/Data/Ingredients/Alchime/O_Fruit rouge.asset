@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
-  m_Name: Arc
+  m_Name: O_Fruit rouge
   m_EditorClassIdentifier: 
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: cd8b4788655b2cc4f80cc640ea420752, type: 2}
-  iD: 6
-  image: {fileID: 0}
-  name: Arc
+  model: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: fc2405625610d8142ad05af6f5b9ffdf, type: 2}
+  iD: 1
+  image: {fileID: 21300000, guid: a57d88f676df6b74093f3e5b4867b97c, type: 3}
+  name: "Fruit \xE0 piques rouge"
   craftable: 1
-  weapon: 1
+  weapon: 0
