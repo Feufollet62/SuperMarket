@@ -292,10 +292,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  objetPrefab: {fileID: 0}
+  throwablePrefab: {fileID: 0}
   dataObject: {fileID: 0}
-  iD: 0
-  imageObjet: {fileID: 21300000, guid: 76a42ebeeb1415f40a5d0f797103e5a8, type: 3}
+  iD: 9
+  imageObjet: {fileID: 0}
 --- !u!33 &8751332412729959232
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8751332412729959243}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8751332412729959233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 03dfabb01654d27458827a9618868799, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

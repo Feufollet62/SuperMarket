@@ -2023,10 +2023,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c8ea69062376f4ca9c8b370e152a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fusions:
-  - {fileID: 11400000, guid: 756a97f48ee344a41a3574d8b9bd2ae4, type: 2}
-  - {fileID: 11400000, guid: 4ec1ae6c7276b6f4ca859fc8b1d36f74, type: 2}
-  interactible: {fileID: 0}
+  ObjectsFusionable:
+  - {fileID: 11400000, guid: 6f1d8b10fbe09054f8aad116055630fa, type: 2}
+  - {fileID: 11400000, guid: 28d729a720421f041911debe01882a22, type: 2}
+  - {fileID: 11400000, guid: 87383ca28c460fe4bb369c1fbb822dc3, type: 2}
+  - {fileID: 11400000, guid: 7088662762168ce46b1a3b2f89d214ae, type: 2}
+  - {fileID: 11400000, guid: 38c773265196de04c98c173b73c2864c, type: 2}
+  - {fileID: 11400000, guid: d068dfe4204c0b547a03542ff6e550f9, type: 2}
+  - {fileID: 11400000, guid: 3b17b375a06bff04bb5c635acc4f5520, type: 2}
+  - {fileID: 11400000, guid: 4183fcecdaa94c840a3e01a8c9bfaa9e, type: 2}
+  - {fileID: 11400000, guid: 09b696f19ffdda14d8cb6b3ef2533023, type: 2}
+  - {fileID: 11400000, guid: 3fa4a9a394a352245ab70bdb17a238d6, type: 2}
+  - {fileID: 11400000, guid: 426fe354e2bcdb647a26e1576cf0a9b1, type: 2}
+  - {fileID: 11400000, guid: 422b288af635988469a0f06b0c238fd2, type: 2}
+  throwablePrefab: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0,
+    type: 3}
+  isAlchimisteTable: 0
   posObjet1: {fileID: 12429672}
   posObjet2: {fileID: 1185167141}
   posRejet: {fileID: 1293670159}

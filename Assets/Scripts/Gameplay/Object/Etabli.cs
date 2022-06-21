@@ -6,11 +6,22 @@ public class Etabli : MonoBehaviour
 {
     #region Variables
 
-    int[,] dataarrey = new int[,] {  { 17,14 }, { 19, 16}, { 18, 15} };
+    int[,] dataarrey = new int[,] {  
+        { 8,11,13,0,0,0,0,0 }, 
+        { 11,9,12,0,0,0,0,0 }, 
+        { 13,12,10,0,0,0,0,0},
+        { 0,0,0,0,0,17,19,18},
+        { 0,0,0,0,0,14,16,15},
+        { 0,0,0,17,14,0,0,0 },
+        { 0,0,0,19,16,0,0,0 },
+        { 0,0,0,18,15,0,0,0 }};
 
     // Recettes possibles sur cet etabli
-    [SerializeField] private FusionData[] fusions;
-   
+    //[SerializeField] private FusionData[] fusions;
+    [SerializeField] private ObjectData[] ObjectsFusionable;
+    [SerializeField] private GameObject throwablePrefab;
+
+    [SerializeField] private bool isAlchimisteTable;
 
     // Positions de placement des objets
     [SerializeField] private Transform posObjet1;
@@ -24,7 +35,7 @@ public class Etabli : MonoBehaviour
     [SerializeField] private List<GameObject> objetsSurEtabli;
 
     // Conditions pour :
-    
+
     // Savoir si la première place est prise
     private bool pos1 = false;
     private bool pos2 = false;
@@ -89,71 +100,152 @@ public class Etabli : MonoBehaviour
         }*/
         if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
         {
-            if (other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            /*
+            if (!isAlchimisteTable)
             {
-                //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
-                //j'ajoute un objet dans ma liste
-                objetsSurEtabli.Add(other.gameObject);
-                //destruction de ma liste
-                //Destroy(other.gameObject);
-                //creation d'un objet pour animé 
-                if (!pos1)
+                if (other.gameObject.GetComponent<Interactible>().dataObject.weapon)
                 {
-                    objetsSurEtabli[0].GetComponent<SphereCollider>().enabled = false;
-                    objetsSurEtabli[0].transform.position = posObjet1.position;
-                    //Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
-                    objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
-                    objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                    //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                    //j'ajoute un objet dans ma liste
+                    objetsSurEtabli.Add(other.gameObject);
+                    //destruction de ma liste
                     //Destroy(other.gameObject);
-                    pos1 = true;
-                }/*
-                else
+                    //creation d'un objet pour animé 
+                    if (pos2)
+                    {
+                        objetsSurEtabli[1].GetComponent<Collider>().enabled = false;
+                        objetsSurEtabli[1].transform.position = posObjet1.position;
+                        //Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+                        objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
+                        objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
+                        //Destroy(other.gameObject);
+                        pos1 = true;
+                    }
+                    else
+                    {
+                        objetsSurEtabli[0].GetComponent<Collider>().enabled = false;
+                        objetsSurEtabli[0].transform.position = posObjet1.position;
+                        //Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+                        objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
+                        objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                        //Destroy(other.gameObject);
+                        pos1 = true;
+                    }
+
+                }
+                if (!other.gameObject.GetComponent<Interactible>().dataObject.weapon)
                 {
-                    objetsSurEtabli[1].GetComponent<SphereCollider>().enabled = false;
-                    objetsSurEtabli[1].transform.position = posObjet1.position;
-                    //Item1 = Instantiate(objetsSurEtabli[1], posObjet1.position, posObjet1.rotation);
-                    objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
-                    objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
+                    //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                    //j'ajoute un objet dans ma liste
+                    objetsSurEtabli.Add(other.gameObject);
+                    //destruction de ma liste
                     //Destroy(other.gameObject);
-                }*/
-                //ma place une est prise
+                    //creation d'un objet pour animé 
+                    if (pos1)
+                    {
+                        objetsSurEtabli[1].GetComponent<Collider>().enabled = false;
+                        objetsSurEtabli[1].transform.position = posObjet2.position;
+                        //Item2 = Instantiate(objetsSurEtabli[0], posObjet2.position, posObjet2.rotation);
+                        objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
+                        objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
+                        //Destroy(other.gameObject);
+                        pos2 = true;
+                    }
+                    else
+                    {
+                    objetsSurEtabli[0].GetComponent<Collider>().enabled = false;
+                        objetsSurEtabli[0].transform.position = posObjet2.position;
+                        //Item2 = Instantiate(objetsSurEtabli[1], posObjet2.position, posObjet2.rotation);
+                        objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
+                        objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                        //Destroy(other.gameObject);
+                        pos2 = true;
+                    }
+                    //on se met en fabrication
+                    currentlyCrafting = true;
+                    //lancement de la fabrique
+                    if (pos1 && pos2)
+                    {
+                        StartCoroutine(FusionObjet());
+                    }
+                }
+            
                 
             }
-            if (!other.gameObject.GetComponent<Interactible>().dataObject.weapon)
+            if (isAlchimisteTable)
             {
-                //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
-                //j'ajoute un objet dans ma liste
-                objetsSurEtabli.Add(other.gameObject);
-                //destruction de ma liste
-                //Destroy(other.gameObject);
-                //creation d'un objet pour animé 
-                if (!pos2)
+                if (pos1)
                 {
-                    objetsSurEtabli[0].GetComponent<SphereCollider>().enabled = false;
-                    objetsSurEtabli[0].transform.position = posObjet2.position;
+                    //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                    //j'ajoute un objet dans ma liste
+
+                    //destruction de ma liste
+                    //Destroy(other.gameObject);
+                    //creation d'un objet pour animé 
+                    other.gameObject.GetComponent<Collider>().enabled = false;
+
+                    other.gameObject.transform.position = posObjet2.position;
                     //Item2 = Instantiate(objetsSurEtabli[0], posObjet2.position, posObjet2.rotation);
-                    objetsSurEtabli[0].GetComponent<Rigidbody>().useGravity = false;
-                    objetsSurEtabli[0].GetComponent<Rigidbody>().isKinematic = true;
+                    other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     //Destroy(other.gameObject);
                     pos2 = true;
-                }/*
-                else
-                {
-                    objetsSurEtabli[1].GetComponent<SphereCollider>().enabled = false;
-                    objetsSurEtabli[1].transform.position = posObjet2.position;
-                    //Item2 = Instantiate(objetsSurEtabli[1], posObjet2.position, posObjet2.rotation);
-                    objetsSurEtabli[1].GetComponent<Rigidbody>().useGravity = false;
-                    objetsSurEtabli[1].GetComponent<Rigidbody>().isKinematic = true;
-                    //Destroy(other.gameObject);
-                }*/
-                //on se met en fabrication
-                currentlyCrafting = true;
-                //lancement de la fabrique
-                if (pos1 && pos2)
-                {
-                    StartCoroutine(FusionObjet());
+                    objetsSurEtabli.Add(other.gameObject);
                 }
-                
+                if (!pos1)
+                {
+                    //other.gameObject.GetComponent<Interactible>().dataObject.craftable = false;
+                    //j'ajoute un objet dans ma liste
+
+                    //destruction de ma liste
+                    //Destroy(other.gameObject);
+                    //creation d'un objet pour animé 
+                    other.gameObject.GetComponent<Collider>().enabled = false;
+
+                    other.gameObject.transform.position = posObjet1.position;
+                    //Item1 = Instantiate(objetsSurEtabli[0], posObjet1.position, posObjet1.rotation);
+                    other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    //Destroy(other.gameObject);
+                    pos1 = true;
+                    objetsSurEtabli.Add(other.gameObject);
+                }
+                    //ma place une est prise
+
+            }*/
+            if (!other.gameObject.GetComponent<Interactible>().dataObject.pos1)
+            {
+                Debug.Log("je pose un Objet 1");
+                Item1 = other.gameObject;
+                //Item1.GetComponent<Collider>().enabled = false;
+                Item1.transform.position = posObjet1.position;
+                //Item1.GetComponent<Rigidbody>().useGravity = false;
+                Item1.GetComponent<Rigidbody>().isKinematic = true;
+                Item1.GetComponent<Interactible>().dataObject.pos1 = true;
+                pos1 = true;
+                objetsSurEtabli.Add(other.gameObject);
+            }
+            Debug.Log("je capte un Objet");
+            if (Item1.GetComponent<Interactible>().dataObject.pos1)
+            {
+                Debug.Log("je pose un Objet 2");
+                Item2 = other.gameObject;
+                //Item1.GetComponent<Collider>().enabled = false;
+                Item2.transform.position = posObjet2.position;
+                //Item1.GetComponent<Rigidbody>().useGravity = false;
+                Item2.GetComponent<Rigidbody>().isKinematic = true;
+                pos2 = true;
+                objetsSurEtabli.Add(other.gameObject);
+            }
+            
+            
+            //on se met en fabrication
+            currentlyCrafting = true;
+            //lancement de la fabrique
+            if (pos1 && pos2)
+            {
+                Item1.GetComponent<Interactible>().dataObject.pos1 = false;
+                StartCoroutine(FusionObjet());
             }
         }
     }
@@ -169,6 +261,26 @@ public class Etabli : MonoBehaviour
             Debug.Log(objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD);
             Debug.Log(objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD);
             Debug.Log(dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD]);
+
+            for (int i = 0; i < ObjectsFusionable.Length; i++)
+            {
+                if (ObjectsFusionable[i].iD == dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD])
+                {
+                    Interactible newObject = Instantiate(throwablePrefab, posRejet).GetComponent<Interactible>();
+                    newObject.SetupThrowable(ObjectsFusionable[i]);
+
+                    MeshFilter mFilter = throwablePrefab.GetComponent<MeshFilter>();
+                    MeshRenderer mRender = throwablePrefab.GetComponent<MeshRenderer>();
+
+                    mFilter.sharedMesh = ObjectsFusionable[i].model;
+                    mRender.sharedMaterial = ObjectsFusionable[i].material;
+
+                    gameObject.name = ObjectsFusionable[i].name;
+                    throwablePrefab.GetComponent<Interactible>().imageObjet = ObjectsFusionable[i].image;
+
+                    throwablePrefab.GetComponent<Interactible>().iD = ObjectsFusionable[i].iD;
+                }
+            }
             /*for (int i = 0; i < fusions.Length; i++)
             {
                 //connaitre mon premier objet que je met

@@ -195,24 +195,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  ActPos: 0
+  PosActuelle: 0
   timeService: 30
   posClientRandom: 0
-  clientData: {fileID: 11400000, guid: 6bb5344011f80274e81c82fefcf979e5, type: 2}
-  gM: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d, type: 3}
-  verifID: {fileID: 2177623884564316787, guid: 9ad07d2339acbaa43aa417db1161bead, type: 3}
-  intPosBaseClient: 0
-  agent: {fileID: -3699083752858148782}
   prefabUICommande: {fileID: 3945187260307515550, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
     type: 3}
-  prefabUIEmplacement: {fileID: 7231960651243887471, guid: ad23779d07e32da42bfdb25e7e185ad5,
-    type: 3}
-  baseCommande: {fileID: 2795994132098098510, guid: da824e87edcf8604e881ef5b9f421d7e,
-    type: 3}
-  iDaleatoire: 0
+  iDAleatoire: 0
   listeObject:
-  - {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0, type: 3}
-  - {fileID: 8751332412729959243, guid: c3f6772fa7c10cd4885e98c919ca3d51, type: 3}
+  - {fileID: 11400000, guid: d1590e00bfb60ef448f2cde2d629a60a, type: 2}
+  - {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
+  - {fileID: 11400000, guid: 778428d13e9c19746b10d2d7fff727d5, type: 2}
   iDEgal: 0
 --- !u!195 &-3699083752858148782
 NavMeshAgent:
