@@ -6,17 +6,13 @@ public class Interactible : MonoBehaviour
 {
     public InteractType type;
     
-    // Bientôt un editor script pour ça
+    // Bientôt un editor script pour ça ?
     
     // Seulement pour les spawners: prefab throwable
     [SerializeField] public GameObject throwablePrefab;
-    
 
     // Seulement pour les throwables / players
-    public ObjectData dataObject;
-    public float iD;
-    
-    public Sprite imageObjet;
+    public ObjectData data;
     
     private Rigidbody _rb;
     private Collider _collider;
@@ -95,22 +91,19 @@ public class Interactible : MonoBehaviour
         _rb.AddForce(force,ForceMode.Impulse);
     }
 
-    public void SetupThrowable(ObjectData data) // Faire setup global avec switch case plz
+    public void SetupThrowable(ObjectData newData) // Faire setup global avec switch case plz
     {
         if(type != InteractType.Throwable) return;
 
-        dataObject = data;
+        data = newData;
         
         MeshFilter mFilter = GetComponent<MeshFilter>();
         MeshRenderer mRender = GetComponent<MeshRenderer>();
 
-        mFilter.sharedMesh = dataObject.model;
-        mRender.sharedMaterial = dataObject.material;
+        mFilter.sharedMesh = data.model;
+        mRender.sharedMaterial = data.material;
 
-        gameObject.name = dataObject.name;
-        imageObjet = dataObject.image;
-
-        iD = dataObject.iD;
+        gameObject.name = data.name;
     }
     
     private void ActivateSpawner(PlayerController player)
@@ -118,7 +111,7 @@ public class Interactible : MonoBehaviour
         if (type != InteractType.Spawner) return;
 
         Interactible newObject = Instantiate(throwablePrefab).GetComponent<Interactible>();
-        newObject.SetupThrowable(dataObject);
+        newObject.SetupThrowable(data);
 
         player._grabbedObject = newObject;
         newObject.PickUp(player.grabPoint);

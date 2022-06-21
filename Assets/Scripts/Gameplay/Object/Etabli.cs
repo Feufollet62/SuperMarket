@@ -47,7 +47,7 @@ public class Etabli : MonoBehaviour
         // Que la fabrication n'est pas en cours
         // Et si les objet sont craftable
         
-        if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().dataObject.craftable)
+        if (other.gameObject.CompareTag("Object") && !currentlyCrafting && other.gameObject.GetComponent<Interactible>().data.craftable)
         {
             //si ma 1ere place n'est pas prise
             if (!pos1)
@@ -87,19 +87,19 @@ public class Etabli : MonoBehaviour
             for (int i = 0; i < fusions.Length; i++)
             {
                 //connaitre mon premier objet que je met
-                if (Item1.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion1.iD ||
-                    Item1.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion2.iD)
+                if (Item1.GetComponent<Interactible>().data.iD == fusions[i].objetFusion1.iD ||
+                    Item1.GetComponent<Interactible>().data.iD == fusions[i].objetFusion2.iD)
                 {
                     //mon item est bon
                     item1Verif = true;
                 }
                 //connaitre mon deuxieme objet que je met
-                if (Item2.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion1.iD ||
-                    Item2.GetComponent<Interactible>().dataObject.iD == fusions[i].objetFusion2.iD)
+                if (Item2.GetComponent<Interactible>().data.iD == fusions[i].objetFusion1.iD ||
+                    Item2.GetComponent<Interactible>().data.iD == fusions[i].objetFusion2.iD)
                 {
                     //mon second item est bon
                     item2Verif = true;
-                    newItem = Instantiate(fusions[i].objetResult, posRejet.position, posRejet.rotation);
+                    //newItem = Instantiate(fusions[i].objetResult, posRejet.position, posRejet.rotation);
                 }
                 //pour plus tard pour des objet complexe comme deux objet different
                 /*

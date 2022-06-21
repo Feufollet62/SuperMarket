@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)">
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Characters/Diamond.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Characters/Diamond.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Characters/PlayerBody1 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Characters/PlayerBody1 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/DiamNormal.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/DiamNormal.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_AlbedoTransparency.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_AlbedoTransparency.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_Emission.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_Emission.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diamant_DefaultMaterial_Normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diams.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Diams.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/LICENSE.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/README.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared/Shaders/Outline.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared/Shaders/Outline.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared/Shaders/TransparentOutline.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Shared/Shaders/TransparentOutline.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestBody.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestBody.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestHands.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestHands.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestHead.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/TestHead.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp/Shaders/Urp_FcsCelLighting.hlsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp/Shaders/Urp_FcsCelLighting.hlsl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp/Shaders/Urp_FlexibleCelShader.shadergraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/zPillage/AutreShader/Urp/Shaders/Urp_FlexibleCelShader.shadergraph.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Characters/Garou/GarouHead.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Characters/Garou/GarouHead.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/FusionData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/FusionData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/IdVerif.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IA/ClientController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/Albedo.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/Albedo.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +66,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DevEliot" />
+        <entry key="$PROJECT_DIR$" value="DevCorentin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,7 +75,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,6 +161,8 @@
       <workItem from="1655397301656" duration="4790000" />
       <workItem from="1655449626951" duration="368000" />
       <workItem from="1655557956262" duration="192000" />
+      <workItem from="1655724043981" duration="6338000" />
+      <workItem from="1655796707109" duration="6045000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -249,7 +304,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655563194828</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Netoyage+++&#10;(Oui y'a des erreurs rouges)">
+      <created>1655727318819</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655727318819</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ajout shaders + textures + models">
+      <created>1655734798644</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1655734798644</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fin de journée">
+      <created>1655734813710</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655734813710</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +379,10 @@
     <MESSAGE value="Oups oubli" />
     <MESSAGE value="Renommage client1 en client&#10;Suite du nettoyage&#10;Debut d'utilisation de la liste de clients du GameManager" />
     <MESSAGE value="Enleve des prefabs inutiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enleve des prefabs inutiles" />
+    <MESSAGE value="Netoyage+++&#10;(Oui y'a des erreurs rouges)" />
+    <MESSAGE value="Ajout shaders + textures + models" />
+    <MESSAGE value="Fin de journée" />
+    <MESSAGE value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
   </component>
 </project>

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GarouHead
+  m_Name: PlayerBody1 1
   m_Shader: {fileID: -6465566751694194690, guid: bf36778a400a0894b86a1f49c422fa62,
     type: 3}
   m_ValidKeywords: []
@@ -26,18 +26,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: ef6a62d784bb50d4bbbdfbda933c199c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c31172d2d73820240b4244c82ad40f34, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
-        m_Texture: {fileID: 2800000, guid: e624d5c5b40a5d34d94089f33570a14b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ToonLightingModel_476222baf740f884bb3c8037fd266322_NormalMap_894258242:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -58,11 +50,11 @@ Material:
     - Vector1_8606F96E: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.2
+    - _Smoothness: 0.6
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.02745098}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.23529412}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5847583673491931169

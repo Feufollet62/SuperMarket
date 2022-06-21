@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,12 @@ namespace _Script
 {
     public class IdVerif : MonoBehaviour
     {
-        [SerializeField] public List<ClientController> clientsWait; // chez le GM y'a la même
-        [SerializeField] public GameManager gM;
+        private GameManager gM;
+
+        private void Awake()
+        {
+            gM = FindObjectOfType<GameManager>();
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -15,14 +20,14 @@ namespace _Script
                 VerificationID(other.gameObject.GetComponent<Interactible>());
             }
         }
-        void VerificationID(Interactible interactible)
+        private void VerificationID(Interactible interactible)
         {
-            for (int i = 0; i < clientsWait.Count; i++)
+            for (int i = 0; i < gM.clientList.Count; i++)
             {
-                if (clientsWait[i].idCommande == interactible.iD)
+                if (gM.clientList[i].idCommande == interactible.data.iD)
                 {
                     gM.score++;
-                    clientsWait[i].ExitQueue();
+                    gM.clientList[i].ExitQueue();
                 }
             }
         }

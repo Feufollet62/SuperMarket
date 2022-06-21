@@ -114,8 +114,6 @@ namespace _Script{
 			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?
 			manager.listeUI.Add(newClientUI);
 
-			verifID.clientsWait.Add(this);
-
 			yield return new WaitForSeconds(timeService);
 			
 			ExitQueue();
@@ -123,7 +121,7 @@ namespace _Script{
 
 		public void ExitQueue()
 		{
-			verifID.clientsWait.Remove(this);
+			//verifID.clientsWait.Remove(this);
 			manager.files[fileTarget].positions[0].occupied = false;
 			
             for (int i = 1; i < manager.listeUI.Count; i++)
