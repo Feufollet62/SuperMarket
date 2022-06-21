@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12429672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1665,7 +1665,7 @@ GameObject:
   - component: {fileID: 877021235}
   - component: {fileID: 877021234}
   - component: {fileID: 877021233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1696,7 +1696,7 @@ BoxCollider:
   m_GameObject: {fileID: 877021231}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1970,9 +1970,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002487736}
-  - component: {fileID: 1002487738}
   - component: {fileID: 1002487737}
-  m_Layer: 0
+  - component: {fileID: 1002487739}
+  m_Layer: 8
   m_Name: Laboratoire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2006,12 +2006,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002487735}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1002487738
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1002487739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2020,9 +2020,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1002487735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8c8ea69062376f4ca9c8b370e152a37, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 5
+  throwablePrefab: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0,
+    type: 3}
+  dataObject: {fileID: 0}
+  iD: 0
+  imageObjet: {fileID: 0}
   ObjectsFusionable:
   - {fileID: 11400000, guid: 6f1d8b10fbe09054f8aad116055630fa, type: 2}
   - {fileID: 11400000, guid: 28d729a720421f041911debe01882a22, type: 2}
@@ -2036,14 +2042,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fa4a9a394a352245ab70bdb17a238d6, type: 2}
   - {fileID: 11400000, guid: 426fe354e2bcdb647a26e1576cf0a9b1, type: 2}
   - {fileID: 11400000, guid: 422b288af635988469a0f06b0c238fd2, type: 2}
-  throwablePrefab: {fileID: 8751332412729959243, guid: c39b7df4aed5b4f47b1280622dc792e0,
-    type: 3}
   isAlchimisteTable: 0
   posObjet1: {fileID: 12429672}
   posObjet2: {fileID: 1185167141}
   posRejet: {fileID: 1293670159}
   timeToCraft: 2
-  objetsSurEtabli: []
 --- !u!1 &1096699559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1185167141}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2276,7 +2279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293670159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PosRejet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2778,6 +2781,12 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  ObjectsFusionable: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
 --- !u!1001 &1410358884
 PrefabInstance:
   m_ObjectHideFlags: 0

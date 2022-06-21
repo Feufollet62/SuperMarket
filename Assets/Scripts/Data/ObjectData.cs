@@ -14,5 +14,4 @@ public class ObjectData : ScriptableObject
     public string name;
     public bool craftable;
     public bool weapon;
-    public bool pos1 = false;
 }

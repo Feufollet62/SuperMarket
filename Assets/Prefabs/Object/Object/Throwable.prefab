@@ -296,6 +296,12 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 9
   imageObjet: {fileID: 0}
+  ObjectsFusionable: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
 --- !u!33 &8751332412729959232
 MeshFilter:
   m_ObjectHideFlags: 0

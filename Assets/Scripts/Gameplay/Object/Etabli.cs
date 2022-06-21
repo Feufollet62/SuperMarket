@@ -32,7 +32,7 @@ public class Etabli : MonoBehaviour
     [SerializeField] private float timeToCraft;
     
     // Prend les objet posés permettant de regarder son id
-    [SerializeField] private List<GameObject> objetsSurEtabli;
+    //[SerializeField] private List<GameObject> objetsSurEtabli;
 
     // Conditions pour :
 
@@ -213,20 +213,19 @@ public class Etabli : MonoBehaviour
                     //ma place une est prise
 
             }*/
-            if (!other.gameObject.GetComponent<Interactible>().dataObject.pos1)
+            if (!pos1)
             {
                 Debug.Log("je pose un Objet 1");
                 Item1 = other.gameObject;
-                //Item1.GetComponent<Collider>().enabled = false;
+                Item1.GetComponent<Collider>().enabled = false;
                 Item1.transform.position = posObjet1.position;
                 //Item1.GetComponent<Rigidbody>().useGravity = false;
                 Item1.GetComponent<Rigidbody>().isKinematic = true;
-                Item1.GetComponent<Interactible>().dataObject.pos1 = true;
                 pos1 = true;
-                objetsSurEtabli.Add(other.gameObject);
+                //objetsSurEtabli.Add(other.gameObject);
             }
             Debug.Log("je capte un Objet");
-            if (Item1.GetComponent<Interactible>().dataObject.pos1)
+            if (pos1 && !pos2)
             {
                 Debug.Log("je pose un Objet 2");
                 Item2 = other.gameObject;
@@ -235,7 +234,7 @@ public class Etabli : MonoBehaviour
                 //Item1.GetComponent<Rigidbody>().useGravity = false;
                 Item2.GetComponent<Rigidbody>().isKinematic = true;
                 pos2 = true;
-                objetsSurEtabli.Add(other.gameObject);
+                //objetsSurEtabli.Add(other.gameObject);
             }
             
             
@@ -244,7 +243,6 @@ public class Etabli : MonoBehaviour
             //lancement de la fabrique
             if (pos1 && pos2)
             {
-                Item1.GetComponent<Interactible>().dataObject.pos1 = false;
                 StartCoroutine(FusionObjet());
             }
         }
@@ -258,13 +256,13 @@ public class Etabli : MonoBehaviour
 
         if (currentlyCrafting)
         {
-            Debug.Log(objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD);
-            Debug.Log(objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD);
-            Debug.Log(dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD]);
+            //Debug.Log(objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD);
+            //Debug.Log(objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD);
+            //Debug.Log(dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD]);
 
             for (int i = 0; i < ObjectsFusionable.Length; i++)
             {
-                if (ObjectsFusionable[i].iD == dataarrey[objetsSurEtabli[0].GetComponent<Interactible>().dataObject.iD, objetsSurEtabli[1].GetComponent<Interactible>().dataObject.iD])
+                if (ObjectsFusionable[i].iD == dataarrey[Item1.GetComponent<Interactible>().dataObject.iD, Item2.GetComponent<Interactible>().dataObject.iD])
                 {
                     Interactible newObject = Instantiate(throwablePrefab, posRejet).GetComponent<Interactible>();
                     newObject.SetupThrowable(ObjectsFusionable[i]);
@@ -316,9 +314,10 @@ public class Etabli : MonoBehaviour
                 }/
             }*/
             //elever tout ce qui as sur mon atelier
+
             Destroy(Item1);
             Destroy(Item2);
-            objetsSurEtabli.Clear();
+            //objetsSurEtabli.Clear();
         }
         //dire que c'est vide
         pos1 = false;

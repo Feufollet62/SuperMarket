@@ -113,11 +113,11 @@ namespace _Script{
 			newClient.transform.parent = transform;
 
 			
-
+			/*
 			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
 			{
 				targetClient = Random.Range(0, files.Length);
-			}
+			}*/
 
 			newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
 					

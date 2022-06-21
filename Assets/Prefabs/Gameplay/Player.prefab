@@ -4998,7 +4998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4244139960221053069
 Transform:
   m_ObjectHideFlags: 0
@@ -5159,8 +5159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetPrefab: {fileID: 0}
   type: 2
+  throwablePrefab: {fileID: 0}
+  dataObject: {fileID: 0}
+  iD: 0
+  imageObjet: {fileID: 0}
+  ObjectsFusionable: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
 --- !u!54 &4633482986818612710
 Rigidbody:
   m_ObjectHideFlags: 0

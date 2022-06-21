@@ -18,3 +18,4 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: a57d88f676df6b74093f3e5b4867b97c, type: 3}
   name: "Fruit \xE0 piques rouge"
   craftable: 1
+  weapon: 0

@@ -271,7 +271,7 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
-    void DropItem()
+    public void DropItem()
     {
         if (!grabbing) return;
         _grabbedObject = null;
