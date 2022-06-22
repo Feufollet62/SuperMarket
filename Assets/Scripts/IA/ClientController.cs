@@ -108,7 +108,7 @@ namespace _Script{
 			ui.afficheObjet.sprite = listeObject[idCommande].image;
 
 			ui.gameObject.SetActive(true);
-			ui.transform.parent = manager.prefabUIEmplacement.transform;
+			ui.transform.parent = manager.prefabUIEmplacementContent.transform;
 			ui.transform.position = manager.uICommande.position;
 			
 			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?

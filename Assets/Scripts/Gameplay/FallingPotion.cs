@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingPotion : MonoBehaviour
+namespace _Script
 {
-    [SerializeField] GameObject potionsFall;
-    [SerializeField] PlayerController Player;
-    //private GameObject Player;
-
-    private void OnTriggerEnter(Collider other)
+    public class FallingPotion : MonoBehaviour
     {
-        Debug.Log("Je capte un truc");
-        if (other.CompareTag("armoire") && Player._dashing)
+        [SerializeField] GameObject potionsFall;
+        [SerializeField] PlayerController Player;
+        //private GameObject Player;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Je fait tomber ma potion");
-            Instantiate(potionsFall, other.gameObject.transform.GetChild(1).position, potionsFall.transform.rotation);
+            Debug.Log("Je capte un truc");
+            if (other.CompareTag("armoire") && Player._dashing)
+            {
+                Debug.Log("Je fait tomber ma potion");
+                Instantiate(potionsFall, other.gameObject.transform.GetChild(1).position, potionsFall.transform.rotation);
+            }
         }
     }
 }

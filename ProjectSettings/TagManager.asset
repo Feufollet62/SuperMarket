@@ -9,6 +9,7 @@ TagManager:
   - posPourCommande
   - Object
   - armoire
+  - currentObjet
   layers:
   - Default
   - TransparentFX

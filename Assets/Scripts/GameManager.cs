@@ -8,23 +8,12 @@ using UnityEngine.SceneManagement;
 public class File
 {
 	public PositionFile[] positions;
-
-	// Idéalement ne spawn personne si toutes les places sont prises
-	public PositionFile GetBestPos()
-	{
-		foreach (PositionFile pos in positions)
-		{
-			if (!pos.occupied) return pos;
-		}
-
-		return null; // On devrait jamais en arriver là
-	}
 }
 
 [System.Serializable]
 public class PositionFile
 {
-	public Transform transform;
+	public Transform pos;
 	public ClientController currentClient;
 	public bool canOrder = false;
 	public bool occupied = false;
@@ -40,11 +29,9 @@ namespace _Script{
 		public ClientData clientData;
 		
 		public List<ClientController> clientList; // Utiliser ça stp
-		
-		[SerializeField] private Transform clientSpawnPos;
 
+		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;
-		
 		public Transform sortieQueue1;
 		public Transform sortieQueue2;
 		public Transform porteEntree;
@@ -55,47 +42,53 @@ namespace _Script{
 		[SerializeField] private float cooldownSpawn = 4f;
 
 		[Header("UI")]
+		//Score
 		[SerializeField] private GameObject prefabScreenWin;
 		[SerializeField] private GameObject prefabScreenInGame;
-		
 		public int score;
+		private bool activation = false; // <<- Potentiellement remplaçable par screenWinPrefab.activeSelf
 		private float time;
-		
-		[SerializeField] private float dureePartie;
-		[SerializeField] private Text textScore;
+		public float dureePartie;
+		public Text textScore;
 		
 		public List<GameObject> listeUI;
 
 		// Différence entre ces deux là ?
-		public GameObject prefabUIEmplacement;
+		public GameObject prefabUIEmplacementContent;
 		public Transform uICommande;
+		
+		public int targetClient; // à remplacer
 		
 		#endregion
 
 		#region Builtin Methods
 		private void Start()
 		{
-			
+			time = dureePartie;
 		}
 		
 		private void Update()
 		{
-			time += Time.deltaTime;
-			
+			time -= Time.deltaTime;
+			if (activation == false)
+			{
+				WinLevel();
+			}
 			ClientSpawner();
-			
-			if (!(time >= dureePartie)) return;
-			WinLevel();
 		}
 		#endregion
-		
+
 		#region Properties
 		private void WinLevel()
-		{
-			textScore.text = score.ToString();
-			prefabScreenInGame.SetActive(false);
-			prefabScreenWin.SetActive(true);
-		}
+        {
+			if (time <= 0)
+			{
+				textScore.text = score.ToString();
+				prefabScreenInGame.SetActive(false);
+				prefabScreenWin.SetActive(true);
+				activation = true;
+			}
+        }
 		public void ButtonRestartGame()
         {
 			SceneManager.LoadScene("Niveau_1");
@@ -112,34 +105,24 @@ namespace _Script{
 			if (!(limitSpawn < 0) || clientList.Count > 6) return;
 			
 			int typeClient = Random.Range(0, clientData.clientInfos.Length);
+			targetClient   = Random.Range(0, files.Length);
 			
 			ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
-			clientList.Add(newClient);
 			
+			clientList.Add(newClient);
 			newClient.transform.parent = transform;
-			newClient.SetupClient(clientData.clientInfos[typeClient], GetBestPos());
+
+			
+			/*
+			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
+			{
+				targetClient = Random.Range(0, files.Length);
+			}*/
+
+			newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
 					
 			limitSpawn = cooldownSpawn;
         }
-		
-		// C'est pas opti la comp avec Null
-		private PositionFile GetBestPos()
-		{
-			PositionFile bestPos = null;
-			
-			foreach (File file in files)
-			{
-				PositionFile tempPos = file.GetBestPos();
-				if (tempPos != null) 
-				{
-					bestPos = tempPos;
-					break;
-				}
-			}
-
-			return bestPos;
-		}
-		
 		#endregion
 	}
 }
