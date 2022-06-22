@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +28,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

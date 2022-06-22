@@ -499,10 +499,10 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "3ce8eaddaaa749e49ab3beab24c2a6fd",
     "m_Id": 958945873,
-    "m_DisplayName": "Normale",
+    "m_DisplayName": "Normal",
     "m_SlotType": 0,
     "m_Hidden": false,
-    "m_ShaderOutputName": "_Normale",
+    "m_ShaderOutputName": "_Normal",
     "m_StageCapability": 3,
     "m_Value": {
         "x": 0.0,
