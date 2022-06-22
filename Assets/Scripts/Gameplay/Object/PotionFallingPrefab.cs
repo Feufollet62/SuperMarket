@@ -1,23 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PotionFallingPrefab : MonoBehaviour
 {
-    [SerializeField] float timeFall;
-    [SerializeField] GameObject flaque;
-    void Start()
-    {
-        StartCoroutine(Falling());
-    }
+    [SerializeField] private GameObject flaquePrefab;
 
-    IEnumerator Falling()
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Je tombe");
-        yield return new WaitForSeconds(timeFall);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
+        {
+            ContactPoint contact = collision.GetContact(0);
+            
+            GameObject flaque = Instantiate(flaquePrefab, contact.point, Quaternion.identity);
+            flaque.transform.up = collision.GetContact(0).normal;
 
-        Vector3 posFlaque = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 0.35f, this.gameObject.transform.position.z);
-        Instantiate(flaque, posFlaque, this.gameObject.transform.rotation);
-        Debug.Log("Je casse");
+            Destroy(gameObject);
+        }
     }
 }
