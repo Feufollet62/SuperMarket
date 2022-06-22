@@ -101,9 +101,31 @@ namespace _Script{
 		private void ClientSpawner()
         {
 			limitSpawn -= Time.deltaTime;
-			
-			if (!(limitSpawn < 0) || clientList.Count > 6) return;
-			
+
+            //if (!(limitSpawn < 0) && clientList.Count > 6) return;
+
+            if (limitSpawn <= 0 && clientList.Count < 6)
+            {
+				int typeClient = Random.Range(0, clientData.clientInfos.Length);
+				targetClient = Random.Range(0, files.Length);
+
+				ClientController newClient = Instantiate(clientPrefab, clientSpawnPos.position, transform.rotation).GetComponent<ClientController>();
+
+				clientList.Add(newClient);
+				newClient.transform.parent = transform;
+
+
+
+				while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
+				{
+					targetClient = Random.Range(0, files.Length);
+				}
+
+				newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
+
+				limitSpawn = cooldownSpawn;
+			}
+			/*
 			int typeClient = Random.Range(0, clientData.clientInfos.Length);
 			targetClient   = Random.Range(0, files.Length);
 			
@@ -113,15 +135,15 @@ namespace _Script{
 			newClient.transform.parent = transform;
 
 			
-			/*
+			
 			while (files[targetClient].positions[0].occupied && files[targetClient].positions[1].occupied) // Non
 			{
 				targetClient = Random.Range(0, files.Length);
-			}*/
+			}
 
 			newClient.SetupClient(clientData.clientInfos[typeClient], targetClient);
 					
-			limitSpawn = cooldownSpawn;
+			limitSpawn = cooldownSpawn;*/
         }
 		#endregion
 	}

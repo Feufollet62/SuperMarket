@@ -273,8 +273,7 @@ PrefabInstance:
         type: 3}
       propertyPath: uICommande
       value: 
-      objectReference: {fileID: 3945187260307515549, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
-        type: 3}
+      objectReference: {fileID: 1197047435}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
       propertyPath: dureePartie
@@ -2029,6 +2028,10 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 0}
+  fusions: []
   ObjectsFusionable:
   - {fileID: 11400000, guid: 6f1d8b10fbe09054f8aad116055630fa, type: 2}
   - {fileID: 11400000, guid: 28d729a720421f041911debe01882a22, type: 2}
@@ -2781,6 +2784,10 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 0}
+  fusions: []
   ObjectsFusionable: []
   isAlchimisteTable: 0
   posObjet1: {fileID: 0}
