@@ -294,19 +294,17 @@ MonoBehaviour:
   type: 1
   throwablePrefab: {fileID: 0}
   dataObject: {fileID: 0}
-  iD: 14
+  iD: 17
   imageObjet: {fileID: 0}
   clientsWait: []
   gM: {fileID: 0}
   posPassePlat: {fileID: 0}
   fusions: []
-  ObjectsFusionable: []
   isAlchimisteTable: 0
   posObjet1: {fileID: 0}
   posObjet2: {fileID: 0}
   posRejet: {fileID: 0}
   timeToCraft: 0
-  objetsSurEtabli: []
 --- !u!33 &8751332412729959232
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -335,7 +333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cbeef589492b85d4182e84d2251a5858, type: 2}
+  - {fileID: 2100000, guid: 149804477d655fd40afeb04fa7cda0b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

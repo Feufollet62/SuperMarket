@@ -19,7 +19,7 @@ namespace _Script{
 		private int fileTarget;
 
 		[SerializeField] private float timeService = 20f;
-		[SerializeField] private int posClientRandom;
+		//[SerializeField] private int fileChoiseClient;
 		private GameManager manager;
 		private IdVerif verifID;
 
@@ -86,7 +86,8 @@ namespace _Script{
 				manager.files[fileTarget].positions[1].occupied = true;
 				PosActuelle = Position.Pos2;
 			}
-			
+
+
 			_premiereVerif = true;
 			
             if (_firstPlace)
@@ -118,12 +119,15 @@ namespace _Script{
 
 			ui.gameObject.SetActive(true);
 			ui.transform.parent = manager.prefabUIEmplacementContent.transform;
-			ui.transform.position = manager.uICommande.position;
-			
-			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?
-			manager.listeUI.Add(newClientUI);
+			ui.gameObject.transform.position = Vector3.zero;
+			ui.gameObject.transform.position = manager.uICommande.position;
+			newClientUI = ui.gameObject;
 
-			verifID.clientsWait.Add(this);
+
+			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?
+			manager.listeUI.Add(ui.gameObject);
+
+			//verifID.clientsWait.Add(this);
 
 			yield return new WaitForSeconds(timeService);
 			
@@ -132,7 +136,7 @@ namespace _Script{
 
 		public void ExitQueue()
 		{
-			verifID.clientsWait.Remove(this);
+			//verifID.clientsWait.Remove(this);
 			PosActuelle = Position.APartir;
 			manager.files[fileTarget].positions[0].occupied = false;
 			
@@ -145,7 +149,8 @@ namespace _Script{
 			manager.uICommande.transform.position = new Vector3(manager.uICommande.position.x - 130, manager.uICommande.position.y, manager.uICommande.position.z);
 			newClientUI.SetActive(false);
 
-			if (posClientRandom < 3) // nani the fuck ?
+			
+			if (fileTarget > 2) // nani the fuck ?
 			{
 				agent.destination = manager.sortieQueue2.position;
 			}
@@ -154,7 +159,7 @@ namespace _Script{
 				agent.destination = manager.sortieQueue1.position;
 			}
 			
-			StartCoroutine("ExitShop");
+			StartCoroutine(ExitShop());
 		}
 
 		IEnumerator ExitShop()

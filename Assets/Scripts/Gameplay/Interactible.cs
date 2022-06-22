@@ -8,6 +8,7 @@ namespace _Script
 {
     public class Interactible : MonoBehaviour
     {
+        #region Variable
         public InteractType type;
         
         // Seulement pour les spawners: prefab throwable
@@ -50,7 +51,7 @@ namespace _Script
         [Header("Etabli")]
         // Recettes possibles sur cet etabli
         [SerializeField] private FusionData[] fusions;
-        [SerializeField] private ObjectData[] ObjectsFusionable;
+        //[SerializeField] private ObjectData[] ObjectsFusionable;
         //[SerializeField] private GameObject throwablePrefab;
 
         [SerializeField] private bool isAlchimisteTable;
@@ -83,6 +84,7 @@ namespace _Script
         private Interactible Item1;
         private Interactible Item2;
         private Interactible newItem;
+        #endregion
 
         private void Awake()
         {
@@ -100,6 +102,11 @@ namespace _Script
             {
                 _collider = GetComponent<Collider>();
             }
+        }
+        private void Start()
+        {
+            gM = GetComponent<GameManager>();
+            gM = FindObjectOfType<GameManager>();
         }
 
         public bool Interact(PlayerController player)
@@ -125,22 +132,26 @@ namespace _Script
                     PickUp(player.grabPoint);
                     return true;
 
+                case InteractType.PassePlat:
+                    if (!player.grabbing) return false;
+                    PassePlat(player);
+
+                    print("Je pose");
+                    return true;
+
                 case InteractType.Etabli:
                     if (!player.grabbing) return false;
                     Etabli(player);
 
                     return true;
+                    
                 case InteractType.Comptoir:
                     if (!player.grabbing) return false;
                     Comptoire(player);
                     // to do: comportement comptoir ici
                     print("Interaction comptoir");
                     return true;
-                case InteractType.PassePlat:
-                    if (!player.grabbing) return false;
-                    PassePlat(player);
-                    print("Je pose");
-                    return true;
+                
 
 
                 default:
@@ -187,13 +198,6 @@ namespace _Script
             Debug.Log("Je veux avoir un objet");
             if (player._grabbedObject.dataObject.craftable && !currentlyCrafting)
             {
-                //lancement de la fabrique
-                /*
-                if (pos1 && pos2)
-                {
-                    currentlyCrafting = true;
-                    StartCoroutine(FusionObjet(player));
-                }*/
                 if (isAlchimisteTable)
                 {
                     Debug.Log("je capte un Objet");
@@ -204,14 +208,6 @@ namespace _Script
                         player.DropItem();
                         Item2.PlaceIt(posObjet2);
                         pos2 = true;
-                        if (pos1 && pos2)
-                        {
-                            currentlyCrafting = true;
-                            StartCoroutine(FusionObjet(player));
-
-                        }
-
-                        //objetsSurEtabli.Add(other.gameObject);
                     }
 
                     else
@@ -221,19 +217,18 @@ namespace _Script
                         player.DropItem();
                         Item1.PlaceIt(posObjet1);
                         pos1 = true;
-                        if (pos1 && pos2)
-                        {
-                            currentlyCrafting = true;
-                            StartCoroutine(FusionObjet(player));
-
-                        }
 
                         //objetsSurEtabli.Add(other.gameObject);
                     }
 
-                    
-                    
-                    
+                    if (pos1 && pos2)
+                    {
+                        currentlyCrafting = true;
+                        StartCoroutine(FusionObjet(player));
+
+                    }
+
+
                 }
                 if (!isAlchimisteTable)
                 {
@@ -243,12 +238,6 @@ namespace _Script
                         player.DropItem();
                         Item1.PlaceIt(posObjet1);
                         pos1 = true;
-                        if (pos1 && pos2)
-                        {
-                            currentlyCrafting = true;
-                            StartCoroutine(FusionObjet(player));
-
-                        }
                     }
                     if (!player._grabbedObject.dataObject.weapon && !pos2)
                     {
@@ -256,12 +245,12 @@ namespace _Script
                         player.DropItem();
                         Item2.PlaceIt(posObjet2);
                         pos2 = true;
-                        if (pos1 && pos2)
-                        {
-                            currentlyCrafting = true;
-                            StartCoroutine(FusionObjet(player));
+                    }
+                    if (pos1 && pos2)
+                    {
+                        currentlyCrafting = true;
+                        StartCoroutine(FusionObjet(player));
 
-                        }
                     }
                 }
             }
@@ -277,25 +266,33 @@ namespace _Script
         private void PassePlat(PlayerController player)
         {
             ItemADeposer = player._grabbedObject;
-            player.DropItem();
-            ItemADeposer.PlaceIt(posPassePlat);
+
+            if (!player.grabbing) return;
+            player._grabbedObject = null;
+            player.grabbing = false;
+            
+            ItemADeposer.PlaceIn(posPassePlat);
         }
         private void Comptoire(PlayerController player)
         {
-            if (player.grabbing)
-            {
-                VerificationID(player._grabbedObject.GetComponent<Interactible>());
-            }
+            ItemADeposer = player._grabbedObject;
 
+            player.DropItem();
+
+            ItemADeposer.PlaceIn(posPassePlat);
+            VerificationID(ItemADeposer, player);
         }
-        void VerificationID(Interactible interactible)
+        void VerificationID(Interactible interactible, PlayerController player)
         {
-            for (int i = 0; i < clientsWait.Count; i++)
+            for (int i = 0; i < gM.clientList.Count; i++)
             {
-                if (clientsWait[i].iDAleatoire == interactible.iD)
+                if (gM.clientList[i].iDAleatoire == interactible.iD && gM.clientList[i].PosActuelle == Position.Pos1)
                 {
+                    player.interactibles.Remove(ItemADeposer);
+                    //Destroy(ItemADeposer.gameObject);
                     gM.score++;
-                    clientsWait[i].ExitQueue();
+                    gM.clientList[i].ExitQueue();
+                    return;
                 }
             }
         }
@@ -351,6 +348,21 @@ namespace _Script
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+        private void PlaceIn(Transform placeposition)
+        {
+            if (type == InteractType.Spawner) return;
+            if (type == InteractType.Player) _thisPlayer.SetControllable(false);
+
+            _isHeld = false;
+
+            _rb.isKinematic = true;
+            _collider.enabled = true;
+
+            transform.parent = placeposition;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            transform.localScale = Vector3.one;
+        }
         IEnumerator FusionObjet(PlayerController player)
         {
             Debug.Log("Je demarre ma production");
@@ -364,18 +376,18 @@ namespace _Script
                     if (fusions[i].objetFusion1.iD == Item1.iD && fusions[i].objetFusion2.iD == Item2.iD || fusions[i].objetFusion1.iD == Item2.iD && fusions[i].objetFusion2.iD == Item1.iD)
                     {
                         Interactible newObject = Instantiate(throwablePrefab, posRejet).GetComponent<Interactible>();
-                        newObject.SetupThrowable(ObjectsFusionable[i]);
+                        newObject.SetupThrowable(fusions[i].objetResult);
 
                         MeshFilter mFilter = throwablePrefab.GetComponent<MeshFilter>();
                         MeshRenderer mRender = throwablePrefab.GetComponent<MeshRenderer>();
 
-                        mFilter.sharedMesh = ObjectsFusionable[i].model;
-                        mRender.sharedMaterial = ObjectsFusionable[i].material;
+                        mFilter.sharedMesh = fusions[i].objetResult.model;
+                        mRender.sharedMaterial = fusions[i].objetResult.material;
 
-                        gameObject.name = ObjectsFusionable[i].name;
-                        throwablePrefab.GetComponent<Interactible>().imageObjet = ObjectsFusionable[i].image;
+                        gameObject.name = fusions[i].objetResult.name;
+                        throwablePrefab.GetComponent<Interactible>().imageObjet = fusions[i].objetResult.image;
 
-                        throwablePrefab.GetComponent<Interactible>().iD = ObjectsFusionable[i].iD;
+                        throwablePrefab.GetComponent<Interactible>().iD = fusions[i].objetResult.iD;
                     }
                 }
 
