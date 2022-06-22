@@ -129,22 +129,26 @@ namespace _Script
                     PickUp(player.grabPoint);
                     return true;
 
+                case InteractType.PassePlat:
+                    if (!player.grabbing) return false;
+                    PassePlat(player);
+
+                    print("Je pose");
+                    return true;
+
                 case InteractType.Etabli:
                     if (!player.grabbing) return false;
                     Etabli(player);
 
                     return true;
+                    /*
                 case InteractType.Comptoir:
                     if (!player.grabbing) return false;
                     Comptoire(player);
                     // to do: comportement comptoir ici
                     print("Interaction comptoir");
-                    return true;
-                case InteractType.PassePlat:
-                    if (!player.grabbing) return false;
-                    PassePlat(player);
-                    print("Je pose");
-                    return true;
+                    return true;*/
+                
 
 
                 default:
@@ -259,8 +263,12 @@ namespace _Script
         private void PassePlat(PlayerController player)
         {
             ItemADeposer = player._grabbedObject;
-            player.DropItem();
-            ItemADeposer.PlaceIt(posPassePlat);
+
+            if (!player.grabbing) return;
+            player._grabbedObject = null;
+            player.grabbing = false;
+            
+            ItemADeposer.PlaceIn(posPassePlat);
         }
         private void Comptoire(PlayerController player)
         {
@@ -332,6 +340,21 @@ namespace _Script
             transform.parent = placeposition;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        private void PlaceIn(Transform placeposition)
+        {
+            if (type == InteractType.Spawner) return;
+            if (type == InteractType.Player) _thisPlayer.SetControllable(false);
+
+            _isHeld = false;
+
+            _rb.isKinematic = true;
+            _collider.enabled = true;
+
+            transform.parent = placeposition;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            transform.localScale = Vector3.one;
         }
         IEnumerator FusionObjet(PlayerController player)
         {
