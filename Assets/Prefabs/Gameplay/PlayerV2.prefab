@@ -4897,67 +4897,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5132879325713752781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4244139960221053069}
-  - component: {fileID: 6906671639332871043}
-  - component: {fileID: 6769891274765162591}
-  m_Layer: 6
-  m_Name: ColliderArmoire
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4244139960221053069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132879325713752781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2434059746085102224}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6906671639332871043
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132879325713752781}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.8, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &6769891274765162591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132879325713752781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e251f2fe72a244f9e6078e141876f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionsFall: {fileID: 8751332412729959243, guid: 91108c63114673e479f6c722687ce762,
-    type: 3}
-  Player: {fileID: 6459041946926125507}
 --- !u!1 &6015315166791141032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,6 +4938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2434059746085102224}
   - component: {fileID: 6459041946926125507}
+  - component: {fileID: 14784647973851479}
   - component: {fileID: 7912259794157549765}
   - component: {fileID: 4633482986818612710}
   - component: {fileID: 3304209607636648804}
@@ -5024,7 +4964,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7331436132118923141}
-  - {fileID: 4244139960221053069}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5063,6 +5002,21 @@ MonoBehaviour:
   interactibles: []
   _grabbedObject: {fileID: 0}
   _dashing: 0
+--- !u!114 &14784647973851479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188362982576016349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e251f2fe72a244f9e6078e141876f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionPrefab: {fileID: 8751332412729959243, guid: 91108c63114673e479f6c722687ce762,
+    type: 3}
+  Player: {fileID: 6459041946926125507}
 --- !u!114 &7912259794157549765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5080,6 +5034,16 @@ MonoBehaviour:
   dataObject: {fileID: 0}
   iD: 0
   imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 0}
+  fusions: []
+  ObjectsFusionable: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
 --- !u!54 &4633482986818612710
 Rigidbody:
   m_ObjectHideFlags: 0

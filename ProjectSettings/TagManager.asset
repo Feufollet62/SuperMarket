@@ -8,7 +8,6 @@ TagManager:
   - FinRun
   - posPourCommande
   - Object
-  - armoire
   - currentObjet
   layers:
   - Default

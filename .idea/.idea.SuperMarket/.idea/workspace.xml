@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLights.shadersubgraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/AdditionalLightsToon.shadersubgraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonLightingModel.shadersubgraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/SubGraphs/ToonShading.shadersubgraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPillage/Shaders/Toon.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/PlayerV2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/PlayerV2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Decor/Armoire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Object/Decor/Armoire.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/FallingPotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/SpawnOnBonk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/FallingPotion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/SpawnOnBonk.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/SceneGameplay/Niveau/Niveau_1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/IA/ClientController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -279,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655734813710</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix scene">
+      <created>1655887872553</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655887872553</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +344,7 @@
     <MESSAGE value="Ajout shaders + textures + models" />
     <MESSAGE value="Fin de journée" />
     <MESSAGE value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
+    <MESSAGE value="Fix scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix scene" />
   </component>
 </project>
