@@ -18,6 +18,7 @@ namespace _Script
 
         [Header("Mouvement")]
         [SerializeField] private float maxAccel = 30f;
+        [SerializeField] [Range(0,1)] private float slippingMultiplier = .2f;
         [SerializeField] private float maxAirAccel = 10f;
         [SerializeField] private float maxSpeed = 8f;
 
@@ -51,7 +52,7 @@ namespace _Script
 
         //public bool _inputDash;
         private bool _inputInteract, _inputDash;
-        public bool _dashing;
+        public bool _dashing, _slipping;
         private float _dashTimer;
 
         private float _animTimer;
@@ -203,6 +204,7 @@ namespace _Script
             float currentZ = Vector3.Dot(_velocity, zAxis);
 
             float accel = Grounded ? maxAccel : maxAirAccel;
+            if (_slipping) accel *= slippingMultiplier;
             float maxSpeedChange = accel * Time.deltaTime;
 
             float newX = Mathf.MoveTowards(currentX, _desiredVelocity.x, maxSpeedChange);

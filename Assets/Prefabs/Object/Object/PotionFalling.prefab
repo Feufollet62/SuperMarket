@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1102701337331174851}
   - component: {fileID: 7122804587882117564}
   - component: {fileID: 3619243977632753577}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 8751332412729959236}
   - component: {fileID: 7013175485553131932}
   - component: {fileID: 6143381939371055063}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: PotionFalling
-  m_TagString: Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
