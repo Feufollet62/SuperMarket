@@ -105,6 +105,11 @@ namespace _Script
                 _collider = GetComponent<Collider>();
             }
         }
+        private void Start()
+        {
+            gM = GetComponent<GameManager>();
+            gM = FindObjectOfType<GameManager>();
+        }
 
         public bool Interact(PlayerController player)
         {
@@ -141,13 +146,13 @@ namespace _Script
                     Etabli(player);
 
                     return true;
-                    /*
+                    
                 case InteractType.Comptoir:
                     if (!player.grabbing) return false;
                     Comptoire(player);
                     // to do: comportement comptoir ici
                     print("Interaction comptoir");
-                    return true;*/
+                    return true;
                 
 
 
@@ -272,20 +277,24 @@ namespace _Script
         }
         private void Comptoire(PlayerController player)
         {
-            if (player.grabbing)
-            {
-                VerificationID(player._grabbedObject.GetComponent<Interactible>());
-            }
+            ItemADeposer = player._grabbedObject;
 
+            player.DropItem();
+
+            ItemADeposer.PlaceIn(posPassePlat);
+            VerificationID(ItemADeposer, player);
         }
-        void VerificationID(Interactible interactible)
+        void VerificationID(Interactible interactible, PlayerController player)
         {
-            for (int i = 0; i < clientsWait.Count; i++)
+            for (int i = 0; i < gM.clientList.Count; i++)
             {
-                if (clientsWait[i].iDAleatoire == interactible.iD)
+                if (gM.clientList[i].iDAleatoire == interactible.iD && gM.clientList[i].PosActuelle == Position.Pos1)
                 {
+                    player.interactibles.Remove(ItemADeposer);
+                    //Destroy(ItemADeposer.gameObject);
                     gM.score++;
-                    clientsWait[i].ExitQueue();
+                    gM.clientList[i].ExitQueue();
+                    return;
                 }
             }
         }

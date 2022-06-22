@@ -294,7 +294,7 @@ MonoBehaviour:
   type: 1
   throwablePrefab: {fileID: 0}
   dataObject: {fileID: 0}
-  iD: 12
+  iD: 17
   imageObjet: {fileID: 0}
   clientsWait: []
   gM: {fileID: 0}
@@ -312,7 +312,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8751332412729959243}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8751332412729959233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d47b03a0d2e40bb4caf731eadf996dea, type: 2}
+  - {fileID: 2100000, guid: 149804477d655fd40afeb04fa7cda0b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

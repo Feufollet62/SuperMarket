@@ -28,7 +28,7 @@ namespace _Script{
 		public GameObject clientPrefab;
 		public ClientData clientData;
 		
-		public List<ClientController> clientList; // Utiliser ça stp
+		public List<ClientController> clientList;
 
 		[SerializeField] private Transform clientSpawnPos;
 		public File[] files;

@@ -24,6 +24,7 @@ namespace _Script
                     gM.score++;
                     clientsWait[i].ExitQueue();
                 }
+                return;
             }
         }
         

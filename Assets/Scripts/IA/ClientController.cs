@@ -127,7 +127,7 @@ namespace _Script{
 			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?
 			manager.listeUI.Add(ui.gameObject);
 
-			verifID.clientsWait.Add(this);
+			//verifID.clientsWait.Add(this);
 
 			yield return new WaitForSeconds(timeService);
 			
@@ -136,7 +136,7 @@ namespace _Script{
 
 		public void ExitQueue()
 		{
-			verifID.clientsWait.Remove(this);
+			//verifID.clientsWait.Remove(this);
 			PosActuelle = Position.APartir;
 			manager.files[fileTarget].positions[0].occupied = false;
 			
