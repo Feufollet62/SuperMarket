@@ -1089,6 +1089,80 @@ Transform:
   m_Father: {fileID: 1466394255}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &488198192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488198193}
+  - component: {fileID: 488198195}
+  - component: {fileID: 488198194}
+  m_Layer: 0
+  m_Name: PassePlat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488198193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488198192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.68, y: 0, z: 5.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1015461316}
+  - {fileID: 584980185}
+  m_Father: {fileID: 1897727957}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &488198194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488198192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &488198195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488198192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb7ab1bca91a1d41ad50afe1644d372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  throwablePrefab: {fileID: 0}
+  dataObject: {fileID: 0}
+  iD: 0
+  imageObjet: {fileID: 0}
+  clientsWait: []
+  gM: {fileID: 0}
+  posPassePlat: {fileID: 584980185}
+  fusions: []
+  isAlchimisteTable: 0
+  posObjet1: {fileID: 0}
+  posObjet2: {fileID: 0}
+  posRejet: {fileID: 0}
+  timeToCraft: 0
 --- !u!1001 &557632383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1285,6 +1359,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &584980184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584980185}
+  m_Layer: 0
+  m_Name: posObjectEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584980185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584980184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488198193}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &683111200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,25 +2136,121 @@ MonoBehaviour:
   clientsWait: []
   gM: {fileID: 0}
   posPassePlat: {fileID: 0}
-  fusions: []
-  ObjectsFusionable:
-  - {fileID: 11400000, guid: 6f1d8b10fbe09054f8aad116055630fa, type: 2}
-  - {fileID: 11400000, guid: 28d729a720421f041911debe01882a22, type: 2}
-  - {fileID: 11400000, guid: 87383ca28c460fe4bb369c1fbb822dc3, type: 2}
-  - {fileID: 11400000, guid: 7088662762168ce46b1a3b2f89d214ae, type: 2}
-  - {fileID: 11400000, guid: 38c773265196de04c98c173b73c2864c, type: 2}
-  - {fileID: 11400000, guid: d068dfe4204c0b547a03542ff6e550f9, type: 2}
-  - {fileID: 11400000, guid: 3b17b375a06bff04bb5c635acc4f5520, type: 2}
-  - {fileID: 11400000, guid: 4183fcecdaa94c840a3e01a8c9bfaa9e, type: 2}
-  - {fileID: 11400000, guid: 09b696f19ffdda14d8cb6b3ef2533023, type: 2}
-  - {fileID: 11400000, guid: 3fa4a9a394a352245ab70bdb17a238d6, type: 2}
-  - {fileID: 11400000, guid: 426fe354e2bcdb647a26e1576cf0a9b1, type: 2}
-  - {fileID: 11400000, guid: 422b288af635988469a0f06b0c238fd2, type: 2}
-  isAlchimisteTable: 0
+  fusions:
+  - {fileID: 11400000, guid: 7282147462ce1774bb1cbd05f8bd8fb3, type: 2}
+  - {fileID: 11400000, guid: 929ed4d1afe54174ea453e76761b4927, type: 2}
+  - {fileID: 11400000, guid: 232e609ddf0280946bcf8695eea19360, type: 2}
+  - {fileID: 11400000, guid: 04ab33f34758e1748a5fe1e61e3e3338, type: 2}
+  - {fileID: 11400000, guid: 9a076e10c549e304abee85333f51ddb0, type: 2}
+  - {fileID: 11400000, guid: 791b5f870b052db4894f84a5b09f75d3, type: 2}
+  - {fileID: 11400000, guid: 756a97f48ee344a41a3574d8b9bd2ae4, type: 2}
+  - {fileID: 11400000, guid: b0839a11f744bf7488a866f1aa1435e1, type: 2}
+  - {fileID: 11400000, guid: 5e18f5e182ffb934eb4b5148edf0be72, type: 2}
+  - {fileID: 11400000, guid: 4ec1ae6c7276b6f4ca859fc8b1d36f74, type: 2}
+  - {fileID: 11400000, guid: 0b6710d92d5e6d847870979b93e36236, type: 2}
+  - {fileID: 11400000, guid: cde16174f5a4c1c4eab8c3765270fc4f, type: 2}
+  isAlchimisteTable: 1
   posObjet1: {fileID: 12429672}
   posObjet2: {fileID: 1185167141}
   posRejet: {fileID: 1293670159}
   timeToCraft: 2
+--- !u!1 &1015461315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015461316}
+  - component: {fileID: 1015461319}
+  - component: {fileID: 1015461318}
+  - component: {fileID: 1015461317}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015461316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015461315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488198193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1015461317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015461315}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1015461318
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015461315}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1015461319
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015461315}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1096699559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2989,6 @@ MonoBehaviour:
   gM: {fileID: 0}
   posPassePlat: {fileID: 0}
   fusions: []
-  ObjectsFusionable: []
   isAlchimisteTable: 0
   posObjet1: {fileID: 0}
   posObjet2: {fileID: 0}
@@ -3866,6 +4066,7 @@ Transform:
   - {fileID: 1096699560}
   - {fileID: 1002487736}
   - {fileID: 1939070851}
+  - {fileID: 488198193}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
