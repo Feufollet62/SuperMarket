@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" afterDir="false" />
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Début script éditeur">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/MovementTest.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/DynamicsManager.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/DynamicsManager.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,6 +114,7 @@
       <workItem from="1655557956262" duration="192000" />
       <workItem from="1655724043981" duration="6338000" />
       <workItem from="1655796707109" duration="6045000" />
+      <workItem from="1655895995537" duration="6413000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -270,7 +277,42 @@
       <option name="project" value="LOCAL" />
       <updated>1655734813710</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix scene">
+      <created>1655887872553</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655887872553</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Passage spawn potions sur prefab etagère">
+      <created>1655890614688</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1655890614688</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Cool etagere marche&#10;Prochaine etape: faire marcher la flaque">
+      <created>1655891806481</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1655891806481</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Flaque fonctionne">
+      <created>1655898116386</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1655898116386</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Apparament il voulait pas changer la matrice de collision">
+      <created>1655898265554</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1655898265554</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,11 +346,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setup nouveau PC + merge avec DevCorentin" />
-    <MESSAGE value="Setup scene basique + assignation auto matériaux joueurs + input system" />
-    <MESSAGE value="Première version bancale sans physique, en solo. Support clavier + manette" />
-    <MESSAGE value="Ajout de plein de méthodes d'input, dont clavier et manette partagée entre 2e joueurs&#10;Ajout Logo&#10;Nettoyage Fichiers" />
-    <MESSAGE value="Ajout DotWeen + petit feedback de mouvement" />
     <MESSAGE value="Rigidbodies sur les joueurs" />
     <MESSAGE value="Dash basique sans knockback / stun&#10;Feedback de mouvement avec &quot;animation&quot; du joueur + particules" />
     <MESSAGE value="Ajout objet throwable&#10;Interaction basique avec le throwable" />
@@ -328,6 +365,12 @@
     <MESSAGE value="Ajout shaders + textures + models" />
     <MESSAGE value="Fin de journée" />
     <MESSAGE value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nouveau pillage shader + NormalMap ajoutée sur matériau cel shadé (Mais pas beau ?)" />
+    <MESSAGE value="Fix scene" />
+    <MESSAGE value="Passage spawn potions sur prefab etagère" />
+    <MESSAGE value="Cool etagere marche&#10;Prochaine etape: faire marcher la flaque" />
+    <MESSAGE value="Flaque fonctionne" />
+    <MESSAGE value="Apparament il voulait pas changer la matrice de collision" />
+    <MESSAGE value="Début script éditeur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Début script éditeur" />
   </component>
 </project>

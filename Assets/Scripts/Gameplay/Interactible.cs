@@ -9,9 +9,7 @@ namespace _Script
     public class Interactible : MonoBehaviour
     {
         public InteractType type;
-
-        // Bientôt un editor script pour ça
-
+        
         // Seulement pour les spawners: prefab throwable
         [SerializeField] public GameObject throwablePrefab;
 
