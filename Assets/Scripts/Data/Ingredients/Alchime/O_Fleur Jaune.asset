@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 8446609489244548808, guid: 1768ee55f34473341b19afb56defd74f,
     type: 3}
   iD: 2
-  image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  image: {fileID: 21300000, guid: c72eeddefa5952243b73955221c16f17, type: 3}
   name: FleurJaune
   craftable: 1
   weapon: 0

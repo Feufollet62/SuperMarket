@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 6087686338693582863, guid: 679ebc85bb78ca54bacdfbf2396cc8e2,
     type: 3}
   iD: 7
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 39bab5d0c7f90ae46a27cc18a974edb3, type: 3}
   name: Bouclier
   craftable: 1
   weapon: 1

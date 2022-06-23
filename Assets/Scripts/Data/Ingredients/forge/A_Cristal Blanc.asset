@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 8267657467693448288, guid: 4b4e8e01ef2f85a45b4305ee40599fe3,
     type: 3}
   iD: 4
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 580fdf07b0de569489f727a0c2c5c115, type: 3}
   name: Crystal Blanc
   craftable: 1
   weapon: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 7368980128519085360, guid: 8bd998b03c4371b46a8cff8431b8a9f1,
     type: 3}
   iD: 16
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 01934987a1817ad44870602f114ff7c1, type: 3}
   name: Arc de Lumiere
   craftable: 0
   weapon: 1

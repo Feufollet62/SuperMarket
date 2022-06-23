@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 4405105742800149705, guid: c2451e8820861254fb44e512da1fa484,
     type: 3}
   iD: 6
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 965009ba24ba18c4ba69d6f06fe3ff88, type: 3}
   name: Arc
   craftable: 1
   weapon: 1

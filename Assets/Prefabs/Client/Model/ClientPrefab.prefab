@@ -197,7 +197,6 @@ MonoBehaviour:
   type: 0
   PosActuelle: 0
   timeService: 30
-  posClientRandom: 0
   prefabUICommande: {fileID: 3945187260307515550, guid: 41fcaf51263fe8b40a9ea4d2c4c8e4ec,
     type: 3}
   iDAleatoire: 0
@@ -205,6 +204,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1590e00bfb60ef448f2cde2d629a60a, type: 2}
   - {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
   - {fileID: 11400000, guid: 778428d13e9c19746b10d2d7fff727d5, type: 2}
+  - {fileID: 11400000, guid: e1bb58ab6901ff149b3ac2bd828d0e61, type: 2}
+  - {fileID: 11400000, guid: 38df1321db959d348bd34f0c9e7ede07, type: 2}
+  - {fileID: 11400000, guid: 7533d95d24400a14a910d15d3538858f, type: 2}
   iDEgal: 0
 --- !u!195 &-3699083752858148782
 NavMeshAgent:

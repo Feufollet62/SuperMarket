@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 6413130911269130500, guid: bb1d2c060e7b9ba459bd2faee9aadda5,
     type: 3}
   iD: 3
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 157cb343a2f0daa4fbe080123acf5e88, type: 3}
   name: Pierre Noire
   craftable: 1
   weapon: 0

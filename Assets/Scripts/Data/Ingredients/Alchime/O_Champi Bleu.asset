@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: O_Champi Bleu
   m_EditorClassIdentifier: 
+  model: {fileID: 0}
+  material: {fileID: 0}
   prefabModel: {fileID: 912255973529788465, guid: e85a7ea30d319db45a8932f58eddde4a,
     type: 3}
   iD: 0
-  image: {fileID: 21300000, guid: 76a42ebeeb1415f40a5d0f797103e5a8, type: 3}
+  image: {fileID: 21300000, guid: d3048b59f94e435448e7fdee7d21678e, type: 3}
   name: Champignon Bleu
   craftable: 1
   weapon: 0

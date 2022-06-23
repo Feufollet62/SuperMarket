@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 5102701779404573827, guid: 350a3b0cddb85684581137c333a32d22,
     type: 3}
   iD: 5
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 946a1ab6e0e234448b71481b1aa47902, type: 3}
   name: "\xC9p\xE9e"
   craftable: 1
   weapon: 1
