@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="4 players dans une scène">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordMagique.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordMagique.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordSimple.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordSimple.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordSimpleToon.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/SwordSimpleToon.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_AlbedoTransparency.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Emission.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_MetallicSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_SpecularSmoothness 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_SpecularSmoothness 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_SpecularSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLPEnchant_DefaultMaterial_SpecularSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_AlbedoTransparency 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_AlbedoTransparency 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_AlbedoTransparency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_AlbedoTransparency.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_MetallicSmoothness 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_MetallicSmoothness 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_MetallicSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_MetallicSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_Normal 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_Normal 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_SpecularSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/epeeLP_DefaultMaterial_SpecularSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Objet/epeeLP.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Objet/epeeLP.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Objet/epeeLPEnchant.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Objet/epeeLPEnchant.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" afterDir="false" />
-    </list>
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Rangement + eppes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +18,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/Diorama.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -175,7 +109,7 @@
       <workItem from="1655895995537" duration="6413000" />
       <workItem from="1655969383955" duration="304000" />
       <workItem from="1655975623660" duration="511000" />
-      <workItem from="1655990942104" duration="3272000" />
+      <workItem from="1655990942104" duration="3285000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -408,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655996489452</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Rangement + eppes">
+      <created>1655998212658</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998212658</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +398,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix" />
     <MESSAGE value="Truc random avant merge" />
     <MESSAGE value="Update" />
     <MESSAGE value="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements" />
@@ -482,6 +422,7 @@
     <MESSAGE value="Ajout d'épées + leurs textures" />
     <MESSAGE value="Nouvelle scène + players" />
     <MESSAGE value="4 players dans une scène" />
-    <option name="LAST_COMMIT_MESSAGE" value="4 players dans une scène" />
+    <MESSAGE value="Rangement + eppes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rangement + eppes" />
   </component>
 </project>
