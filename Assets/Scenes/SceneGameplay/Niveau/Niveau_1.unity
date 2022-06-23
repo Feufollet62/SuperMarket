@@ -480,7 +480,7 @@ PrefabInstance:
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
       propertyPath: dureePartie
-      value: 300
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 694172216762316520, guid: b3f06c54c69cdbf408a8deec6b7c422d,
         type: 3}
