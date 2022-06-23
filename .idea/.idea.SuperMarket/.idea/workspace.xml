@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Début script éditeur">
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +24,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/MovementTest.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/DynamicsManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/DynamicsManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,7 +50,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\feufo\Desktop\Bordel\Unity\SuperMarket -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\feufo\Desktop\Bordel\Unity\SuperMarket" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -115,6 +112,7 @@
       <workItem from="1655724043981" duration="6338000" />
       <workItem from="1655796707109" duration="6045000" />
       <workItem from="1655895995537" duration="6413000" />
+      <workItem from="1655969383955" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -339,6 +337,21 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="DevCorentin" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
