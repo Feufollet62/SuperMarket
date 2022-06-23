@@ -276,7 +276,7 @@ namespace _Script
                         mRender.sharedMaterial = ObjectsFusionable[i].material;
 
                         gameObject.name = ObjectsFusionable[i].name;
-                        throwablePrefab.GetComponent<Interactible>().imageObjet = ObjectsFusionable[i].image;
+                        throwablePrefab.GetComponent<Interactible>().dataObject.image = ObjectsFusionable[i].image;
 
                         throwablePrefab.GetComponent<Interactible>().iD = ObjectsFusionable[i].iD;
                     }
