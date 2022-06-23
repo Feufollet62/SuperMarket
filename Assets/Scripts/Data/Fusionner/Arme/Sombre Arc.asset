@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Sombre Arc
   m_EditorClassIdentifier: 
-  model: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 5521160260186012320, guid: 25c2b800fdf7ba04e85949d3fc700665,
+    type: 3}
   iD: 19
   image: {fileID: 0}
   name: Arc de l'Ombre

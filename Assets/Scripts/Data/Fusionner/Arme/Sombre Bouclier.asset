@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Sombre Bouclier
   m_EditorClassIdentifier: 
-  model: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 8080785280514412061, guid: 8d4b0a2e0f1470544a7ea30f76ea452d,
+    type: 3}
   iD: 18
   image: {fileID: 0}
   name: Bouclier de l'Ombre

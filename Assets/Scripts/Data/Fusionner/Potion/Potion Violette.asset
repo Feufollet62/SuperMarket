@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Potion Violette
   m_EditorClassIdentifier: 
-  model: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 23d608099f66b464486e2e757b9d5b24, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 5309934410022776537, guid: 627bcfff84ee59a46b719d18ca759f86,
+    type: 3}
   iD: 11
   image: {fileID: 0}
   name: Potion Violette

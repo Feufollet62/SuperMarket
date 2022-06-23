@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Sombre Epee
   m_EditorClassIdentifier: 
-  model: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 149804477d655fd40afeb04fa7cda0b3, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 7722607762089512936, guid: dc9b2b4890203b94daff10fd109de3de,
+    type: 3}
   iD: 17
   image: {fileID: 0}
   name: Epee de l'Ombre

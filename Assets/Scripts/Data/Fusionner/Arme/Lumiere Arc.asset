@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Lumiere Arc
   m_EditorClassIdentifier: 
-  model: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 06c01184c3e82d84ea66ed397f68a4c2, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 7368980128519085360, guid: 8bd998b03c4371b46a8cff8431b8a9f1,
+    type: 3}
   iD: 16
   image: {fileID: 0}
   name: Arc de Lumiere

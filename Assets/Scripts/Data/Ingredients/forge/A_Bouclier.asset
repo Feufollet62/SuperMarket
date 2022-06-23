@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: A_Bouclier
   m_EditorClassIdentifier: 
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 3ad7e03442a4f8c4e9d4efc56075de81, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 6087686338693582863, guid: 679ebc85bb78ca54bacdfbf2396cc8e2,
+    type: 3}
   iD: 7
   image: {fileID: 0}
   name: Bouclier

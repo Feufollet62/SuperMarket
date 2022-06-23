@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: O_Fleur Jaune
   m_EditorClassIdentifier: 
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: d47b03a0d2e40bb4caf731eadf996dea, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 8446609489244548808, guid: 1768ee55f34473341b19afb56defd74f,
+    type: 3}
   iD: 2
   image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   name: FleurJaune
   craftable: 1
+  weapon: 0

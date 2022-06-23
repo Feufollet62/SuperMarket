@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: A_Epee
   m_EditorClassIdentifier: 
-  model: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 5ce811708d3f9564bb83bf6e6d057578, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 5102701779404573827, guid: 350a3b0cddb85684581137c333a32d22,
+    type: 3}
   iD: 5
   image: {fileID: 0}
   name: "\xC9p\xE9e"

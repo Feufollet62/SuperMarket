@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: A_Cristal Blanc
   m_EditorClassIdentifier: 
-  model: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: cbeef589492b85d4182e84d2251a5858, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 8267657467693448288, guid: 4b4e8e01ef2f85a45b4305ee40599fe3,
+    type: 3}
   iD: 4
   image: {fileID: 0}
   name: Crystal Blanc

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f759094e559c4783cdf3722321c1c, type: 3}
   m_Name: Potion Rouge
   m_EditorClassIdentifier: 
-  model: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 03dfabb01654d27458827a9618868799, type: 2}
+  model: {fileID: 0}
+  material: {fileID: 0}
+  prefabModel: {fileID: 2470445530524883006, guid: d12597ec58b2f374988bfbef88645292,
+    type: 3}
   iD: 9
   image: {fileID: 0}
   name: Potion Rouge
