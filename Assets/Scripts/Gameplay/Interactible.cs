@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public enum InteractType {Spawner, Throwable, Player, Comptoir, PassePlat, Etabli}
 
@@ -8,7 +7,7 @@ namespace _Script
 {
     public class Interactible : MonoBehaviour
     {
-        #region Variable
+        #region Variables
         public InteractType type;
         
         // Seulement pour les spawners: prefab throwable
@@ -19,8 +18,6 @@ namespace _Script
         public ObjectData dataObject;
         public float iD;
 
-        public Sprite imageObjet;
-
         private Rigidbody _rb;
         private Collider _collider;
 
@@ -29,30 +26,14 @@ namespace _Script
         // Seulement pour les players
         private PlayerController _thisPlayer;
 
-        [Header("Passe Plat / Comptoire")]
-        //seulement le comptoire
-        [SerializeField] public List<ClientController> clientsWait;// chez le GM y'a la même
-        [SerializeField] public GameManager gM;
+        [Header("Passe Plat / Comptoir")]
+        [SerializeField] public GameManager manager;
         [SerializeField] private Transform posPassePlat;
         private Interactible ItemADeposer;
-
-        [Header("Etabli")]
-        //seulement pour etabli
-        int[,] dataarrey = new int[,] {
-        { 8,11,13,0,0,0,0,0 },
-        { 11,9,12,0,0,0,0,0 },
-        { 13,12,10,0,0,0,0,0},
-        { 0,0,0,0,0,17,19,18},
-        { 0,0,0,0,0,14,16,15},
-        { 0,0,0,17,14,0,0,0 },
-        { 0,0,0,19,16,0,0,0 },
-        { 0,0,0,18,15,0,0,0 }};
-
+        
         [Header("Etabli")]
         // Recettes possibles sur cet etabli
         [SerializeField] private FusionData[] fusions;
-        //[SerializeField] private ObjectData[] ObjectsFusionable;
-        //[SerializeField] private GameObject throwablePrefab;
 
         [SerializeField] private bool isAlchimisteTable;
 
@@ -64,34 +45,26 @@ namespace _Script
         // Temps de craft
         [SerializeField] private float timeToCraft;
 
-        // Prend les objet posés permettant de regarder son id
-        //[SerializeField] private List<GameObject> objetsSurEtabli;
-
         // Conditions pour :
-
         // Savoir si la première place est prise
         private bool pos1 = false;
         private bool pos2 = false;
 
         // Si l'objet est en cours de construction
         private bool currentlyCrafting = false;
-
-        // Verif si mes objet sont dans ma collection
-        //private bool item1Verif = false;
-        //private bool item2Verif = false;
-
+        
         // Creation d'objet pour l'anim (et l'appeler dans d'autre fonction)
         private Interactible Item1;
         private Interactible Item2;
         private Interactible newItem;
         #endregion
 
+        #region Built-in functions
+        
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-
-            // if(type == InteractType.Throwable) SetupThrowable(dataObject);
-
+            
             if (type == InteractType.Player)
             {
                 // Le gameobject est un joueur, donc collider capsule
@@ -105,14 +78,16 @@ namespace _Script
         }
         private void Start()
         {
-            gM = GetComponent<GameManager>();
-            gM = FindObjectOfType<GameManager>();
+            manager = FindObjectOfType<GameManager>();
         }
+        
+        #endregion
+
+        #region Custom functions
 
         public bool Interact(PlayerController player)
         {
             // On return true si l'interaction est faisable, et false si elle ne l'est pas
-
             switch (type)
             {
                 case InteractType.Spawner:
@@ -124,6 +99,8 @@ namespace _Script
                     return true;
 
                 case InteractType.Throwable:
+                    // Uhhhhh il y avait un truc ici avant
+                    
                 case InteractType.Player:
                     if (player.grabbing) return false;
 
@@ -147,36 +124,19 @@ namespace _Script
                     
                 case InteractType.Comptoir:
                     if (!player.grabbing) return false;
-                    Comptoire(player);
+                    Comptoir(player);
                     // to do: comportement comptoir ici
                     print("Interaction comptoir");
                     return true;
                 
-
-
                 default:
                     return false;
             }
-
-            // Normalement on n'arrive jamais ici
-            return false;
         }
 
-        public void Throw(Vector3 force)
-        {
-            if (type == InteractType.Spawner || !_isHeld) return;
-            if (type == InteractType.Player) _thisPlayer.SetControllable(true);
+        #region Objets physiques (Throwables, player)
 
-            _isHeld = false;
-            transform.SetParent(null, true);
-
-            _rb.isKinematic = false;
-            _collider.enabled = true;
-
-            _rb.AddForce(force, ForceMode.Impulse);
-        }
-
-        public void SetupThrowable(ObjectData data) // Faire setup global avec switch case plz
+        public void SetupThrowable(ObjectData data)
         {
             if (type != InteractType.Throwable) return;
 
@@ -189,137 +149,10 @@ namespace _Script
             mRender.sharedMaterial = dataObject.material;
 
             gameObject.name = dataObject.name;
-            imageObjet = dataObject.image;
 
             iD = dataObject.iD;
         }
-        private void Etabli(PlayerController player)
-        {
-            Debug.Log("Je veux avoir un objet");
-            if (player._grabbedObject.dataObject.craftable && !currentlyCrafting)
-            {
-                if (isAlchimisteTable)
-                {
-                    Debug.Log("je capte un Objet");
-                    if (pos1)
-                    {
-                        Debug.Log("je pose un Objet 2");
-                        Item2 = player._grabbedObject;
-                        player.DropItem();
-                        Item2.PlaceIt(posObjet2);
-                        pos2 = true;
-                    }
-
-                    else
-                    {
-                        Debug.Log("je pose un Objet 1");
-                        Item1 = player._grabbedObject;
-                        player.DropItem();
-                        Item1.PlaceIt(posObjet1);
-                        pos1 = true;
-
-                        //objetsSurEtabli.Add(other.gameObject);
-                    }
-
-                    if (pos1 && pos2)
-                    {
-                        currentlyCrafting = true;
-                        StartCoroutine(FusionObjet(player));
-
-                    }
-
-
-                }
-                if (!isAlchimisteTable)
-                {
-                    if (player._grabbedObject.dataObject.weapon && !pos1)
-                    {
-                        Item1 = player._grabbedObject;
-                        player.DropItem();
-                        Item1.PlaceIt(posObjet1);
-                        pos1 = true;
-                    }
-                    if (!player._grabbedObject.dataObject.weapon && !pos2)
-                    {
-                        Item2 = player._grabbedObject;
-                        player.DropItem();
-                        Item2.PlaceIt(posObjet2);
-                        pos2 = true;
-                    }
-                    if (pos1 && pos2)
-                    {
-                        currentlyCrafting = true;
-                        StartCoroutine(FusionObjet(player));
-
-                    }
-                }
-            }
-            /*
-            if (pos1 && pos2)
-            {
-                currentlyCrafting = true;
-                StartCoroutine(FusionObjet(player));
-
-            }*/
-        }
-
-        private void PassePlat(PlayerController player)
-        {
-            ItemADeposer = player._grabbedObject;
-
-            if (!player.grabbing) return;
-            player._grabbedObject = null;
-            player.grabbing = false;
-            
-            ItemADeposer.PlaceIn(posPassePlat);
-        }
-        private void Comptoire(PlayerController player)
-        {
-            ItemADeposer = player._grabbedObject;
-
-            player.DropItem();
-
-            ItemADeposer.PlaceIn(posPassePlat);
-            VerificationID(ItemADeposer, player);
-        }
-        void VerificationID(Interactible interactible, PlayerController player)
-        {
-            for (int i = 0; i < gM.clientList.Count; i++)
-            {
-                if (gM.clientList[i].iDAleatoire == interactible.iD && gM.clientList[i].PosActuelle == Position.Pos1)
-                {
-                    player.interactibles.Remove(ItemADeposer);
-                    //Destroy(ItemADeposer.gameObject);
-                    gM.score++;
-                    gM.clientList[i].ExitQueue();
-                    return;
-                }
-            }
-        }
-
-        void Drop()
-        {
-            if (type == InteractType.Spawner || !_isHeld) return;
-            if (type == InteractType.Player) _thisPlayer.SetControllable(true);
-
-            _isHeld = false;
-            transform.SetParent(null, true);
-
-            _rb.isKinematic = true;
-            _collider.enabled = true;
-        }
-
-        private void ActivateSpawner(PlayerController player)
-        {
-            if (type != InteractType.Spawner) return;
-
-            Interactible newObject = Instantiate(throwablePrefab).GetComponent<Interactible>();
-            newObject.SetupThrowable(dataObject);
-
-            player._grabbedObject = newObject;
-            newObject.PickUp(player.grabPoint);
-        }
-
+        
         private void PickUp(Transform grabPoint)
         {
             if (type == InteractType.Spawner || _isHeld) return;
@@ -334,7 +167,22 @@ namespace _Script
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        private void PlaceIt(Transform placeposition)
+        
+        public void Throw(Vector3 force)
+        {
+            if (type == InteractType.Spawner || !_isHeld) return;
+            if (type == InteractType.Player) _thisPlayer.SetControllable(true);
+
+            _isHeld = false;
+            transform.SetParent(null, true);
+
+            _rb.isKinematic = false;
+            _collider.enabled = true;
+
+            _rb.AddForce(force, ForceMode.Impulse);
+        }
+        
+        private void Place(Transform placePosition)
         {
             if (type == InteractType.Spawner) return;
             if (type == InteractType.Player) _thisPlayer.SetControllable(false);
@@ -344,11 +192,13 @@ namespace _Script
             _rb.isKinematic = true;
             _collider.enabled = false;
 
-            transform.parent = placeposition;
+            transform.parent = placePosition;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        private void PlaceIn(Transform placeposition)
+        
+        // Diff entre celle ci ^^^^^ et celle là vvvvvv ? On peut sûrement en garder une seule
+        private void PlaceIn(Transform placePosition)
         {
             if (type == InteractType.Spawner) return;
             if (type == InteractType.Player) _thisPlayer.SetControllable(false);
@@ -358,14 +208,132 @@ namespace _Script
             _rb.isKinematic = true;
             _collider.enabled = true;
 
-            transform.parent = placeposition;
+            transform.parent = placePosition;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.localScale = Vector3.one;
         }
-        IEnumerator FusionObjet(PlayerController player)
+        
+        private void Drop()
         {
-            Debug.Log("Je demarre ma production");
+            if (type == InteractType.Spawner || !_isHeld) return;
+            if (type == InteractType.Player) _thisPlayer.SetControllable(true);
+
+            _isHeld = false;
+            transform.SetParent(null, true);
+
+            _rb.isKinematic = true;
+            _collider.enabled = true;
+        }
+
+        #endregion
+
+        #region Objets statiques (Spawners, etablis, comptoir)
+
+        private void ActivateSpawner(PlayerController player)
+        {
+            if (type != InteractType.Spawner) return;
+
+            Interactible newObject = Instantiate(throwablePrefab).GetComponent<Interactible>();
+            newObject.SetupThrowable(dataObject);
+
+            player._grabbedObject = newObject;
+            newObject.PickUp(player.grabPoint);
+        }
+        
+        private void PassePlat(PlayerController player)
+        {
+            ItemADeposer = player._grabbedObject;
+
+            if (!player.grabbing) return;
+            player._grabbedObject = null;
+            player.grabbing = false;
+            
+            ItemADeposer.PlaceIn(posPassePlat);
+        }
+        
+        private void Comptoir(PlayerController player)
+        {
+            ItemADeposer = player._grabbedObject;
+
+            player.DropItem();
+
+            ItemADeposer.PlaceIn(posPassePlat);
+            VerificationID(ItemADeposer, player);
+        }
+        
+        private void VerificationID(Interactible interactible, PlayerController player)
+        {
+            for (int i = 0; i < manager.clientList.Count; i++)
+            {
+                if (manager.clientList[i].iDAleatoire == interactible.iD && manager.clientList[i].PosActuelle == Position.Pos1)
+                {
+                    player.interactibles.Remove(ItemADeposer);
+                    manager.score++;
+                    manager.clientList[i].ExitQueue();
+                    return;
+                }
+            }
+        }
+        
+        private void Etabli(PlayerController player)
+        {
+            if (player._grabbedObject.dataObject.craftable && !currentlyCrafting)
+            {
+                if (isAlchimisteTable)
+                {
+                    if (pos1)
+                    {
+                        Item2 = player._grabbedObject;
+                        player.DropItem();
+                        Item2.Place(posObjet2);
+                        pos2 = true;
+                    }
+
+                    else
+                    {
+                        Item1 = player._grabbedObject;
+                        player.DropItem();
+                        Item1.Place(posObjet1);
+                        pos1 = true;
+
+                        //objetsSurEtabli.Add(other.gameObject);
+                    }
+
+                    if (pos1 && pos2)
+                    {
+                        currentlyCrafting = true;
+                        StartCoroutine(FusionObjet(player));
+                    }
+                }
+                
+                if (!isAlchimisteTable)
+                {
+                    if (player._grabbedObject.dataObject.weapon && !pos1)
+                    {
+                        Item1 = player._grabbedObject;
+                        player.DropItem();
+                        Item1.Place(posObjet1);
+                        pos1 = true;
+                    }
+                    if (!player._grabbedObject.dataObject.weapon && !pos2)
+                    {
+                        Item2 = player._grabbedObject;
+                        player.DropItem();
+                        Item2.Place(posObjet2);
+                        pos2 = true;
+                    }
+                    if (pos1 && pos2)
+                    {
+                        currentlyCrafting = true;
+                        StartCoroutine(FusionObjet(player));
+                    }
+                }
+            }
+        }
+        
+        private IEnumerator FusionObjet(PlayerController player)
+        {
             //temps de fabrique
             yield return new WaitForSeconds(timeToCraft);
 
@@ -385,8 +353,8 @@ namespace _Script
                         mRender.sharedMaterial = fusions[i].objetResult.material;
 
                         gameObject.name = fusions[i].objetResult.name;
-                        throwablePrefab.GetComponent<Interactible>().imageObjet = fusions[i].objetResult.image;
-
+                        
+                        throwablePrefab.GetComponent<Interactible>().dataObject.image = fusions[i].objetResult.image;
                         throwablePrefab.GetComponent<Interactible>().iD = fusions[i].objetResult.iD;
                     }
                 }
@@ -395,12 +363,16 @@ namespace _Script
                 Destroy(Item1.gameObject);
                 player.interactibles.Remove(Item2);
                 Destroy(Item2.gameObject);
-                //objetsSurEtabli.Clear();
             }
-            //dire que c'est vide
+            
+            // Dire que c'est vide
             pos1 = false;
             pos2 = false;
             currentlyCrafting = false;
         }
+        
+        #endregion
+        
+        #endregion
     }
 }

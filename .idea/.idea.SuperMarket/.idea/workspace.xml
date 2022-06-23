@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Interactible.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +357,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Rigidbodies sur les joueurs" />
     <MESSAGE value="Dash basique sans knockback / stun&#10;Feedback de mouvement avec &quot;animation&quot; du joueur + particules" />
     <MESSAGE value="Ajout objet throwable&#10;Interaction basique avec le throwable" />
     <MESSAGE value="Premier import scene Alex + rangement" />
@@ -384,6 +381,7 @@
     <MESSAGE value="Flaque fonctionne" />
     <MESSAGE value="Apparament il voulait pas changer la matrice de collision" />
     <MESSAGE value="Début script éditeur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début script éditeur" />
+    <MESSAGE value="Update Unity 2021.3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Unity 2021.3.5" />
   </component>
 </project>
