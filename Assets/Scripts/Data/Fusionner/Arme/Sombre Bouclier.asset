@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 8080785280514412061, guid: 8d4b0a2e0f1470544a7ea30f76ea452d,
     type: 3}
   iD: 18
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: c8b825c9a77e90643aaf6c1d067f8334, type: 3}
   name: Bouclier de l'Ombre
   craftable: 0
   weapon: 1

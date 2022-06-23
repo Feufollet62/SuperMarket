@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 5521160260186012320, guid: 25c2b800fdf7ba04e85949d3fc700665,
     type: 3}
   iD: 19
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 25ba0e6f720a6114f88c8055a3f17407, type: 3}
   name: Arc de l'Ombre
   craftable: 0
   weapon: 1

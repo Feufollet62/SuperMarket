@@ -284,15 +284,19 @@ namespace _Script
             player.DropItem();
 
             ItemADeposer.PlaceIn(posPassePlat);
+            Debug.Log(ItemADeposer);
             VerificationID(ItemADeposer, player);
         }
         void VerificationID(Interactible interactible, PlayerController player)
         {
+            Debug.Log("Je check une verif");
             for (int i = 0; i < gM.clientList.Count; i++)
             {
-                if (gM.clientList[i].iDAleatoire == interactible.iD && gM.clientList[i].PosActuelle == Position.Pos1)
+                Debug.Log("Je verifie");
+                if (gM.clientList[i].listeObject[gM.clientList[i].iDAleatoire].iD == interactible.iD && gM.clientList[i].PosActuelle == Position.Pos1 && gM.clientList[i].enCommande)
                 {
-                    player.interactibles.Remove(ItemADeposer);
+                    Debug.Log("Je te donne");
+                    //player.interactibles.Remove(ItemADeposer);
                     //Destroy(ItemADeposer.gameObject);
                     gM.score++;
                     gM.clientList[i].ExitQueue();

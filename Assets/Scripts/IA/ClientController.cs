@@ -25,6 +25,7 @@ namespace _Script{
 
 		private NavMeshAgent agent;
 
+		public bool enCommande = false;
 		private bool _premiereVerif = false;
 		private bool _firstPlace = false;
 
@@ -126,6 +127,7 @@ namespace _Script{
 
 			manager.uICommande.position += Vector3.right * 130; // C'est quoi ce 130 ?
 			manager.listeUI.Add(ui.gameObject);
+			enCommande = true;
 
 			//verifID.clientsWait.Add(this);
 
@@ -137,6 +139,7 @@ namespace _Script{
 		public void ExitQueue()
 		{
 			//verifID.clientsWait.Remove(this);
+			enCommande = false;
 			PosActuelle = Position.APartir;
 			manager.files[fileTarget].positions[0].occupied = false;
 			

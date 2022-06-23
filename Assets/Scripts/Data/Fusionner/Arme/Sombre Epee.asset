@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 7722607762089512936, guid: dc9b2b4890203b94daff10fd109de3de,
     type: 3}
   iD: 17
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 00d195062d7647d4ca82734757e21aba, type: 3}
   name: Epee de l'Ombre
   craftable: 0
   weapon: 1

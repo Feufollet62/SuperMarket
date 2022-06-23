@@ -204,9 +204,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1590e00bfb60ef448f2cde2d629a60a, type: 2}
   - {fileID: 11400000, guid: 0f69dde752688424495c362583406437, type: 2}
   - {fileID: 11400000, guid: 778428d13e9c19746b10d2d7fff727d5, type: 2}
+  - {fileID: 11400000, guid: 7533d95d24400a14a910d15d3538858f, type: 2}
   - {fileID: 11400000, guid: e1bb58ab6901ff149b3ac2bd828d0e61, type: 2}
   - {fileID: 11400000, guid: 38df1321db959d348bd34f0c9e7ede07, type: 2}
-  - {fileID: 11400000, guid: 7533d95d24400a14a910d15d3538858f, type: 2}
+  - {fileID: 11400000, guid: 3b17b375a06bff04bb5c635acc4f5520, type: 2}
+  - {fileID: 11400000, guid: 4183fcecdaa94c840a3e01a8c9bfaa9e, type: 2}
+  - {fileID: 11400000, guid: 09b696f19ffdda14d8cb6b3ef2533023, type: 2}
+  - {fileID: 11400000, guid: 422b288af635988469a0f06b0c238fd2, type: 2}
+  - {fileID: 11400000, guid: 3fa4a9a394a352245ab70bdb17a238d6, type: 2}
+  - {fileID: 11400000, guid: 426fe354e2bcdb647a26e1576cf0a9b1, type: 2}
   iDEgal: 0
 --- !u!195 &-3699083752858148782
 NavMeshAgent:

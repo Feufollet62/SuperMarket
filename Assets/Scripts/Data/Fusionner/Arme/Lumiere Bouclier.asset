@@ -17,7 +17,7 @@ MonoBehaviour:
   prefabModel: {fileID: 5747195859309583646, guid: b129dd617e0fb6240a6b783d8a25558a,
     type: 3}
   iD: 15
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 92bebad3144b676449381b7afffa07d0, type: 3}
   name: Bouclier de Lumiere
   craftable: 0
   weapon: 1
