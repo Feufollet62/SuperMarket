@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/shelf/Uncommitted_changes_before_Update_at_20_06_2022_09_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Push avant import unity package" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +105,7 @@
       <workItem from="1655975623660" duration="511000" />
       <workItem from="1655990942104" duration="3662000" />
       <workItem from="1656006461860" duration="50000" />
-      <workItem from="1656007062711" duration="598000" />
+      <workItem from="1656007062711" duration="1222000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -366,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655998595835</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Push avant import unity package">
+      <created>1656008954561</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1656008954561</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +416,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements" />
     <MESSAGE value="Début grand rangement:&#10;- ObjectDefinition combiné avec Interactible&#10;- Prefabs différents d'objets combinés en un seul Throwable" />
     <MESSAGE value="Refonte objets et spawner" />
     <MESSAGE value="Début nettoyage" />
@@ -441,6 +440,7 @@
     <MESSAGE value="Rangement + eppes" />
     <MESSAGE value="Toutes les eppees yay" />
     <MESSAGE value="Meilleurs mats" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meilleurs mats" />
+    <MESSAGE value="Push avant import unity package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push avant import unity package" />
   </component>
 </project>
