@@ -12,6 +12,7 @@ namespace _Script
         [Header("Info")]
         public int id;
         // Remplacer par scriptableojbect maybe ?
+        // Fix ça stp
         [SerializeField] private Material[] playerMats;
         [SerializeField] private Transform model;
         [SerializeField] public Transform grabPoint;

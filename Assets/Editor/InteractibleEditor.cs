@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+/*
 using _Script;
 using UnityEditor;
 using UnityEngine;
@@ -36,4 +37,5 @@ public class InteractibleEditor : Editor
         }
     }
 }
+*/
 #endif
