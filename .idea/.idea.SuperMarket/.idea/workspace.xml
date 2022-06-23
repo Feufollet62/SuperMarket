@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="" />
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SuperMarket/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,19 +12,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DevCorentin" />
+        <entry key="$PROJECT_DIR$" value="Diorama" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Breakable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/ProjectSettings/ShaderGraphSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,6 +109,7 @@
       <workItem from="1655796707109" duration="6045000" />
       <workItem from="1655895995537" duration="6413000" />
       <workItem from="1655969383955" duration="304000" />
+      <workItem from="1655975623660" duration="511000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655975216281</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Rangement++">
+      <created>1655975969916</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655975969916</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +341,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="DevEliot" />
+                        <option value="Diorama" />
                       </list>
                     </value>
                   </entry>
@@ -363,7 +370,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Dash basique sans knockback / stun&#10;Feedback de mouvement avec &quot;animation&quot; du joueur + particules" />
     <MESSAGE value="Ajout objet throwable&#10;Interaction basique avec le throwable" />
     <MESSAGE value="Premier import scene Alex + rangement" />
     <MESSAGE value="Giga rangement de la map d'Alex" />
@@ -388,6 +394,7 @@
     <MESSAGE value="Début script éditeur" />
     <MESSAGE value="Update Unity 2021.3.5" />
     <MESSAGE value="Fix scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix scene" />
+    <MESSAGE value="Rangement++" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rangement++" />
   </component>
 </project>
