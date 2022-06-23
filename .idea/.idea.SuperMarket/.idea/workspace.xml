@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Rangement + eppes" />
+    <list default="true" id="de674532-1158-4464-9332-2cfa95c686c9" name="Changes" comment="Meilleurs mats">
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordDarkToon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordDarkToon.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordLightToon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordLightToon.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordToon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Items/Epees/SwordToon.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Diorama.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +23,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InteractibleEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/Diorama.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/Diorama.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Etudiant/Desktop/Bordel/Unity/SuperMarket/Assets/Scenes/Diorama.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Object/Etabli.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.7/Editor/Importers/ShaderGraphImporter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,7 +116,7 @@
       <workItem from="1655895995537" duration="6413000" />
       <workItem from="1655969383955" duration="304000" />
       <workItem from="1655975623660" duration="511000" />
-      <workItem from="1655990942104" duration="3285000" />
+      <workItem from="1655990942104" duration="3662000" />
     </task>
     <task id="LOCAL-00001" summary="Setup nouveau PC + merge avec DevCorentin">
       <created>1654347854558</created>
@@ -349,7 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655998212658</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Toutes les eppees yay">
+      <created>1655998480903</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998480903</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Meilleurs mats">
+      <created>1655998595835</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998595835</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,8 +419,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Truc random avant merge" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Fix interaction - Nouveau système plus &quot;&quot;&quot;simple&quot;&quot;&quot; qui permet plus de flexibilité et d'ajouter facilement nouveaux comportements" />
     <MESSAGE value="Début grand rangement:&#10;- ObjectDefinition combiné avec Interactible&#10;- Prefabs différents d'objets combinés en un seul Throwable" />
     <MESSAGE value="Refonte objets et spawner" />
@@ -423,6 +442,8 @@
     <MESSAGE value="Nouvelle scène + players" />
     <MESSAGE value="4 players dans une scène" />
     <MESSAGE value="Rangement + eppes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rangement + eppes" />
+    <MESSAGE value="Toutes les eppees yay" />
+    <MESSAGE value="Meilleurs mats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meilleurs mats" />
   </component>
 </project>
