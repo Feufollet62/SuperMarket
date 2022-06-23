@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerBody4
+  m_Name: CorpsJaune
   m_Shader: {fileID: -6465566751694194690, guid: bf36778a400a0894b86a1f49c422fa62,
     type: 3}
   m_ValidKeywords: []
@@ -26,7 +26,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: c464684c31ed5c34a87edd7453a6a863, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4d00a805f7fd24b42b25930fc78c5ea7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 8ac2ea05c9b93b944bb6196c99b4f844, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
@@ -50,11 +54,11 @@ Material:
     - Vector1_8606F96E: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.572
+    - _Smoothness: 0.6
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.09803922}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5847583673491931169
