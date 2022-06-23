@@ -184,12 +184,14 @@ namespace _Script
 
             dataObject = data;
 
+            
             MeshFilter mFilter = GetComponent<MeshFilter>();
             MeshRenderer mRender = GetComponent<MeshRenderer>();
 
             mFilter.sharedMesh = dataObject.model;
             mRender.sharedMaterial = dataObject.material;
 
+            Instantiate(dataObject.prefabModel, gameObject.transform);
             gameObject.name = dataObject.name;
             imageObjet = dataObject.image;
 
@@ -379,17 +381,6 @@ namespace _Script
                     {
                         Interactible newObject = Instantiate(throwablePrefab, posRejet).GetComponent<Interactible>();
                         newObject.SetupThrowable(fusions[i].objetResult);
-
-                        MeshFilter mFilter = throwablePrefab.GetComponent<MeshFilter>();
-                        MeshRenderer mRender = throwablePrefab.GetComponent<MeshRenderer>();
-
-                        mFilter.sharedMesh = fusions[i].objetResult.model;
-                        mRender.sharedMaterial = fusions[i].objetResult.material;
-
-                        gameObject.name = fusions[i].objetResult.name;
-                        throwablePrefab.GetComponent<Interactible>().imageObjet = fusions[i].objetResult.image;
-
-                        throwablePrefab.GetComponent<Interactible>().iD = fusions[i].objetResult.iD;
                     }
                 }
 
@@ -397,7 +388,6 @@ namespace _Script
                 Destroy(Item1.gameObject);
                 player.interactibles.Remove(Item2);
                 Destroy(Item2.gameObject);
-                //objetsSurEtabli.Clear();
             }
             //dire que c'est vide
             pos1 = false;

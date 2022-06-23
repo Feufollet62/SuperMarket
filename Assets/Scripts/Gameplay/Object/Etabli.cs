@@ -272,8 +272,8 @@ namespace _Script
                         MeshFilter mFilter = throwablePrefab.GetComponent<MeshFilter>();
                         MeshRenderer mRender = throwablePrefab.GetComponent<MeshRenderer>();
 
-                        mFilter.sharedMesh = ObjectsFusionable[i].model;
-                        mRender.sharedMaterial = ObjectsFusionable[i].material;
+                        //mFilter.sharedMesh = ObjectsFusionable[i].model;
+                        //mRender.sharedMaterial = ObjectsFusionable[i].material;
 
                         gameObject.name = ObjectsFusionable[i].name;
                         throwablePrefab.GetComponent<Interactible>().imageObjet = ObjectsFusionable[i].image;
